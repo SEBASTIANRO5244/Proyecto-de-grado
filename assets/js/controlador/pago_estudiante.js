@@ -1,0 +1,461 @@
+ $(document).on("click", "#New_PEst", function () {
+  $(".modal-title").html("Nuevo");
+
+  $("#Guardar").show();
+  $("#Cerrar").show();
+  $("#ActualizarPEst").hide();
+  //$("#exampleModal").modal();
+});
+
+  $(document).on("click", "#Actualizar_pension1", function () {
+  $(".modal-title").html("Editar");
+  
+  $("#Guardar").hide();
+  $("#Cerrar").show();
+  $("#ActualizarPEst").show();
+  //$("#exampleModal").modal();
+});
+
+function guardar() {
+    // body...
+    var acum = 0;
+    var fecha = "";
+    var valor = "";
+    var nombres = "";
+    var apellidos ="";
+    var nombres1 = "";
+    var apellidos1="";
+    var admin = "";
+    var doc_estudiante ="";
+
+    fecha =  document.getElementById("Fecha").value;
+    valor =   document.getElementById("Valor").value;
+    nombres =  document.getElementById("Nombres").value;
+    apellidos =   document.getElementById("Apellidos").value;
+    nombres1 =  document.getElementById("Nombres1").value;
+    apellidos1 =   document.getElementById("Apellidos1").value;        
+    admin =  document.getElementById("Admin").value;
+    doc_estudiante =  document.getElementById("Identificacion").value;
+
+
+
+    if(!fecha||!valor||!nombres||!apellidos||!nombres1||!apellidos1||!admin||!doc_estudiante){
+    
+     acum++;
+ }
+
+ if(acum<1){
+
+   
+
+    ruta = url + cpago_estudiante + 'guardar';
+    
+    $.ajax({
+        'url'  : ruta,
+        'data' : {
+                    'fecha': fecha,
+                    'valor': valor,
+                    'nombres': nombres,
+                    'apellidos': apellidos,
+                    'nombres1': nombres1,
+                    'apellidos1': apellidos1,
+                    'admin': admin,
+                    'doc_estudiante': doc_estudiante
+        },
+        'type' : 'POST',
+        'statusCode': {
+            404: function() {
+              alertify.error("La Ruta de la pagina no es la correcta" );
+            }
+          }
+    }).done(function( data ) {
+        if(data == 1){
+            limpiar();
+            tpago_est();
+            cargar_tabla();
+                  Swal.fire({
+           icon: 'success',
+            title: 'Datos guardados con exito!!',
+            showConfirmButton: false,
+            timer: 900
+          })
+        
+        }else{
+           Swal.fire(
+             'Error al guardar, Intenta nuevamente!!',
+             '',
+             'error')
+        }
+            
+  }).fail(function() {
+           Swal.fire(
+             'Error',
+             '',
+             'error')
+  });
+
+  }else{
+            Swal.fire(
+             'Error, campos vacios',
+             '',
+             'error')
+        }  
+
+}
+
+$('.input-letter').on('input', function () {
+  this.value = this.value.replace(/[^a-zA-Z ]/g,'');
+});
+
+$('.input-number').on('input', function () {
+  this.value = this.value.replace(/[^0-9 ]/g,'');
+});
+
+
+function limpiar(){
+    $("#Nombres").val("");
+    $("#Apellidos").val("");
+    $("#Nombres1").val("");
+    $("#Apellidos1").val("");
+    $("#Fecha").val(""); 
+    $("#Admin").val("");
+    $("#Identificacion").val("");
+    $("#Valor").val("");  
+}
+
+function buscarespecifico() {
+    // body...
+
+    var acum = 0;
+    var identifiacion = 0;  
+    var ruta = "";
+    identificacion = document.getElementById("Identificacion").value;
+
+
+
+    if(!identificacion){
+    
+     acum++;
+ }
+
+ if(acum<1){
+ 
+    ruta = url + cpago_estudiante + 'buscarespecifico';
+    
+    $.ajax({
+        'url'  : ruta,
+        'data' : {
+                    'identificacion': identificacion 
+        },
+        'type' : 'POST',
+        'statusCode': {
+            404: function() {
+              alertify.error("La Ruta de la pagina no es la correcta" );
+            }
+          }
+    }).done(function( data ) {
+        var respuesta="";
+        var obj="";
+        respuesta = '{"respuesta": ['+data+']}';
+        obj = JSON.parse(respuesta);
+        if (obj.respuesta[0]!=false) {
+            $("#Nombres").val(obj.respuesta[0].nombre_estudiante);
+            $("#Apellidos").val(obj.respuesta[0].apellido_estudiante);
+            $("#Nombres1").val(obj.respuesta[0].nombre_acudiente);
+            $("#Apellidos1").val(obj.respuesta[0].apellido_acudiente);  
+           Swal.fire({
+           icon: 'success',
+            title: 'Documento encontrado con exito!!',
+            showConfirmButton: false,
+            timer: 900
+          })
+        }else{
+           Swal.fire(
+             'Error, numero documento no registrado',
+             '',
+             'error')
+        }            
+    }).fail(function() {
+        alertify.error( "Error" );
+    });
+
+  }else{
+            Swal.fire(
+             'Error, campo vacio, digite un documento',
+             '', 
+             'error')
+        }  
+
+}
+function tpago_est(){
+   var ruta = "";
+   var id_html = "";
+   ruta=url+cpago_estudiante+"tpago_est";
+   id_html = "tpago_est";
+    
+   cargar_tabla(ruta,id_html);
+}
+
+function cargar_tabla(ruta, id_html){
+   $.ajax({
+       'url'  : ruta,
+       'statusCode': {
+           404: function() {
+             alertify.error("La Ruta de la pagina no es la correcta" );
+           }
+         }
+   }).done(function( data ) { 
+
+       $("#"+id_html).html(data);           
+   }).fail(function() {
+       alertify.error( "Error" );
+   })
+}
+
+$(document).ready(function(){
+   tpago_est();
+
+});
+
+$(document).ready(function(){
+ $("#form_buscarPEst").keyup(function(){
+ _this = this;
+ // Show only matching TR, hide rest of them
+
+
+ $.each($("#tpago_est tbody tr"), function() {
+ if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+ $(this).hide();
+ else
+ $(this).show();
+ });
+ });
+});
+
+function actualizar() {
+    // body...
+    var acum=0;
+    var id="";
+    var fecha = "";
+    var valor = "";
+    var nombres = "";
+    var apellidos ="";
+    var nombres1 = "";
+    var apellidos1="";
+    var admin = "";
+    var doc_estudiante ="";
+
+    id = $("#Id").val();
+    fecha = document.getElementById("Fecha").value;
+    valor = document.getElementById("Valor").value;
+    nombres = document.getElementById("Nombres").value;
+    apellidos = document.getElementById("Apellidos").value;
+    nombres1 = document.getElementById("Nombres1").value;
+    apellidos1 = document.getElementById("Apellidos1").value;        
+    admin = document.getElementById("Admin").value;
+    doc_estudiante = document.getElementById("Identificacion").value;
+
+    if(!fecha||!valor||!nombres||!apellidos||!nombres1||!apellidos1||!admin||!doc_estudiante){
+    
+     acum++;
+ }
+
+ if(acum<1){
+
+   
+    ruta = url + cpago_estudiante + 'actualizar';
+    
+    $.ajax({
+        'url'  : ruta,
+        'data' : {
+                    'id': id , 
+                    'fecha': fecha,
+                    'valor': valor,
+                    'nombres': nombres,
+                    'apellidos': apellidos,
+                    'nombres1': nombres1,
+                    'apellidos1': apellidos1,
+                    'admin': admin,
+                    'doc_estudiante': doc_estudiante
+                    
+         },
+        'type' : 'POST',
+        'statusCode': {
+            404: function() {
+             alertify.error("La Ruta de la pagina no es la correcta" );
+           }
+          }
+    }).done(function( data ) {
+        if(data == 1){
+           actualizarMat();
+           actualizarEst();
+           actualizarAcu();
+            limpiar();
+            tpago_est();
+            cargar_tabla();
+                Swal.fire({
+           icon: 'success',
+            title: 'Datos actualizados con exito!!',
+            showConfirmButton: false,
+            timer: 900
+          })
+        
+        }else{
+           Swal.fire(
+             'Error al actualizar, Intenta nuevamente!!',
+             '',
+             'error')
+        }
+            
+  }).fail(function() {
+           Swal.fire(
+             'Error',
+             '',
+             'error')
+  });
+
+  }else{
+            Swal.fire(
+             'Error, campos vacios',
+             '',
+             'error')
+        }  
+
+}
+
+function cargarmodalPEst(id, fecha, valor, nombre_estudiante, apellido_estudiante, nombre_acudiente, 
+  apellido_acudiente, nombre_admin, fk_id_matricula){
+ 
+    $("#Id").val(id);
+    $("#Fecha").val(fecha); 
+    $("#Valor").val(valor);
+    $("#Nombres").val(nombre_estudiante);
+    $("#Apellidos").val(apellido_estudiante);
+    $("#Nombres1").val(nombre_acudiente);
+    $("#Apellidos1").val(apellido_acudiente);
+    $("#Admin").val(nombre_admin);
+    $("#Identificacion").val(fk_id_matricula);
+    
+}
+
+function actualizarmodalPEst(){
+  actualizar();
+  tpago_est();
+}
+
+function actualizarMat(){
+  var nombre = "";
+  var apellidos = "";
+  var identificacion=0;
+  var nombre1 = "";
+  var apellidos1 = "";
+
+
+  nombre = $("#Nombres").val();
+  apellidos = $("#Apellidos").val();
+  identificacion = $("#Identificacion").val();  
+  nombre1 = $("#Nombres1").val();
+  apellidos1 = $("#Apellidos1").val();
+
+
+   ruta = url + cpago_estudiante + 'actualizarMat';
+    
+    $.ajax({
+        'url'  : ruta,
+        'data' : {
+                    'nombres': nombre , 
+                    'apellidos': apellidos,
+                    'identificacion': identificacion,
+                    'nombres1': nombre1 , 
+                    'apellidos1': apellidos1                    
+         },
+        'type' : 'POST',
+        'statusCode': {
+            404: function() {
+             alertify.error("La Ruta de la pagina no es la correcta" );
+           }
+          }
+    }).done(function( data ) {
+        if(data == 1){
+            limpiar();
+            tpago_est();
+            cargar_tabla();
+             
+        
+        }else{
+          
+        }
+            
+  }).fail(function() {
+     
+  })
+
+}
+
+function actualizarEst(){
+  var nombre = "";
+  var apellidos = "";
+  var identificacion=0;
+
+
+  nombre = $("#Nombres").val();
+  apellidos = $("#Apellidos").val();
+  identificacion = $("#Identificacion").val();  
+
+
+   ruta = url + cpago_estudiante + 'actualizarEst';
+    
+    $.ajax({
+        'url'  : ruta,
+        'data' : {
+                    'nombres': nombre , 
+                    'apellidos': apellidos,
+                    'identificacion': identificacion               
+         },
+        'type' : 'POST',
+        'statusCode': {
+            404: function() {
+             alertify.error("La Ruta de la pagina no es la correcta" );
+           }
+          }
+    }).done(function( data ) {
+        if(data == 1){
+            limpiar();
+            tpago_est();
+            cargar_tabla();
+             
+        
+        }else{
+          
+        }
+            
+  }).fail(function() {
+     
+  })
+
+
+}
+
+$(document).on('click', '.reportePago', function(e){
+      e.preventDefault();
+    let fecha = '';
+    let numMatricula = 0;   
+    fecha = $(this).parents("tr").find("td").eq(0).text();
+    numMatricula = $(this).parents("tr").find("td").eq(1).text();
+    numMatricula = numMatricula.trim();
+    fecha = fecha.trim();
+
+  viewPdfPago(fecha, numMatricula);
+
+    return false;
+})
+
+
+function viewPdfPago(fecha, matricula ){
+  let fecha1  = fecha;
+  var matricula1 = matricula; 
+     var url = `http://localhost:8081/workspace1/cecs/index.php/pension/${fecha1}/${matricula1}`;
+    window.open(url, '_blank');
+    return false; 
+}
+
