@@ -26,7 +26,9 @@ class Cpago_estudiante extends CI_Controller {
             "nombre_acudiente" => $_POST['nombres1'],
             "apellido_acudiente" => $_POST['apellidos1'],
             "nombre_admin" => $_POST['admin'],
-            "fk_id_matricula" => $_POST['doc_estudiante']
+            "fk_id_matricula" => $_POST['doc_estudiante'],
+            "periodo_academico" => $_POST['periodo_academico'],
+            "mes_academico" => $_POST['mes_academico']
           );
 
       echo $this->Mpago_estudiante->guardar($dato);
@@ -44,7 +46,9 @@ class Cpago_estudiante extends CI_Controller {
             "nombre_acudiente" => $_POST['nombres1'],
             "apellido_acudiente" => $_POST['apellidos1'],
             "nombre_admin" => $_POST['admin'],
-            "fk_id_matricula" => $_POST['doc_estudiante']
+            "fk_id_matricula" => $_POST['doc_estudiante'],
+            "periodo_academico" => $_POST['periodo_academico'],
+            "mes_academico" => $_POST['mes_academico']
           );
 
       echo $this->Mpago_estudiante->actualizar($id,$dato);

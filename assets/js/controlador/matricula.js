@@ -101,7 +101,7 @@ function buscarespecifico() {
 
 function CargarCombo() {
     var base_url="";
-    base_url="http://localhost:8081/workspace1/cecs/index.php/cmatriculas/CargarCombo";
+    base_url="http://localhost/cecs/index.php/cmatriculas/CargarCombo";
     $.ajax({
         'url' : base_url,
         'type' : 'GET',
