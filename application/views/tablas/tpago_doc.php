@@ -9,6 +9,8 @@
       <th scope="col">Apellido</th>
       <th scope="col">Valor</th>
       <th scope="col">Rectora</th>
+      <th scope="col">Periodo Academico</th>
+      <th scope="col">Mes Academico</th>
       <th scope="col">Acción</th>
     </tr>
   </thead>
@@ -50,11 +52,20 @@
                              echo $data->nombre_rectora;
                            ?>
                          </td>
-                        
+                         <td>
+                           <?php
+                             echo $data->periodo_academico;
+                           ?>
+                         </td>
+                         <td>
+                           <?php
+                             echo $data->mes_academico;
+                           ?>
+                         </td>
                           <td>
       
 
-      <button type="button" class="btn btn-success" data-toggle='modal' data-target='#exampleModal' id="Actualizar_doc1" data-whatever=" @geetbootstrap" onclick="cargarmodalPDoc('<?php echo $data->id;?>','<?php echo $data->fecha;?>','<?php echo $data->valor;?>','<?php echo $data->nombre_docente;?>','<?php echo $data->apellido_docente;?>','<?php echo $data->numDoc_docente;?>','<?php echo $data->nombre_rectora;?>')"><img src="<?php echo base_url('assets/img/actualizar.png');?>"><br><b class="letter"></button>
+      <button type="button" class="btn btn-success" data-toggle='modal' data-target='#exampleModal' id="Actualizar_doc1" data-whatever=" @geetbootstrap" onclick="cargarmodalPDoc('<?php echo $data->id;?>','<?php echo $data->fecha;?>','<?php echo $data->valor;?>','<?php echo $data->nombre_docente;?>','<?php echo $data->apellido_docente;?>','<?php echo $data->numDoc_docente;?>','<?php echo $data->nombre_rectora;?>','<?php echo $data->mes_academico;?>','<?php echo $data->periodo_academico;?>')"><img src="<?php echo base_url('assets/img/actualizar.png');?>"><br><b class="letter"></button>
 
          <a href="" class="btn btn-warning reportePagoDoc"><img src="<?php echo base_url('assets/img/reporte.png');?>"></a>
        </td>

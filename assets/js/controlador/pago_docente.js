@@ -25,6 +25,8 @@ function guardar() {
     var apellido = 0;
     var valor="";
     var rectora = "";
+    var periodo_academico ="";
+    var mes_academico ="";
 
     fecha = document.getElementById("Fecha").value;
     numdoc_docente = document.getElementById("Identificacion").value;
@@ -32,9 +34,11 @@ function guardar() {
     apellido =  document.getElementById("Apellidos").value;
     valor = document.getElementById("Valor").value;
     rectora = document.getElementById("Admin").value;
+    periodo_academico =  document.getElementById("Periodo_academico").value;
+    mes_academico =  document.getElementById("Mes_academico").value;
 
 
-    if(!fecha||!numdoc_docente||!apellido||!valor||!rectora){
+    if(!fecha||!numdoc_docente||!apellido||!valor||!rectora||!periodo_academico||!mes_academico){
     
      acum++;
  }
@@ -53,7 +57,9 @@ function guardar() {
                     'nombre': nombre,
                     'apellido': apellido,
                     'valor': valor,
-                    'rectora': rectora
+                    'rectora': rectora,
+                    'periodo_academico': periodo_academico,
+                    'mes_academico': mes_academico
         },
         'type' : 'POST',
         'statusCode': {
@@ -111,6 +117,8 @@ function limpiar(){
     $("#Admin").val("");
     $("#Identificacion").val("");
     $("#Valor").val("");  
+    $("#Periodo_academico").val("");  
+    $("#Mes_academico").val("");  
 }
 
 
@@ -233,6 +241,8 @@ function actualizar() {
     var apellido = 0;
     var valor="";
     var rectora = "";
+    var periodo_academico ="";
+    var mes_academico ="";
 
     id = $("#Id").val();
    
@@ -242,9 +252,11 @@ function actualizar() {
     apellido =  document.getElementById("Apellidos").value;
     valor = document.getElementById("Valor").value;
     rectora = document.getElementById("Admin").value;
+    periodo_academico =  document.getElementById("Periodo_academico").value;
+    mes_academico =  document.getElementById("Mes_academico").value;
 
 
-    if(!fecha||!numdoc_docente||!apellido||!valor||!rectora){
+    if(!fecha||!numdoc_docente||!apellido||!valor||!rectora||!periodo_academico||!mes_academico){
     
      acum++;
  }
@@ -263,7 +275,9 @@ function actualizar() {
                     'nombre': nombre,
                     'apellido': apellido,
                     'valor': valor,
-                    'rectora': rectora
+                    'rectora': rectora,
+                    'periodo_academico': periodo_academico,
+                    'mes_academico': mes_academico
          },
         'type' : 'POST',
         'statusCode': {
@@ -308,7 +322,8 @@ function actualizar() {
 }
 
 
-function cargarmodalPDoc(id, fecha,  valor, nombre_docente, apellido_docente,numDoc_docente, nombre_rectora){
+function cargarmodalPDoc(id, fecha,  valor, nombre_docente, apellido_docente,
+  numDoc_docente, nombre_rectora, mes_academico, periodo_academico){
  
     $("#Id").val(id);
     $("#Nombres").val(nombre_docente);
@@ -317,6 +332,8 @@ function cargarmodalPDoc(id, fecha,  valor, nombre_docente, apellido_docente,num
     $("#Admin").val(nombre_rectora);
     $("#Identificacion").val(numDoc_docente);
     $("#Valor").val(valor);  
+    $("#Periodo_academico").val(periodo_academico);
+    $("#Mes_academico").val(mes_academico);
     
 }
 
