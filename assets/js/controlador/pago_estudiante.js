@@ -27,6 +27,8 @@ function guardar() {
     var apellidos1="";
     var admin = "";
     var doc_estudiante ="";
+    var periodo_academico ="";
+    var mes_academico ="";
 
     fecha =  document.getElementById("Fecha").value;
     valor =   document.getElementById("Valor").value;
@@ -35,11 +37,13 @@ function guardar() {
     nombres1 =  document.getElementById("Nombres1").value;
     apellidos1 =   document.getElementById("Apellidos1").value;        
     admin =  document.getElementById("Admin").value;
-    doc_estudiante =  document.getElementById("Identificacion").value;
+    doc_estudiante = document.getElementById("Identificacion").value;
+    periodo_academico =  document.getElementById("Periodo_academico").value;
+    mes_academico =  document.getElementById("Mes_academico").value;
 
 
-
-    if(!fecha||!valor||!nombres||!apellidos||!nombres1||!apellidos1||!admin||!doc_estudiante){
+    if(!fecha||!valor||!nombres||!apellidos||!nombres1||!apellidos1||!admin
+      ||!doc_estudiante||!periodo_academico||!mes_academico){
     
      acum++;
  }
@@ -60,7 +64,9 @@ function guardar() {
                     'nombres1': nombres1,
                     'apellidos1': apellidos1,
                     'admin': admin,
-                    'doc_estudiante': doc_estudiante
+                    'doc_estudiante': doc_estudiante,
+                    'periodo_academico': periodo_academico,
+                    'mes_academico': mes_academico
         },
         'type' : 'POST',
         'statusCode': {
@@ -121,6 +127,8 @@ function limpiar(){
     $("#Admin").val("");
     $("#Identificacion").val("");
     $("#Valor").val("");  
+    $("#Periodo_academico").val("");  
+    $("#Mes_academico").val("");  
 }
 
 function buscarespecifico() {
@@ -244,6 +252,8 @@ function actualizar() {
     var apellidos1="";
     var admin = "";
     var doc_estudiante ="";
+    var periodo_academico ="";
+    var mes_academico ="";
 
     id = $("#Id").val();
     fecha = document.getElementById("Fecha").value;
@@ -254,8 +264,12 @@ function actualizar() {
     apellidos1 = document.getElementById("Apellidos1").value;        
     admin = document.getElementById("Admin").value;
     doc_estudiante = document.getElementById("Identificacion").value;
+    periodo_academico =  document.getElementById("Periodo_academico").value;
+    mes_academico =  document.getElementById("Mes_academico").value;
 
-    if(!fecha||!valor||!nombres||!apellidos||!nombres1||!apellidos1||!admin||!doc_estudiante){
+
+    if(!fecha||!valor||!nombres||!apellidos||!nombres1||!apellidos1||!admin
+      ||!doc_estudiante||!periodo_academico||!mes_academico){
     
      acum++;
  }
@@ -276,9 +290,10 @@ function actualizar() {
                     'nombres1': nombres1,
                     'apellidos1': apellidos1,
                     'admin': admin,
-                    'doc_estudiante': doc_estudiante
-                    
-         },
+                    'doc_estudiante': doc_estudiante,
+                    'periodo_academico': periodo_academico,
+                    'mes_academico': mes_academico
+        },
         'type' : 'POST',
         'statusCode': {
             404: function() {
@@ -289,7 +304,6 @@ function actualizar() {
         if(data == 1){
            actualizarMat();
            actualizarEst();
-           actualizarAcu();
             limpiar();
             tpago_est();
             cargar_tabla();
@@ -324,7 +338,7 @@ function actualizar() {
 }
 
 function cargarmodalPEst(id, fecha, valor, nombre_estudiante, apellido_estudiante, nombre_acudiente, 
-  apellido_acudiente, nombre_admin, fk_id_matricula){
+  apellido_acudiente, nombre_admin, fk_id_matricula, mes_academico, periodo_academico){
  
     $("#Id").val(id);
     $("#Fecha").val(fecha); 
@@ -334,6 +348,8 @@ function cargarmodalPEst(id, fecha, valor, nombre_estudiante, apellido_estudiant
     $("#Nombres1").val(nombre_acudiente);
     $("#Apellidos1").val(apellido_acudiente);
     $("#Admin").val(nombre_admin);
+    $("#Periodo_academico").val(periodo_academico);
+    $("#Mes_academico").val(mes_academico);
     $("#Identificacion").val(fk_id_matricula);
     
 }
