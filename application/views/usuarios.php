@@ -2,7 +2,7 @@
   <a class="navbar-brand" href="" >
     <a type="button" class="btn btn-light" href="<?=$_SERVER["HTTP_REFERER"]?>">Atrás</a>
    </a>
-   <h3 class="cecs1" style="color: white;"><b>CENTRO EDUCATIVO CRECER DE SOLEDAD</b></h3> 
+   <h3 class="cecs1" style="color: white;"><b>SISTEMA DE INFORMACIÓN INTEGRADO DE MATRÍCULAS PARA COLEGIOS PRIVADOS</b></h3> 
 </nav>
    <head>
      <!-- TABLA!-->
@@ -22,7 +22,7 @@
 <!-- ANIMACION Y DIV DEL FORMULARIO!-->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content" id="modal_usu" style="height: 72%;">
+    <div class="modal-content" id="modal_usu" style="height: 77%;">
       <div class="modal-header">
       </div>
       <!-- CAJAS DE TEXTO DEL FORM!-->

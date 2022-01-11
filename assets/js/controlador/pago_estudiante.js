@@ -470,7 +470,7 @@ $(document).on('click', '.reportePago', function(e){
 function viewPdfPago(fecha, matricula ){
   let fecha1  = fecha;
   var matricula1 = matricula; 
-     var url = `http://localhost:8081/workspace1/cecs/index.php/pension/${fecha1}/${matricula1}`;
+     var url = `http://localhost/Proyecto-de-grado/index.php/pension/${fecha1}/${matricula1}`;
     window.open(url, '_blank');
     return false; 
 }

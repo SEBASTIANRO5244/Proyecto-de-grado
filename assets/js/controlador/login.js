@@ -50,9 +50,9 @@ $(document).on('click', '#cerrarSession', function(e){
        e.preventDefault();
     
         $.ajax({
-            url : 'http://localhost/cecs/' + 'index.php/Clogin/logout',
+            url : 'http://localhost/Proyecto-de-grado/' + 'index.php/Clogin/logout',
             success : function(data){
-                window.location='http://localhost/cecs/index.php/clogin';
+                window.location='http://localhost/Proyecto-de-grado/index.php/clogin';
             }
 
         })

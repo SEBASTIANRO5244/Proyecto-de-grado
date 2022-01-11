@@ -2,7 +2,7 @@
   <a class="navbar-brand" href="" >
       <a type="button" class="btn btn-light" href="<?=$_SERVER["HTTP_REFERER"]?>">Atrás</a>
    </a>
-   <h3 class="cecs1" style="color: white;"><b>CENTRO EDUCATIVO CRECER DE SOLEDAD</b></h3> 
+   <h3 class="cecs1" style="color: white;"><b>SISTEMA DE INFORMACIÓN INTEGRADO DE MATRÍCULAS PARA COLEGIOS PRIVADOS</b></h3> 
 </nav>
   <head>
     <div class="container">  
@@ -79,8 +79,8 @@
 <input class="input-letter form-control rounded-pill" type="text" placeholder="EPS" id="Eps">
 </div>       
       <div class="modal_fest">
-        <button type="button" class="btn btn-secondary" id="Cerrar" data-dismiss="modal">Cerrar</button>
-        <button onclick="guardar()" type="button" id="Guardar" data-dismiss="modal" class="btn btn-primary">Registrar</button>
+        <button type="button" class="btn btn-secondary" id="Cerrar" style="margin-top: 30px;" data-dismiss="modal">Cerrar</button>
+        <button onclick="guardar()" style="margin-top: 30px"; type="button" id="Guardar" data-dismiss="modal" class="btn btn-primary">Registrar</button>
          <button type="button" id="Actualizar_est" onclick="actualizar()" data-dismiss="modal" class="btn btn-primary">Actualizar</button>
         <script type="text/javascript" src="<?php echo base_url('assets/js/controlador/estudiante.js'); ?>"></script>
       </div>

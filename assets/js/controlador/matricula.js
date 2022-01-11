@@ -101,7 +101,7 @@ function buscarespecifico() {
 
 function CargarCombo() {
     var base_url="";
-    base_url="http://localhost/cecs/index.php/cmatriculas/CargarCombo";
+    base_url="http://localhost/Proyecto-de-grado/cmatriculas/CargarCombo";
     $.ajax({
         'url' : base_url,
         'type' : 'GET',
@@ -548,7 +548,8 @@ $.ajax({
     
         if(data == 0){
            EliminarestadoEst();
-          EliminarestadoAcu();
+           EliminarestadoAcu();
+           eliminar();
            cargar_tabla();
            tmatriculas();
            

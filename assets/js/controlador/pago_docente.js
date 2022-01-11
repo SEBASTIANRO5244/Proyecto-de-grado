@@ -350,7 +350,8 @@ function actualizarDoc(){
 
   nombre = $("#Nombres").val();
   apellidos = $("#Apellidos").val();
-  identificacion = $("#Identificacion").val();  
+  identificacion = $("#Identificacion").val();
+
  
 
 
@@ -361,7 +362,8 @@ function actualizarDoc(){
         'data' : {
                     'nombres': nombre , 
                     'apellidos': apellidos,
-                    'identificacion': identificacion                  
+                    'identificacion': identificacion
+                                
          },
         'type' : 'POST',
         'statusCode': {
@@ -404,7 +406,7 @@ $(document).on('click', '.reportePagoDoc', function(e){
 function viewPdfPago(fecha, documento ){
   let fecha1  = fecha;
   var documento1 = documento; 
-     var url = `http://localhost:8081/workspace1/cecs/index.php/pago_Docente/${fecha1}/${documento1}`;
+     var url = `http://localhost/Proyecto-de-grado/index.php/pago_Docente/${fecha1}/${documento1}`;
     window.open(url, '_blank');
     return false; 
 }

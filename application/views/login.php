@@ -3,10 +3,10 @@
  <nav class="navbar navbar-light" style="background-color: #28d;">
   <a class="navbar-brand" href="" >
    </a>
-   <h3 class="alinear_letra" style="color: white;"><b>CENTRO EDUCATIVO CRECER DE SOLEDAD</b></h3> 
+   <h3 class="alinear_letra" style="color: white;"><b>SISTEMA DE INFORMACIÓN INTEGRADO DE MATRÍCULAS PARA COLEGIOS PRIVADOS</b></h3> 
 </nav>
 <div class="Escudo">
-  <img src="<?php echo base_url('assets/img/Escudo.png'); ?>" height="70%" width="31%" align="left" style=" margin-top: 30px; margin-left: 100px">
+  <img src="<?php echo base_url('assets/img/LogoStudent.png'); ?>" height="60%" width="41%" align="left" style=" margin-top: 30px; margin-left: 55px">
 </div>
 
 
@@ -15,7 +15,7 @@
 
 <div class="login">
   <div class="login-triangle"></div>
-  <h2 class="login-header"><b>BIENVENIDOS A CECS</b></h2>
+  <h2 class="login-header"><b>BIENVENIDOS A STUDENTMAT</b></h2>
   <div class="login-container">
     <p><input id="usuario" type="text" placeholder="Users"></p>
     <p><input id="contraseña" type="password" placeholder="Password"></p>
@@ -23,6 +23,7 @@
     <script type="text/javascript" src="<?php echo base_url('assets/js/controlador/login.js'); ?>"></script>
   </div>
 </div>
+
 
 
 

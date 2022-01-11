@@ -2,7 +2,7 @@
   <a class="navbar-brand" href="" >  
   <a type="button" class="btn btn-light" href="<?=$_SERVER["HTTP_REFERER"]?>">Atrás</a>
    </a>
-   <h3 class="cecs1" style="color: white;"><b>CENTRO EDUCATIVO CRECER DE SOLEDAD</b></h3> 
+   <h3 class="cecs1" style="color: white;"><b>SISTEMA DE INFORMACIÓN INTEGRADO DE MATRÍCULAS PARA COLEGIOS PRIVADOS</b></h3> 
 </nav>
 
 <head>
@@ -38,7 +38,7 @@
    <input style="margin-left: 70px; width: 470px;" class="input-letter form-control rounded-pill" type="text" id="Nombres" placeholder="Nombre Curso">
 </div>
        <div style="margin-left: 200px;">
-           <button type="button" class="btn btn-secondary" id="Cerrar" data-dismiss="modal">Cerrar</button>
+           <button type="button" class="btn btn-secondary" id="Cerrar" style="margin-left: 40px;"data-dismiss="modal">Cerrar</button>
            <button type="button" onclick="guardar()" id="Guardar" data-dismiss="modal" class="btn btn-primary">Registrar</button>
            <button type="button" id="Actualizar_curso" onclick="actualizarmodalcurso()" data-dismiss="modal" class="btn btn-primary">Actualizar</button>
 
@@ -55,6 +55,7 @@
 <div class="boton_agr_curso">
 
 <a href="<?php echo base_url('index.php/CReportes/curso') ?>"><button type="button" class="btn btn-secondary btn-lg" data-whatever=" @getbootstrap" style="background-color: #28d; margin-left: 66.3%; margin-top: 160px;">Reporte</button></a>
+
   <button type="button" class="btn btn-secondary btn-lg" id="New_curso" data-toggle="modal" data-target="#exampleModal" 
   data-whatever=" @getbootstrap" style="background-color: #28d; margin-top: 160px;">Agregar</button>
 </div>

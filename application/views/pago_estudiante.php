@@ -2,7 +2,7 @@
   <a class="navbar-brand" href="" >
      <a type="button" class="btn btn-light" href="<?=$_SERVER["HTTP_REFERER"]?>">Atrás</a>
    </a>
-   <h3 class="cecs1" style="color: white;"><b>CENTRO EDUCATIVO CRECER DE SOLEDAD</b></h3> 
+   <h3 class="cecs1" style="color: white;"><b>SISTEMA DE INFORMACIÓN INTEGRADO DE MATRÍCULAS PARA COLEGIOS PRIVADOS</b></h3> 
 </nav>
 <body>
   <head>
@@ -64,15 +64,17 @@
     <label for="">Rectora/Secretaria</label>
     <input class="input-letter form-control rounded-pill" type="text" id="Admin" placeholder="Rectora/Secretaria">
   </div>
-  <div class="col-sm-6">
+ <div class="col-sm-6">
     <label for="exampleFormControlSelect1">Periodo Academico</label>
-    <select class="form-control" id="Periodo_academico">
+    <select class="form-control rounded-pill" id="Periodo_academico">
+      <option >Seleccione</option>
       <option value="2022">2022</option>
     </select>
   </div>
   <div class="col-sm-6">
     <label for="exampleFormControlSelect1">Mes Academico</label>
-    <select class="form-control" id="Mes_academico">
+    <select class="form-control rounded-pill" id="Mes_academico">
+      <option>Seleccione</option>
       <option>Febrero</option>
       <option>Marzo</option>
       <option>Abril</option>

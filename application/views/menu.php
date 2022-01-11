@@ -1,7 +1,7 @@
 <nav class="navbar navbar-light" style="background-color: #28d;">
   <a class="navbar-brand" href="#" >
    </a>
-   <h3 class="alinear_letra" style="color: white;"><b>CENTRO EDUCATIVO CRECER DE SOLEDAD</b></h3> 
+   <h3 class="alinear_letra" style="color: white;"><b>SISTEMA DE INFORMACIÓN INTEGRADO DE MATRÍCULAS PARA COLEGIOS PRIVADOS</b></h3> 
 </nav>
 <div class="contenedor-menu">
 
@@ -21,5 +21,5 @@
 
 <button onclick="usuarios()" class="botonmenu2" type="Submit"> <b class="letter">Usuarios</b> <img class="registro_login" src="<?php echo base_url('assets/img/usuario.png');?>"></button> 
 
-<button class="botonmenu2" href="" id="cerrarSession"> <b class="letter">Cerrar Sesión</b> <img style="height: 112px;" src="<?php echo base_url('assets/img/salir.png');?>"></button> 
+<button  class="botonmenu2" href="" id="cerrarSession"> <b class="letter">Cerrar Sesión</b> <img style="height: 112px;" src="<?php echo base_url('assets/img/salir.png');?>"></button> 
 </div>

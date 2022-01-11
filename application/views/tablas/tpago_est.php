@@ -1,18 +1,18 @@
 <div class="scrollbar scrollbar-primary" id="scrollbarpension">
   <div class="force-overflow"></div>
-<table class="table" style="margin: auto;">
+<table class="table" style="margin: auto; width: 101%;">
   <thead class="thead">
     <tr>
       <th scope="col">Fecha</th>
-      <th scope="col">Matricula</th>
+      <th scope="col">Doc Est</th>
       <th scope="col">Nombres Est.</th>
       <th scope="col">Apellidos Est.</th>
       <th scope="col">Nombres Acu.</th>
       <th scope="col">Apellidos Acu.</th>
       <th scope="col">Valor</th>
-      <th scope="col">Rectora/Secretaria</th>
-      <th scope="col">Periodo Academico</th>
-      <th scope="col">Mes Academico</th>
+      <th scope="col">Recibio</th>
+      <th scope="col">Periodo</th>
+      <th scope="col">Mes Acad</th>
       <th scope="col">Acción</th>
     </tr>
   </thead>

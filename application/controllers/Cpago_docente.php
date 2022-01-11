@@ -62,6 +62,7 @@ class Cpago_docente extends CI_Controller {
   $identificacion = $_POST['identificacion'];
 
 
+
   echo $this->Mpago_docente->actualizarDoc($nombre, $apellidos, $identificacion);
  }
 

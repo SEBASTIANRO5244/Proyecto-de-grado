@@ -13,7 +13,7 @@ class Mpago_docente extends CI_Model {
     }
 
   	public function buscarespecifico($id){
-  		$query = $this->db->query("select * from docente where numero_documento = ".$id);
+  		$query = $this->db->query("select * from docente where estado='activo' and numero_documento = ".$id);
   		
   		if($query->num_rows()>0){
   			return $query->row();
@@ -22,6 +22,7 @@ class Mpago_docente extends CI_Model {
   		}
 
   	}
+
      public function actualizar($id,$dato)
     {
       # code...
@@ -40,7 +41,7 @@ class Mpago_docente extends CI_Model {
    }
 
     public function actualizarDoc($nombre, $apellidos, $identificacion){
-      $query = $this->db->query("update docente set nombre='".$nombre."',apellido='".$apellidos."',numero_documento='".$identificacion."' where numero_documento =".$identificacion);
+      $query = $this->db->query("update docente set nombre='".$nombre."',apellido='".$apellidos."' where numero_documento =".$identificacion);
       return $query;
     }
 }

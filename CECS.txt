@@ -96,4 +96,15 @@ foreign key(fk_id_matricula) references matricula(fk_numero_documento_estudiante
 
 insert into usuarios(nombre, tipo_usuario, usuario, password) values ('Sebastian','Rector', 's','s');
 
+ALTER TABLE `cecs`.`pago_docente` 
+ADD COLUMN `periodo_academico` VARCHAR(20) NOT NULL;
+
+ALTER TABLE `cecs`.`pago_docente` 
+ADD COLUMN `mes_academico` VARCHAR(20) NOT NULL;
+
+ALTER TABLE `cecs`.`pension` 
+ADD COLUMN `periodo_academico` VARCHAR(20) NOT NULL;
+
+ALTER TABLE `cecs`.`pension` 
+ADD COLUMN `mes_academico` VARCHAR(20) NOT NULL;
 

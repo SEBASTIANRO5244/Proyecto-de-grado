@@ -1,7 +1,7 @@
 <html>
 <head>
-	<title>CECS</title>
-	<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('assets/img/escudo_reportes.png');  ?>">
+	<title>STUDENTMAT</title>
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('assets/img/LogoStudent.png');  ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/alertify.min.css');  ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/themes/estilo.css');  ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');  ?>">

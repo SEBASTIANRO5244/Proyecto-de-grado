@@ -1,12 +1,8 @@
 <center>
 <head>
-  <div>
-    <img style="margin-left: 80px" src="assets/img/escudo_reportes.png">
-<p align="center" style=" margin-left:15%; margin-top: -120px;">Centro Educativo Crecer De Soledad <br> EDUCACIÓN PRE-ESCOLAR, BÁSICA PRIMARIA
-<br> Código DANE: 308758003986 <br> Resolución No. 0706 De Nov. Del 2006 <br> Dirección Calle. 65 No. 21-57 Terranova 1 <br> Soledad – Atlántico <br>crecerdesoledad@hotamail.com</p>
-  </div>
+  <img style="width: 40%; height: 30%; margin-left: 30%;" src="assets/img/logoStudent.png">
   <div style="text-align: center;">
-    <h1>Reporte Pago</h1>
+    <h1>Constancia de pago</h1>
   </div>
 </head>
 <table class="table">
@@ -69,7 +65,7 @@
   </tbody>
 </table>
 <hr>
-<footer style="margin-top: 600px">
+<footer style="margin-top: 550px">
 <p align="center">Firma Docente: _________________________ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Firma Rectora: _________________________</p>
 </footer>
 </center>

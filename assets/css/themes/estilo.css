@@ -1,4 +1,5 @@
 /* LOGIN */
+
 *{
 margin: 0px;
 padding: 0px;
@@ -137,7 +138,7 @@ body {
 /* LETRA NAVBAR HEADER-FOOTER*/
 .alinear_letra{
   position: absolute;
-  margin-left: 30%;
+  margin-left: 6%;
   text-align: center;
   
 }
@@ -170,7 +171,7 @@ height: 60px;
 
 .alinear_letra2{
   position: absolute;
-  margin-left: 30%;
+  margin-left: 20%;
   margin-right: 55px;
   margin-top: 6px;
 }
@@ -301,7 +302,7 @@ background-size: cover;
 #modal_acu{
    width: auto; 
   margin-left: -0%;
-  height: 95%; 
+  height: 100%; 
 }
 
 #modal_usu{
@@ -312,37 +313,37 @@ background-size: cover;
 #modal_estu{
   width: auto; 
   margin-left: -0%;
-  height: 95%;
+  height: 99%;
 }
 
 #modal_doc{
   width: 130%;
   margin-left: -20%;
-  height: 103%;
+  height: 110%;
 }
 
 #pago_doc{
   width: 150%;
-  height: 77%;
+  height: 95%;
   margin-left: -20%;
 }
 
 #pago_est{
   width: 150%;
-  height: 90%;
+  height: 110%;
   margin-left: -20%;
 }
 
 #m_matricula{
   width: 160%;
   margin-left: -25%;
-  height: 94%
+  height: 100%
 }
 
 #m_curso{
   width: 130%;
-  margin-left: -20%;
-  height: 52%
+  margin-left: -10%;
+  height: 55%
 }
 
 .modal-dialog{
@@ -619,6 +620,11 @@ border-radius : 10% ;
  margin-top: -100px;
 }
 
+
+#Actualizar_est{
+  margin-top: 17%;
+}
+
 .scrollbar {
 margin-left: 320px;
 height: 289px;
@@ -704,7 +710,7 @@ background-color: #28d; }
 
 .cecs1{
   position: absolute;
-  margin-left: 28%;
+  margin-left: 5%;
   text-align: center;
 }
 
@@ -738,4 +744,8 @@ background-color: #28d; }
 
 .modalf_usu{
   margin-left: 270px;
+}
+
+.Membrete{
+ margin-top: 50%; 
 }

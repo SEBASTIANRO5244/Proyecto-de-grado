@@ -11,7 +11,7 @@ var cpago_estudiante="";
 var cusuarios="";
 var clogin="";
 
-url = "http://localhost/cecs/index.php/";
+url = "http://localhost/Proyecto-de-grado/index.php/";
 cmain = "Controlador/";
 cmenu = "Cmenu/";
 cestudiantes = "Cestudiante/";
@@ -23,3 +23,4 @@ cpago_docente = "Cpago_docente/";
 cpago_estudiante = "Cpago_estudiante/";
 cusuarios = "Cusuarios/";
 clogin = "Clogin/";
+
