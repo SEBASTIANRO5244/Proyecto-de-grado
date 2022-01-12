@@ -548,8 +548,7 @@ $.ajax({
     
         if(data == 0){
            EliminarestadoEst();
-           EliminarestadoAcu();
-           eliminar();
+           EliminarestadoAcu();          
            cargar_tabla();
            tmatriculas();
            

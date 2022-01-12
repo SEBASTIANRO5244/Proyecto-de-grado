@@ -294,8 +294,8 @@ function actualizar() {
           }
     }).done(function( data ) {
         if(data == 1){
-           actualizarMat();
            actualizarEst();
+           actualizarMat();
             limpiar();
             tpago_est();
             cargar_tabla();
@@ -385,11 +385,11 @@ function actualizarMat(){
           }
     }).done(function( data ) {
         if(data == 1){
+           
             limpiar();
             tpago_est();
             cargar_tabla();
-             
-        
+
         }else{
           
         }
