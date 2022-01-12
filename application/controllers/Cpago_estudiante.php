@@ -21,10 +21,6 @@ class Cpago_estudiante extends CI_Controller {
     $dato = array(
             "fecha" => $_POST['fecha'],
             "valor" => $_POST['valor'],
-            "nombre_estudiante" => $_POST['nombres'],
-            "apellido_estudiante" => $_POST['apellidos'],
-            "nombre_acudiente" => $_POST['nombres1'],
-            "apellido_acudiente" => $_POST['apellidos1'],
             "nombre_admin" => $_POST['admin'],
             "fk_id_matricula" => $_POST['doc_estudiante'],
             "periodo_academico" => $_POST['periodo_academico'],
@@ -41,10 +37,6 @@ class Cpago_estudiante extends CI_Controller {
       $dato = array(
            "fecha" => $_POST['fecha'],
             "valor" => $_POST['valor'],
-            "nombre_estudiante" => $_POST['nombres'],
-            "apellido_estudiante" => $_POST['apellidos'],
-            "nombre_acudiente" => $_POST['nombres1'],
-            "apellido_acudiente" => $_POST['apellidos1'],
             "nombre_admin" => $_POST['admin'],
             "fk_id_matricula" => $_POST['doc_estudiante'],
             "periodo_academico" => $_POST['periodo_academico'],
@@ -56,7 +48,13 @@ class Cpago_estudiante extends CI_Controller {
 
  
    public function tpago_est () {
-   $dato['pension'] = $this->Mpago_estudiante->consultar("Select * from pension");
+   $dato['pension'] = $this->Mpago_estudiante->consultar("select pension.id, pension.fecha, 
+    matricula.nombre_estudiante, matricula.apellido_estudiante, matricula.nombre_acudiente, 
+    matricula.apellido_acudiente, pension.periodo_academico, pension.mes_academico, 
+    pension.fk_id_matricula, pension.valor, pension.nombre_admin
+    from pension 
+    inner join matricula 
+    on pension.fk_id_matricula = matricula.fk_numero_documento_estudiante");
     $this->load->view('tablas/tpago_est', $dato);
 
  }
