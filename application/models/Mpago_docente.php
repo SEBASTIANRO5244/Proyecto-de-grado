@@ -7,7 +7,7 @@ class Mpago_docente extends CI_Model {
         parent::__construct(); 
   	}
 
-  public function guardar($dato)
+    public function guardar($dato)
     {
       echo $this->db->insert("pago_docente",$dato);  
     }

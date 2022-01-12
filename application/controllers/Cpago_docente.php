@@ -21,8 +21,6 @@ class Cpago_docente extends CI_Controller {
     $dato = array(
             "fecha" => $_POST['fecha'],
             "numDoc_docente" => $_POST['numdoc_docente'],
-            "nombre_docente" => $_POST['nombre'],
-            "apellido_docente" => $_POST['apellido'],
             "valor" => $_POST['valor'],
             "nombre_rectora" => $_POST['rectora'],
             "periodo_academico" => $_POST['periodo_academico'],
@@ -33,7 +31,13 @@ class Cpago_docente extends CI_Controller {
     }
 
       public function tpago_doc () {
-   $dato['pago_docente'] = $this->Mpago_docente->consultar("Select * from pago_docente");
+   $dato['pago_docente'] = $this->Mpago_docente->consultar("select pago_docente.fecha, 
+   pago_docente.numDoc_docente, pago_docente.valor, pago_docente.nombre_rectora, 
+   pago_docente.periodo_academico, pago_docente.mes_academico, docente.nombre, 
+   docente.apellido, pago_docente.id
+   from pago_docente 
+   inner join docente 
+   on pago_docente.numDoc_docente = docente.numero_documento");
     $this->load->view('tablas/tpago_doc', $dato);
 
  }
@@ -45,8 +49,6 @@ class Cpago_docente extends CI_Controller {
       $dato = array(
             "fecha" => $_POST['fecha'],
             "numDoc_docente" => $_POST['numdoc_docente'],
-            "nombre_docente" => $_POST['nombre'],
-            "apellido_docente" => $_POST['apellido'],
             "valor" => $_POST['valor'],
             "nombre_rectora" => $_POST['rectora'],
             "periodo_academico" => $_POST['periodo_academico'],
