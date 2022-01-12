@@ -51,7 +51,8 @@ class Cpago_estudiante extends CI_Controller {
    $dato['pension'] = $this->Mpago_estudiante->consultar("select pension.id, pension.fecha, 
     matricula.nombre_estudiante, matricula.apellido_estudiante, matricula.nombre_acudiente, 
     matricula.apellido_acudiente, pension.periodo_academico, pension.mes_academico, 
-    pension.fk_id_matricula, pension.valor, pension.nombre_admin
+    pension.fk_id_matricula, pension.valor, pension.nombre_admin, 
+    matricula.fk_numero_documento_acudiente
     from pension 
     inner join matricula 
     on pension.fk_id_matricula = matricula.fk_numero_documento_estudiante");
@@ -77,4 +78,13 @@ class Cpago_estudiante extends CI_Controller {
   echo $this->Mpago_estudiante->actualizarEst($nombre, $apellidos, $identificacion);
  }
  
+ public function actualizarAcu(){
+  $nombre = $_POST['nombres'];
+  $apellidos = $_POST['apellidos'];
+  $identificacion = $_POST['identificacion'];
+
+  echo $this->Mpago_estudiante->actualizarAcu($nombre, $apellidos, $identificacion);
+ }
 }
+
+

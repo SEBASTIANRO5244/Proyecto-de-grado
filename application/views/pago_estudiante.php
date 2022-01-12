@@ -35,6 +35,7 @@
     <label for="">Fecha</label>
     <input class="form-control rounded-pill" type="date" id="Fecha" placeholder="Fecha">
   </div>
+  <input class="input-number form-control rounded-pill" type="hidden" id="Identificacion_acu" placeholder="Documento acudiente" style="width: 290px;">
   <div class="col-sm-6">
     <label for="">Documento Estudiante</label>
     <input class="input-number form-control rounded-pill" type="text" id="Identificacion" placeholder="Documento Estudiante" style="width: 290px;">
