@@ -50,5 +50,10 @@ class Mpago_estudiante extends CI_Model {
       return $query;
     }
 
+    public function actualizarAcu($nombre, $apellidos, $identificacion){
+      $query = $this->db->query("update acudiente set nombre='".$nombre."',apellido='".$apellidos."', numero_documento='".$identificacion."' where numero_documento =".$identificacion);
+      return $query;
+    }
+
      
 }

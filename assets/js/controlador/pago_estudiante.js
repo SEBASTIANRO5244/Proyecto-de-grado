@@ -166,7 +166,8 @@ function buscarespecifico() {
             $("#Nombres").val(obj.respuesta[0].nombre_estudiante);
             $("#Apellidos").val(obj.respuesta[0].apellido_estudiante);
             $("#Nombres1").val(obj.respuesta[0].nombre_acudiente);
-            $("#Apellidos1").val(obj.respuesta[0].apellido_acudiente);  
+            $("#Apellidos1").val(obj.respuesta[0].apellido_acudiente);
+            $("#Identificacion_acu").val(obj.respuesta[0].fk_numero_documento_acudiente);   
            Swal.fire({
            icon: 'success',
             title: 'Documento encontrado con exito!!',
@@ -294,8 +295,9 @@ function actualizar() {
           }
     }).done(function( data ) {
         if(data == 1){
-           actualizarMat();
            actualizarEst();
+           actualizarMat();
+           actualizarAcu();
             limpiar();
             tpago_est();
             cargar_tabla();
@@ -330,7 +332,7 @@ function actualizar() {
 }
 
 function cargarmodalPEst(id, fecha, valor, nombre_estudiante, apellido_estudiante, nombre_acudiente, 
-  apellido_acudiente, nombre_admin, fk_id_matricula, mes_academico, periodo_academico){
+  apellido_acudiente, nombre_admin, fk_id_matricula, mes_academico, periodo_academico, fk_numero_documento_acudiente){
  
     $("#Id").val(id);
     $("#Fecha").val(fecha); 
@@ -343,6 +345,7 @@ function cargarmodalPEst(id, fecha, valor, nombre_estudiante, apellido_estudiant
     $("#Periodo_academico").val(periodo_academico);
     $("#Mes_academico").val(mes_academico);
     $("#Identificacion").val(fk_id_matricula);
+    $("#Identificacion_acu").val(fk_numero_documento_acudiente);
     
 }
 
@@ -441,6 +444,47 @@ function actualizarEst(){
      
   })
 
+
+}
+
+function actualizarAcu(){
+  var nombre = "";
+  var apellidos = "";
+  var identificacion = 0;
+
+  nombre = $("#Nombres1").val();
+  apellidos = $("#Apellidos1").val();
+  identificacion = $("#Identificacion_acu").val();
+
+   ruta = url + cpago_estudiante + 'actualizarAcu';
+    
+    $.ajax({
+        'url'  : ruta,
+        'data' : {
+                    'nombres': nombre , 
+                    'apellidos': apellidos,
+                    'identificacion': identificacion     
+         },
+        'type' : 'POST',
+        'statusCode': {
+            404: function() {
+             alertify.error("La Ruta de la pagina no es la correcta" );
+           }
+          }
+    }).done(function( data ) {
+        if(data == 1){
+            limpiar();
+            tmatriculas();
+            cargar_tabla();
+             
+        
+        }else{
+          
+        }
+            
+  }).fail(function() {
+     
+  })
 
 }
 
