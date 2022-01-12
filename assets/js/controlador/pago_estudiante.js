@@ -297,10 +297,7 @@ function actualizar() {
         if(data == 1){
            actualizarEst();
            actualizarMat();
-<<<<<<< HEAD
-=======
            actualizarAcu();
->>>>>>> c34121963672fb1fc84b3bf61917be1cbb872bb9
             limpiar();
             tpago_est();
             cargar_tabla();
