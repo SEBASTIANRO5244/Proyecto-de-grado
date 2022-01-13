@@ -36,12 +36,12 @@
                          </td>
                          <td style="text-align:center;">
                            <?php
-                             echo $data->nombre_docente;
+                             echo $data->nombre;
                            ?>
                          </td>
                          <td style="text-align:center;">
                            <?php
-                             echo $data->apellido_docente;
+                             echo $data->apellido;
                            ?>
                          </td>
                          <td style="text-align:center;">
