@@ -29,6 +29,9 @@
 <center><img  class="" style="" src="<?php echo base_url('assets/img/estudiante.png');?>"></center>
 <h1><center><label style="text-shadow: 2px 2px 4px #444">Estudiantes</label></center></h1>
 <div class="row">
+   <div class="col-sm-6" style="">
+          <input class="input-letter form-control rounded-pill" type="text" id="Estado_est">
+</div>
  <input class="form-control rounded-pill" type="hidden" id="Id_est" placeholder="Id Estudiante">
 <div class="col-sm-6">
 <label for="">Nombres</label>

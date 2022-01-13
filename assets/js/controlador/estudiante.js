@@ -261,7 +261,8 @@ function actualizar() {
 
 }
 
-function cargarmodalest(id, nombre, apellido, genero, fecha_nacimiento, lugar_nacimiento, numero_documento, tipo_documento, direccion, eps){
+function cargarmodalest(id, nombre, apellido, genero, fecha_nacimiento, lugar_nacimiento, 
+    numero_documento, tipo_documento, direccion, eps, estado){
  $("#Id_est").val(id);
  $("#Nombres").val(nombre);
  $("#Apellidos").val(apellido);
@@ -272,7 +273,13 @@ function cargarmodalest(id, nombre, apellido, genero, fecha_nacimiento, lugar_na
  $("#Tipo").val(tipo_documento);
  $("#Direccion").val(direccion);
  $("#Eps").val(eps);
+ $("#Estado_est").val(estado);
 }
+
+function cargarestadoform(estado){
+ $("#Estado_est").val(estado);   
+}
+
 
 function actualizarmodalest(){
   actualizar();

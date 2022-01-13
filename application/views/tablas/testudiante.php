@@ -78,7 +78,7 @@
                           <td>
       
 
-      <button type="button" class="btn btn-success" data-toggle='modal' data-target='#exampleModal' id="Actualizar_est1" data-whatever=" @geetbootstrap" onclick="cargarmodalest('<?php echo $data->id;?>','<?php echo $data->nombre;?>','<?php echo $data->apellido;?>','<?php echo $data->genero;?>','<?php echo $data->fecha_nacimiento;?>','<?php echo $data->lugar_nacimiento;?>','<?php echo $data->numero_documento;?>','<?php echo $data->tipo_documento;?>','<?php echo $data->direccion;?>','<?php echo $data->eps;?>')"><img src="<?php echo base_url('assets/img/actualizar.png');?>"><br><b class="letter"></button>
+      <button type="button" class="btn btn-success" data-toggle='modal' data-target='#exampleModal' id="Actualizar_est1" data-whatever=" @geetbootstrap" onclick="cargarmodalest('<?php echo $data->id;?>','<?php echo $data->nombre;?>','<?php echo $data->apellido;?>','<?php echo $data->genero;?>','<?php echo $data->fecha_nacimiento;?>','<?php echo $data->lugar_nacimiento;?>','<?php echo $data->numero_documento;?>','<?php echo $data->tipo_documento;?>','<?php echo $data->direccion;?>','<?php echo $data->eps;?>','<?php echo $data->estado;?>')"><img src="<?php echo base_url('assets/img/actualizar.png');?>"><br><b class="letter"></button>
        </td>
                        </tr>
                   <?php
