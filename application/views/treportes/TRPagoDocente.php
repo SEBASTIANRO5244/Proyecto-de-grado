@@ -12,6 +12,8 @@
       <th style="text-align:center; padding:15px; background-color:#4C9ED9; color:#fff" scope="col">Documento docente</th>
       <th style="text-align:center; padding:15px; background-color:#4C9ED9; color:#fff" scope="col">Nombre</th>
       <th style="text-align:center; padding:15px; background-color:#4C9ED9; color:#fff" scope="col">Apellido</th>
+      <th style="text-align:center; padding:15px; background-color:#4C9ED9; color:#fff" scope="col">Periodo</th>
+      <th style="text-align:center; padding:15px; background-color:#4C9ED9; color:#fff" scope="col">Mes Academico</th>
       <th style="text-align:center; padding:15px; background-color:#4C9ED9; color:#fff" scope="col">Valor</th>
       <th style="text-align:center; padding:15px; background-color:#4C9ED9; color:#fff" scope="col">Rectora</th>
     </tr>
@@ -44,6 +46,19 @@
                              echo $data->apellido_docente;
                            ?>
                          </td>
+
+                          <td style="text-align:center;">
+                           <?php
+                             echo $data->periodo_academico;
+                           ?>
+                         </td>
+                          <td style="text-align:center;">
+                           <?php
+                             echo $data->mes_academico;
+                           ?>
+                         </td>
+
+
                          <td style="text-align:center;">
                            <?php
                              echo $data->valor;

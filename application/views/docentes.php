@@ -57,9 +57,9 @@
     <label for="exampleFormControlSelect1">Tipo de Documento</label>
     <select class="form-control rounded-pill" id="Tipo">
       <option>Seleccione</option>
-      <option>Registro Civil</option>
-      <option>Tarjeta Identidad</option>
-      <option>Cédula ciudadania</option>
+      <option>TI</option>
+      <option>CC</option>
+      <option>CE</option>
     </select>
   </div>
 </div>

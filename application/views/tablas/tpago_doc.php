@@ -4,13 +4,13 @@
   <thead class="thead">
     <tr>
       <th scope="col">Fecha</th>
-      <th scope="col">Documento docente</th>
+      <th scope="col">Identificación</th>
       <th scope="col">Nombre</th>
       <th scope="col">Apellido</th>
-      <th scope="col">Valor</th>
+      <th scope="col">Valor a pagar</th>
       <th scope="col">Rectora</th>
-      <th scope="col">Periodo Academico</th>
-      <th scope="col">Mes Academico</th>
+      <th scope="col">Periodo Acad</th>
+      <th scope="col">Mes Acad</th>
       <th scope="col">Acción</th>
     </tr>
   </thead>

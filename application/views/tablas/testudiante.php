@@ -9,7 +9,7 @@
       <th scope="col">Fecha_Nac</th>
       <th scope="col">Lugar_Nac</th>
       <th scope="col">Identificación</th>
-      <th scope="col">Tipo_Id</th>
+      <th scope="col">Tipo-Id</th>
       <th scope="col">Dirección</th>
       <th scope="col">EPS</th>
       <th scope="col">Estado</th>

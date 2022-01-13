@@ -6,8 +6,8 @@
       <th scope="col">Nombres</th>
       <th scope="col">Apellidos</th>
       <th scope="col">Género</th>
-      <th scope="col">Numero Identificación</th>
-      <th scope="col">Tipo Identificación</th>
+      <th scope="col">Identificación</th>
+      <th scope="col">Tipo-Id</th>
       <th scope="col">Télefono</th>
       <th scope="col">Profesión</th>
       <th scope="col">Dirección</th>

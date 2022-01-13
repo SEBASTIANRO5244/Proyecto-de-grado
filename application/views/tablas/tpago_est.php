@@ -5,13 +5,13 @@
     <tr>
       <th scope="col">Fecha</th>
       <th scope="col">Doc Est</th>
-      <th scope="col">Nombres Est.</th>
-      <th scope="col">Apellidos Est.</th>
-      <th scope="col">Nombres Acu.</th>
-      <th scope="col">Apellidos Acu.</th>
-      <th scope="col">Valor</th>
+      <th scope="col">Nom Est.</th>
+      <th scope="col">Ape Est.</th>
+      <th scope="col">Nom Acu.</th>
+      <th scope="col">Ape Acu.</th>
+      <th scope="col">Valor Mat</th>
       <th scope="col">Recibio</th>
-      <th scope="col">Periodo</th>
+      <th scope="col">Periodo Acad</th>
       <th scope="col">Mes Acad</th>
       <th scope="col">Acción</th>
     </tr>

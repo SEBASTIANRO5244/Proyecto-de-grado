@@ -81,13 +81,15 @@ function guardar() {
 
 }
 
-$('.input-letter').on('input', function () {
-  this.value = this.value.replace(/[^a-zA-Z]/g,'');
-});
 
 function limpiar(){
     $("#Nombres").val("");  
 }
+
+
+$('.input-letter').on('input', function () {
+  this.value = this.value.replace(/[^a-zA-Z -]/g,'');
+});
 
 function tcursos(){
    var ruta = "";

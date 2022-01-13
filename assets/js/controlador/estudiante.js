@@ -21,8 +21,8 @@ function guardar() {
 	// body...
 
     var acum = 0;
-	  var nombres = "";
-	  var apellidos = "";
+	var nombres = "";
+	var apellidos = "";
     var genero ="";
     var fecha_nac="";
     var lugar_nac="";
@@ -35,11 +35,11 @@ function guardar() {
 
     
     nombres = document.getElementById("Nombres").value;
-	  apellidos = document.getElementById("Apellidos").value;
+    apellidos = document.getElementById("Apellidos").value;
     genero = document.getElementById("Genero").value;
     fecha_nac = document.getElementById("Fecha_Nac").value;
     lugar_nac =	 document.getElementById("Lugar_Nac").value;	
-	  identificacion =  document.getElementById("Identificacion").value;
+	identificacion =  document.getElementById("Identificacion").value;
     tipo_identificacion =  document.getElementById("Tipo").value;
     direccion =  document.getElementById("Direccion").value;
     eps =  document.getElementById("Eps").value;

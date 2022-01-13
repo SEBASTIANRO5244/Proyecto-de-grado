@@ -68,14 +68,12 @@
  <div class="col-sm-6">
     <label for="exampleFormControlSelect1">Periodo Academico</label>
     <select class="form-control rounded-pill" id="Periodo_academico">
-      <option >Seleccione</option>
       <option value="2022">2022</option>
     </select>
   </div>
   <div class="col-sm-6">
     <label for="exampleFormControlSelect1">Mes Academico</label>
     <select class="form-control rounded-pill" id="Mes_academico">
-      <option>Seleccione</option>
       <option>Febrero</option>
       <option>Marzo</option>
       <option>Abril</option>

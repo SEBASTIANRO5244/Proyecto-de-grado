@@ -7,8 +7,8 @@
       <th scope="col">Ape Est.</th>
       <th scope="col">N.I Est.</th>
       <th scope="col">Grado</th>
-      <th scope="col">Nombres Acu.</th>
-      <th scope="col">Apellidos Acu.</th>
+      <th scope="col">Nom Acu.</th>
+      <th scope="col">Ape Acu.</th>
       <th scope="col">N.I Acu.</th>
       <th scope="col">Fecha</th>
       <th scope="col">Valor</th>

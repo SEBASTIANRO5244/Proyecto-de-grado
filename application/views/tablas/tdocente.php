@@ -1,17 +1,17 @@
 <div class="scrollbardoc scrollbar-primary">
   <div class="force-overflow"></div>
-<table class="table" style="margin: auto;">
+<table class="table"  style="margin: auto;">
   <thead class="thead">
     <tr>
       <th scope="col">Nombres</th>
       <th scope="col">Apellidos</th>
       <th scope="col">Género</th>
-      <th scope="col">Tipo Identificación</th>
+      <th scope="col">Identificación</th>
       <th scope="col">Num_Ide</th>
       <th scope="col">Profesión</th>
       <th scope="col">Télefono</th>
       <th scope="col">Contrato</th>
-      <th scope="col">Valor Contrato</th>
+      <th scope="col">ValorCon</th>
       <th scope="col">Dirección</th>
       <th scope="col">Estado</th>
       <th scope="col">Acción</th>
