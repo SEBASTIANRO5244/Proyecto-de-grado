@@ -207,7 +207,8 @@ function guardar() {
     fecha = document.getElementById("Fecha").value;
     curso = document.getElementById("G_Cursar").value;
 
-    if(!nombres||!apellidos||!identificacion||!nombres1||!apellidos1||!identificacion1||!valor||!fecha||!curso){
+    if(!nombres||!apellidos||!identificacion||!nombres1||!apellidos1||!identificacion1||
+        !valor||!fecha||!curso){
     
      acum++;
  }

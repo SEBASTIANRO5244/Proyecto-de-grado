@@ -91,7 +91,7 @@ Profesion = document.getElementById("Profesion").value;
             
   }).fail(function() {
            Swal.fire(
-             'Error',
+             'Error, el numero documento del acudiente ya existe',
              '',
              'error')
   });

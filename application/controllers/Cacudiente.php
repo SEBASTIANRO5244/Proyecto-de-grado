@@ -46,7 +46,7 @@ class Cacudiente extends CI_Controller {
 
 
      public function tacudiente () {
-   $dato['acudiente'] = $this->Macudiente->consultar("Select * from acudiente where estado='Inactivo'");
+   $dato['acudiente'] = $this->Macudiente->consultar("Select * from acudiente");
     $this->load->view('tablas/tacudiente', $dato);
 
  }

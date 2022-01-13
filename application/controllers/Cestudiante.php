@@ -11,14 +11,14 @@ class Cestudiante extends CI_Controller {
   	public function guardar()
   	{
   	$dato = array(
-  					"nombre" => $_POST['nombres'],
-  					"apellido" => $_POST['apellidos'],
-  					"genero" => $_POST['genero'],
+  			"nombre" => $_POST['nombres'],
+  			"apellido" => $_POST['apellidos'],
+  			"genero" => $_POST['genero'],
             "fecha_nacimiento" => $_POST['fecha_nac'],
             "lugar_nacimiento" => $_POST['lugar_nac'],
             "numero_documento" => $_POST['identificacion'],
             "tipo_documento" => $_POST['tipo_identificacion'],
-  					"direccion" => $_POST['direccion'],
+  			"direccion" => $_POST['direccion'],
             "eps" => $_POST['eps'],
             "estado" => $_POST['estado']
   				);
@@ -48,7 +48,7 @@ class Cestudiante extends CI_Controller {
 
 
      public function testudiante () {
-   $dato['estudiante'] = $this->Mestudiante->consultar("Select * from estudiante where estado='Inactivo'");
+   $dato['estudiante'] = $this->Mestudiante->consultar("Select * from estudiante");
     $this->load->view('tablas/testudiante', $dato);
 
  }

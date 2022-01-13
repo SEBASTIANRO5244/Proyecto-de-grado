@@ -41,7 +41,7 @@ class Reportes extends CI_Model {
 
  		public function  estudiante ()
  	{
-    $sql = ("Select * from estudiante where estado='Inactivo'");
+    $sql = ("Select * from estudiante");
  	$query = $this->db->query($sql);
  	return $query->result();
  	}

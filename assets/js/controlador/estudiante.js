@@ -98,7 +98,7 @@ function guardar() {
             
 	}).fail(function() {
 	         Swal.fire(
-             'Error',
+             'Error, el numero documento del estudiante ya existe',
              '',
              'error')
 	});
