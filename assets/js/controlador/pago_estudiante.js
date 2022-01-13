@@ -491,22 +491,22 @@ function actualizarAcu(){
 $(document).on('click', '.reportePago', function(e){
       e.preventDefault();
     let fecha = '';
-    let numMatricula = 0;   
-    fecha = $(this).parents("tr").find("td").eq(0).text();
-    numMatricula = $(this).parents("tr").find("td").eq(1).text();
-    numMatricula = numMatricula.trim();
+    let id = 0;   
+    fecha = $(this).parents("tr").find("td").eq(1).text();
+    id = $(this).parents("tr").find("td").eq(0).text();
+    id = id.trim();
     fecha = fecha.trim();
 
-  viewPdfPago(fecha, numMatricula);
+  viewPdfPago(fecha, id);
 
     return false;
 })
 
 
-function viewPdfPago(fecha, matricula ){
+function viewPdfPago(fecha, id ){
   let fecha1  = fecha;
-  var matricula1 = matricula; 
-     var url = `http://localhost/Proyecto-de-grado/index.php/pension/${fecha1}/${matricula1}`;
+  var id1 = id; 
+     var url = `http://localhost/Proyecto-de-grado/index.php/pension/${fecha1}/${id1}`;
     window.open(url, '_blank');
     return false; 
 }

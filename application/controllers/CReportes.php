@@ -18,9 +18,9 @@ public function curso ()
 
    }
 
-  public function pension($fecha, $matricula)
+  public function pension($fecha, $id)
    {
-       $data['pension']=$this->Reportes->pension($fecha, $matricula);
+       $data['pension']=$this->Reportes->pension($fecha, $id);
        $mpdf = new \Mpdf\Mpdf();
        $html = $this->load->view('treportes/TRPagoEstudiante',$data,true);
        $mpdf->WriteHTML($html);
@@ -28,9 +28,9 @@ public function curso ()
    
    }
 
-     public function pago_Docente($fecha, $documento)
+     public function pago_Docente($fecha, $id)
    {
-       $data['pago_docente']=$this->Reportes->pago_Docente($fecha, $documento);
+       $data['pago_docente']=$this->Reportes->pago_Docente($fecha, $id);
        $mpdf = new \Mpdf\Mpdf();
        $html = $this->load->view('treportes/TRPagoDocente',$data,true);
        $mpdf->WriteHTML($html);

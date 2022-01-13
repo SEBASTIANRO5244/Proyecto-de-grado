@@ -379,22 +379,22 @@ function actualizarDoc(){
 $(document).on('click', '.reportePagoDoc', function(e){
       e.preventDefault();
     let fecha = '';
-    let numDocumento = 0;   
-    fecha = $(this).parents("tr").find("td").eq(0).text();
-    numDocumento = $(this).parents("tr").find("td").eq(1).text();
-    numDocumento = numDocumento.trim();
+    let id = 0;   
+    fecha = $(this).parents("tr").find("td").eq(1).text();
+    id = $(this).parents("tr").find("td").eq(0).text();
+    id = id.trim();
     fecha = fecha.trim();
 
-  viewPdfPago(fecha, numDocumento);
+  viewPdfPago(fecha, id);
 
     return false;
 })
 
 
-function viewPdfPago(fecha, documento ){
+function viewPdfPago(fecha, id ){
   let fecha1  = fecha;
-  var documento1 = documento; 
-     var url = `http://localhost/Proyecto-de-grado/index.php/pago_Docente/${fecha1}/${documento1}`;
+  var id1 = id; 
+     var url = `http://localhost/Proyecto-de-grado/index.php/pago_Docente/${fecha1}/${id1}`;
     window.open(url, '_blank');
     return false; 
 }

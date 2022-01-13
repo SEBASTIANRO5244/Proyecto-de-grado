@@ -3,6 +3,7 @@
 <table class="table" style="margin: auto; width: 101%;">
   <thead class="thead">
     <tr>
+      <th scope="col" style="display:none">Id</th>
       <th scope="col">Fecha</th>
       <th scope="col">Doc Est</th>
       <th scope="col">Nom Est.</th>
@@ -24,6 +25,11 @@
                        foreach ($pension->result() as $data ) {      
                    ?>
                        <tr>
+                         <td style="display:none;">
+                           <?php
+                             echo $data->id;
+                           ?>
+                           </td>
                          <td>
                            <?php
                              echo $data->fecha;

@@ -3,6 +3,7 @@
 <table class="table" style="margin: auto;">
   <thead class="thead">
     <tr>
+      <th scope="col" style="display:none">Id</th>
       <th scope="col">Fecha</th>
       <th scope="col">Identificación</th>
       <th scope="col">Nombre</th>
@@ -22,6 +23,13 @@
                        foreach ($pago_docente->result() as $data ) {      
                    ?>
                        <tr>
+                        <td style="display:none;">
+                           <?php
+                             echo $data->id;
+                           ?>
+                         </td>
+                         
+
                          <td>
                            <?php
                              echo $data->fecha;

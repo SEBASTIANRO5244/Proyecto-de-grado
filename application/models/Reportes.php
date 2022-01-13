@@ -13,7 +13,7 @@ class Reportes extends CI_Model {
  	return $query->result();
  	}
 
- 		public function  pension ($fecha, $matricula)
+ 		public function  pension ($fecha, $id)
  	{	
 		$this->db->select('pension.id, pension.fecha, 
 		matricula.nombre_estudiante, matricula.apellido_estudiante, matricula.nombre_acudiente, 
@@ -23,18 +23,18 @@ class Reportes extends CI_Model {
 		$this->db->from('pension');
 		$this->db->join('matricula', 'pension.fk_id_matricula = matricula.fk_numero_documento_estudiante');
 		$this->db->where('pension.fecha', $fecha);
-	    $this->db->where('fk_id_matricula', $matricula); 
+	    $this->db->where('pension.id', $id); 
 		$query = $this->db->get();
 	 	return $query->result();
  	}
 
- 	 	public function  pago_Docente ($fecha, $documento)
+ 	 	public function  pago_Docente ($fecha, $id)
  	{	
 		$this->db->select('*');
 		$this->db->from('pago_docente');
 		$this->db->join('docente', 'pago_docente.numDoc_docente = docente.numero_documento');
 		$this->db->where('fecha', $fecha);
-	    $this->db->where('numDoc_docente', $documento);
+	    $this->db->where('pago_docente.id', $id);
 		$query = $this->db->get();
 	 	return $query->result();
  	}
