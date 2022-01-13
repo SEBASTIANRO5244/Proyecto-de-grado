@@ -1,9 +1,17 @@
 <center>
 <head>
-  <img style="width: 40%; height: 30%; margin-left: 30%;" src="assets/img/logoStudent.png">
-  <div style="text-align: center;">
-    <h1>Reporte estudiantes inactivos</h1>
-  </div>
+  <img style="width: 25%; height: 15%; margin-left:-20px;" src="assets/img/logoStudent.png">
+  <div style="text-align:center; margin-left:50px; padding:80px; margin-top:-160px">
+  <h2><b>  CONSTANCIA DE ESTUDIANTES</b></h2>
+</div>
+<hr style="margin-top:-40px;">
+<p style=" text-align: center; margin-top: -45px;">STUDENTMAT, certifica que los estudiantes en mención se encuentran matriculados y/o próximos a matricular.</p>
+<div style="text-align:center;">
+  <b>DETALLES DE ESTUDIENTES</b>
+
+  <hr style="margin-top:20px;">
+</div>
+
 </head>
 <table class="table">
   <thead class="thead">

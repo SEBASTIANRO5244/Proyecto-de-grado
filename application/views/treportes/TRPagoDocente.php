@@ -1,9 +1,17 @@
 <center>
 <head>
-  <img style="width: 40%; height: 30%; margin-left: 30%;" src="assets/img/logoStudent.png">
-  <div style="text-align: center;">
-    <h1>Constancia de pago</h1>
-  </div>
+  <img style="width: 25%; height: 15%; margin-left:-20px;" src="assets/img/logoStudent.png">
+  <div style="text-align:center; margin-left:50px; padding:80px; margin-top:-140px">
+  <b>  CONSTANCIA DE INFORMACIÓN DE PAGO DE NÓMINA O CONTRATO LABORAL</b>
+</div>
+<hr style="margin-top:-50px;">
+<p style="margin-top:-70px;">STUDENTMAT, certifica que el pago realizado correspondiente(s) a la cuota (s) de nómina o contrato laboral del docente que se detallan a continuación fue realizado SATISFACTORIAMENTE.</p>
+<div style="text-align:center;">
+  <b>DETALLES DEL PAGO</b>
+
+  <hr style="margin-top:20px;">
+</div>
+
 </head>
 <table class="table">
   <thead class="thead">
@@ -80,7 +88,8 @@
   </tbody>
 </table>
 <hr>
-<footer style="margin-top: 550px">
+<p>Se entrega constancia por parte de los intersados.</p> 
+<footer style="margin-top: 450px">
 <p align="center">Firma Docente: _________________________ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Firma Rectora: _________________________</p>
 </footer>
 </center>

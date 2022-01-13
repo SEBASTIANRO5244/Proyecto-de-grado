@@ -1,11 +1,20 @@
 <center>
 <head>
-  <img style="width: 40%; height: 30%; margin-left: 30%;" src="assets/img/logoStudent.png">
-  <div style="text-align: center;">
-    <h1>Constancia de pago</h1>
-  </div>
+  <img style="width: 25%; height: 15%; margin-left:-20px;" src="assets/img/logoStudent.png">
+  <div style="text-align:center; margin-left:50px; padding:80px; margin-top:-140px">
+  <b>  CONSTANCIA DE INFORMACIÓN DE PAGO DE MENSUALIDAD O PENSIÓN DE ESTUDIANTES</b>
+</div>
+<hr style="margin-top:-50px;">
+<p style="margin-top:-30px;">STUDENTMAT, certifica que el pago realizado correspondiente(s) a la cuota (s) de mensualidades o pensiones del estudiante que se detallan a continuación fue realizado SATISFACTORIAMENTE.</p>
+<div style="text-align:center;">
+  <b>DETALLES DEL PAGO</b>
+
+  <hr style="margin-top:20px;">
+</div>
+
 </head>
 <br>
+
 <table class="table" >
   <thead class="thead">
     <tr>
@@ -90,9 +99,10 @@
                   
                  </tr>
   </tbody>
-</table> 
+</table>
 <hr>
-<footer style="margin-top: 550px">
+<p>Se entrega constancia por parte de los intersados.</p> 
+<footer style="margin-top: 450px">
 <p align="center">Firma Acudiente: _________________________ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Firma Administrador: _________________________</p>
 </footer>
 </center>
