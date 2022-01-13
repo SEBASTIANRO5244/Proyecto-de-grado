@@ -18,6 +18,17 @@ class Mmatricula extends CI_Model {
 
   	}
 
+    public function val_estado_est($id){
+  		$query = $this->db->query("select * from estudiante where numero_documento = ".$id);
+  		
+  		if($query->num_rows()>0){
+  			return $query->row();
+  		}else{
+  			return false;
+  		}
+
+  	}
+
       public function buscarespecifico1($id){
       $query = $this->db->query("select * from acudiente where numero_documento = ".$id);
       

@@ -22,7 +22,7 @@ class Cpago_estudiante extends CI_Controller {
             "fecha" => $_POST['fecha'],
             "valor" => $_POST['valor'],
             "nombre_admin" => $_POST['admin'],
-            "fk_id_matricula" => $_POST['doc_estudiante'],
+            "fk_id_matricula" => $_POST['id'],
             "periodo_academico" => $_POST['periodo_academico'],
             "mes_academico" => $_POST['mes_academico']
           );

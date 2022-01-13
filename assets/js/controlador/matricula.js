@@ -45,6 +45,7 @@ function buscarespecifico() {
     
      acum++;
  }
+ val_estado_est();
 
  if(acum<1){
 
@@ -114,7 +115,6 @@ function CargarCombo() {
     })
 }
 
-
 function buscarespecifico1() {
     // body...
     var acum=0;
@@ -180,7 +180,6 @@ function buscarespecifico1() {
 
 }
 
-
 function guardar() {
     // body...
     
@@ -213,7 +212,9 @@ function guardar() {
      acum++;
  }
 
- if(acum<1){
+ estudiante_estado = document.getElementById("Estado_est").value;
+
+ if(acum<1 && estudiante_estado == "Inactivo"){
     ruta = url + cmatriculas + 'guardar';
     
     $.ajax({
@@ -273,6 +274,58 @@ function guardar() {
 
 }
 
+function val_estado_est() {
+  // body...
+  var acum= 0;
+  var identificacion = 0;  
+  var ruta = "";
+  identificacion = document.getElementById("Identificacion").value;
+
+  if(!identificacion){
+  
+   acum++;
+}
+
+if(acum<1){
+
+  ruta = url + cmatriculas + 'val_estado_est';
+  
+  $.ajax({
+      'url'  : ruta,
+      'data' : {
+                  'identificacion': identificacion 
+      },
+      'type' : 'POST',
+      'statusCode': {
+          404: function() {
+            alertify.error("La Ruta de la pagina no es la correcta" );
+          }
+        }
+  }).done(function( data ) {
+      var respuesta="";
+      var obj="";
+      respuesta = '{"respuesta": ['+data+']}';
+      obj = JSON.parse(respuesta);
+      if (obj.respuesta[0]!=false) {
+          $("#Estado_est").val(obj.respuesta[0].estado);
+      }
+          
+}).fail(function() {
+         Swal.fire(
+           'Error',
+           '',
+           'error')
+});
+
+}else{
+          Swal.fire(
+           'Error, digite un numero documento',
+           '',
+           'error')
+      }  
+
+}
+
 $('.input-letter').on('input', function () {
   this.value = this.value.replace(/[^a-zA-Z ]/g,'');
 });
@@ -285,7 +338,6 @@ $('.input-direccion').on('input', function () {
   this.value = this.value.replace(/[^-a-zA-Z0-9# ]/g,'');
 });
 
-
 function limpiar(){
     $("#Nombres").val("");
     $("#Apellidos").val("");
@@ -297,7 +349,6 @@ function limpiar(){
     $("#G_Cursar").val("Seleccione");
     $("#Valor").val("");  
 }
-
 
 function actualizar() {
 
@@ -374,8 +425,6 @@ function actualizar() {
   
 }
 
-
-
 function cargarmodalmat(fk_numero_documento_estudiante, nombre_estudiante, apellido_estudiante,fk_id_curso,
     fk_numero_documento_acudiente, nombre_acudiente, apellido_acudiente, fecha, valor){
  
@@ -394,7 +443,6 @@ function actualizarmodalmat(){
   actualizar();
   tmatriculas();
 }
-
 
 function tmatriculas(){
    var ruta = "";
@@ -442,7 +490,6 @@ $(document).ready(function(){
  });
 });
 
-
 function cambiarestado(){
 
      let identificacion = $("#Identificacion").val();
@@ -463,7 +510,6 @@ function cambiarestado(){
     })
 }
      
-
 function cambiarestadoAcu(){
 
      let identificacion1 = $("#Identificacion1").val();
@@ -483,8 +529,7 @@ function cambiarestadoAcu(){
  
     })
 }
-     
-     
+        
 function EliminarestadoEst(){
 
      let identificacion = $("#Identificacion").val();
@@ -504,7 +549,6 @@ function EliminarestadoEst(){
  
     })
 }
-
 
 function EliminarestadoAcu(){
 
@@ -654,8 +698,6 @@ function actualizarAcu(){
   })
 
 }
-
-
 
 function actualizarPago(){
   var nombre = "";

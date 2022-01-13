@@ -17,6 +17,14 @@ class Cmatriculas extends CI_Controller {
         echo json_encode($respuesta);
     }
 
+    public  function val_estado_est()
+    {
+      # code...
+        $id = $_POST['identificacion'];
+        $respuesta = $this->Mmatricula->val_estado_est($id);
+        echo json_encode($respuesta);
+    }
+
   public  function buscarespecifico1()
     {
       # code...

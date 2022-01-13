@@ -43,7 +43,7 @@ function guardar() {
 
 
     if(!fecha||!valor||!nombres||!apellidos||!nombres1||!apellidos1||!admin
-      ||!doc_estudiante||!periodo_academico||!mes_academico){
+      ||!id||!periodo_academico||!mes_academico){
     
      acum++;
  }
@@ -60,7 +60,7 @@ function guardar() {
                     'fecha': fecha,
                     'valor': valor,
                     'admin': admin,
-                    'doc_estudiante': doc_estudiante,
+                    'id': id,
                     'periodo_academico': periodo_academico,
                     'mes_academico': mes_academico
         },
