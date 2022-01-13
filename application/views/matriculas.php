@@ -77,7 +77,7 @@
         <button type="button" style="margin-top: 35px;" class="btn btn-secondary" id="Cerrar" data-dismiss="modal">Cerrar</button>
         <button onclick="guardar()" type="button" style="margin-top: 35px;" data-dismiss="modal" id="Guardar" class="btn btn-primary">Registrar</button>
          <button onclick="actualizar()" style="margin-top: 35px;" type="button" data-dismiss="modal" id="Actualizar_mat" class="btn btn-primary">Actualizar</button>
-          <button onclick="eliminar()" type="button" data-dismiss="modal" id="Eliminar_mat" class="btn btn-primary">Eliminar</button>
+          <button onclick="eliminar()" style="margin-top: 35px;" type="button" data-dismiss="modal" id="Eliminar_mat" class="btn btn-primary">Eliminar</button>
       </div>
   </div>
 </div>
