@@ -267,7 +267,7 @@ function guardar() {
   }else{
     if (estudiante_estado == "Matriculado"){
       Swal.fire(
-        '¡Ya hay una matricula relaciona con este estudiante!',
+        '¡Ya hay una matricula relacionada con el documento de este estudiante!',
         '',
         'error')
     }else{
@@ -320,13 +320,13 @@ if(acum<1){
           
 }).fail(function() {
          Swal.fire(
-           'Error',
+           'Error, ¡El estudiante no existe!',
            '',
            'error')
 });
 }else{
   Swal.fire(
-   '¡El estudiante no existe!',
+   'Error, campos vacios',
    '',
    'error')
 } 
