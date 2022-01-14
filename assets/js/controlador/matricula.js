@@ -45,7 +45,6 @@ function buscarespecifico() {
     
      acum++;
  }
- val_estado_est();
 
  if(acum<1){
 
@@ -69,7 +68,7 @@ function buscarespecifico() {
         obj = JSON.parse(respuesta);
         if (obj.respuesta[0]!=false) {
             $("#Nombres").val(obj.respuesta[0].nombre);
-            $("#Apellidos").val(obj.respuesta[0].apellido);  
+            $("#Apellidos").val(obj.respuesta[0].apellido);
                Swal.fire({
            icon: 'success',
             title: 'Documento encontrado con exito!!',
@@ -189,7 +188,7 @@ function guardar() {
     var identificacion = 0;
     var nombres1="";
     var apellidos1 = "";
-    var identifiacion1="";
+    var identificacion1="";
     var valor="";
     var fecha="";
     var curso="";
@@ -260,16 +259,23 @@ function guardar() {
             
   }).fail(function() {
            Swal.fire(
-             'Error',
+             'Error, campos vacios',
              '',
              'error')
   });
 
   }else{
-            Swal.fire(
-             'Error, campos vacios',
-             '',
-             'error')
+    if (estudiante_estado == "Matriculado"){
+      Swal.fire(
+        '¡Ya hay una matricula relaciona con este estudiante!',
+        '',
+        'error')
+    }else{
+      Swal.fire(
+        'Error, campos vacios',
+        '',
+        'error')
+    }    
         }  
 
 }
@@ -309,6 +315,8 @@ if(acum<1){
       if (obj.respuesta[0]!=false) {
           $("#Estado_est").val(obj.respuesta[0].estado);
       }
+
+      guardar();
           
 }).fail(function() {
          Swal.fire(
@@ -316,13 +324,12 @@ if(acum<1){
            '',
            'error')
 });
-
 }else{
-          Swal.fire(
-           'Error, digite un numero documento',
-           '',
-           'error')
-      }  
+  Swal.fire(
+   '¡El estudiante no existe!',
+   '',
+   'error')
+} 
 
 }
 
@@ -347,7 +354,8 @@ function limpiar(){
     $("#Identificacion1").val("");
     $("#Fecha").val("");
     $("#G_Cursar").val("Seleccione");
-    $("#Valor").val("");  
+    $("#Valor").val("");
+    $("#Estado_est").val("");  
 }
 
 function actualizar() {
@@ -603,6 +611,7 @@ $.ajax({
             showConfirmButton: false,
             timer: 900
           })
+          limpiar();
         }else{
            Swal.fire(
              'Error al eliminar, Intenta nuevamente!!',

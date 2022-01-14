@@ -31,7 +31,7 @@
 <center><img  class="acudiente2" style="" src="<?php echo base_url('assets/img/matricula.png');?>"></center>
 <h1><center><label style="text-shadow: 2px 2px 4px #444">Matriculas</label></center></h1>
         <div class="row">
-          <div class="col-sm-6" style="display: none;">
+          <div class="col-sm-6">
           <input class="input-letter form-control rounded-pill" type="text" id="Estado_est">
 </div>
         <div class="col-sm-6">
@@ -78,7 +78,7 @@
 </div>
       <div class="modalf_mat">
         <button type="button" style="margin-top: 35px;" class="btn btn-secondary" id="Cerrar" data-dismiss="modal">Cerrar</button>
-        <button onclick="guardar()" type="button" style="margin-top: 35px;" data-dismiss="modal" id="Guardar" class="btn btn-primary">Registrar</button>
+        <button onclick="val_estado_est()" type="button" style="margin-top: 35px;" data-dismiss="modal" id="Guardar" class="btn btn-primary">Registrar</button>
          <button onclick="actualizar()" style="margin-top: 35px;" type="button" data-dismiss="modal" id="Actualizar_mat" class="btn btn-primary">Actualizar</button>
           <button onclick="eliminar()" style="margin-top: 35px;" type="button" data-dismiss="modal" id="Eliminar_mat" class="btn btn-primary">Eliminar</button>
       </div>
