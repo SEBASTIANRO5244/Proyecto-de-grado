@@ -26,7 +26,7 @@ function guardar() {
     var nombres1 = "";
     var apellidos1="";
     var admin = "";
-    var doc_estudiante ="";
+    var id ="";
     var periodo_academico ="";
     var mes_academico ="";
 
@@ -37,7 +37,7 @@ function guardar() {
     nombres1 =  document.getElementById("Nombres1").value;
     apellidos1 =   document.getElementById("Apellidos1").value;        
     admin =  document.getElementById("Admin").value;
-    doc_estudiante = document.getElementById("Identificacion").value;
+    id = document.getElementById("Identificacion").value;
     periodo_academico =  document.getElementById("Periodo_academico").value;
     mes_academico =  document.getElementById("Mes_academico").value;
 
