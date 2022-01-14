@@ -31,7 +31,7 @@
 <center><img  class="acudiente2" style="" src="<?php echo base_url('assets/img/matricula.png');?>"></center>
 <h1><center><label style="text-shadow: 2px 2px 4px #444">Matriculas</label></center></h1>
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-6" style="display: none;">
           <input class="input-letter form-control rounded-pill" type="text" id="Estado_est">
 </div>
         <div class="col-sm-6">
