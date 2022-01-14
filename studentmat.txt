@@ -102,3 +102,6 @@ ADD COLUMN `periodo_academico` VARCHAR(20) NOT NULL;
 ALTER TABLE `studentmat`.`pension` 
 ADD COLUMN `mes_academico` VARCHAR(20) NOT NULL;
 
+ALTER TABLE `studentmat`.`pension` 
+CHANGE COLUMN `fk_id_matricula` `fk_id_estudiante` BIGINT NOT NULL ;
+

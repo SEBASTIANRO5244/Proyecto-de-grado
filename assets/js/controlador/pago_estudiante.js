@@ -16,8 +16,46 @@
   //$("#exampleModal").modal();
 });
 
+function obtener_id_matricula(){
+    var identificacion = 0;  
+    var ruta = "";
+    identificacion = document.getElementById("Identificacion").value;
+ 
+    ruta = url + cpago_estudiante + 'obtener_id_matricula';
+    
+    $.ajax({
+        'url'  : ruta,
+        'data' : {
+                    'identificacion': identificacion 
+        },
+        'type' : 'POST',
+        'statusCode': {
+            404: function() {
+              alertify.error("La Ruta de la pagina no es la correcta" );
+            }
+          }
+    }).done(function( data ) {
+        var respuesta="";
+        var obj="";
+        respuesta = '{"respuesta": ['+data+']}';
+        obj = JSON.parse(respuesta);
+        if (obj.respuesta[0]!=false) {
+          estado_estudiante = obj.respuesta[0].estado
+
+              $("#Id_matricula").val(obj.respuesta[0].id);
+              guardar();
+        }else{
+           Swal.fire(
+             'Error, numero documento no registrado',
+             '',
+             'error')
+        }            
+    }).fail(function() {
+        alertify.error( "Error" );
+    });
+}
+
 function guardar() {
-    // body...
     var acum = 0;
     var fecha = "";
     var valor = "";
@@ -27,6 +65,7 @@ function guardar() {
     var apellidos1="";
     var admin = "";
     var id ="";
+    var id_matricula = "";
     var periodo_academico ="";
     var mes_academico ="";
 
@@ -38,6 +77,7 @@ function guardar() {
     apellidos1 =   document.getElementById("Apellidos1").value;        
     admin =  document.getElementById("Admin").value;
     id = document.getElementById("Identificacion").value;
+    id_matricula = document.getElementById("Id_matricula").value;
     periodo_academico =  document.getElementById("Periodo_academico").value;
     mes_academico =  document.getElementById("Mes_academico").value;
 
@@ -49,9 +89,6 @@ function guardar() {
  }
 
  if(acum<1){
-
-   
-
     ruta = url + cpago_estudiante + 'guardar';
     
     $.ajax({
@@ -61,6 +98,7 @@ function guardar() {
                     'valor': valor,
                     'admin': admin,
                     'id': id,
+                    'id_matricula' : id_matricula,
                     'periodo_academico': periodo_academico,
                     'mes_academico': mes_academico
         },
@@ -125,13 +163,14 @@ function limpiar(){
     $("#Valor").val("");  
     $("#Periodo_academico").val("");  
     $("#Mes_academico").val("");  
+    $("#Id_matricula").val("");  
 }
 
 function buscarespecifico() {
     // body...
 
     var acum = 0;
-    var identifiacion = 0;  
+    var identificacion = 0;  
     var ruta = "";
     identificacion = document.getElementById("Identificacion").value;
 
@@ -160,20 +199,32 @@ function buscarespecifico() {
     }).done(function( data ) {
         var respuesta="";
         var obj="";
+        var estado_estudiante = "";
         respuesta = '{"respuesta": ['+data+']}';
         obj = JSON.parse(respuesta);
         if (obj.respuesta[0]!=false) {
-            $("#Nombres").val(obj.respuesta[0].nombre_estudiante);
-            $("#Apellidos").val(obj.respuesta[0].apellido_estudiante);
-            $("#Nombres1").val(obj.respuesta[0].nombre_acudiente);
-            $("#Apellidos1").val(obj.respuesta[0].apellido_acudiente);
-            $("#Identificacion_acu").val(obj.respuesta[0].fk_numero_documento_acudiente);   
-           Swal.fire({
-           icon: 'success',
-            title: 'Documento encontrado con exito!!',
-            showConfirmButton: false,
-            timer: 900
-          })
+          estado_estudiante = obj.respuesta[0].estado
+
+            if(estado_estudiante == "Inactivo"){
+              Swal.fire(
+                '¡Este estudiante no se encuentra matriculado!',
+                '',
+                'error')
+            }else{
+              $("#Nombres").val(obj.respuesta[0].nombre_estudiante);
+              $("#Apellidos").val(obj.respuesta[0].apellido_estudiante);
+              $("#Nombres1").val(obj.respuesta[0].nombre_acudiente);
+              $("#Apellidos1").val(obj.respuesta[0].apellido_acudiente);
+              $("#Identificacion_acu").val(obj.respuesta[0].fk_numero_documento_acudiente);
+              
+              Swal.fire({
+                icon: 'success',
+                title: 'Documento encontrado con exito!!',
+                showConfirmButton: false,
+                timer: 900
+              })
+            }
+         
         }else{
            Swal.fire(
              'Error, numero documento no registrado',
@@ -249,6 +300,7 @@ function actualizar() {
     var apellidos1="";
     var admin = "";
     var doc_estudiante ="";
+    var id_matricula = "";
     var periodo_academico ="";
     var mes_academico ="";
 
@@ -261,6 +313,7 @@ function actualizar() {
     apellidos1 = document.getElementById("Apellidos1").value;        
     admin = document.getElementById("Admin").value;
     doc_estudiante = document.getElementById("Identificacion").value;
+    id_matricula = document.getElementById("Id_matricula").value;
     periodo_academico =  document.getElementById("Periodo_academico").value;
     mes_academico =  document.getElementById("Mes_academico").value;
 
@@ -284,6 +337,7 @@ function actualizar() {
                     'valor': valor,
                     'admin': admin,
                     'doc_estudiante': doc_estudiante,
+                    'id_matricula': id_matricula,
                     'periodo_academico': periodo_academico,
                     'mes_academico': mes_academico
         },
@@ -332,7 +386,7 @@ function actualizar() {
 }
 
 function cargarmodalPEst(id, fecha, valor, nombre_estudiante, apellido_estudiante, nombre_acudiente, 
-  apellido_acudiente, nombre_admin, fk_id_matricula, mes_academico, periodo_academico, fk_numero_documento_acudiente){
+  apellido_acudiente, nombre_admin, fk_id_estudiante, mes_academico, periodo_academico, fk_numero_documento_acudiente){
  
     $("#Id").val(id);
     $("#Fecha").val(fecha); 
@@ -344,7 +398,7 @@ function cargarmodalPEst(id, fecha, valor, nombre_estudiante, apellido_estudiant
     $("#Admin").val(nombre_admin);
     $("#Periodo_academico").val(periodo_academico);
     $("#Mes_academico").val(mes_academico);
-    $("#Identificacion").val(fk_id_matricula);
+    $("#Identificacion").val(fk_id_estudiante);
     $("#Identificacion_acu").val(fk_numero_documento_acudiente);
     
 }

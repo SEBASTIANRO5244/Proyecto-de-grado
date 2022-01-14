@@ -18,10 +18,10 @@ class Reportes extends CI_Model {
 		$this->db->select('pension.id, pension.fecha, matricula.estado,
 		matricula.nombre_estudiante, matricula.apellido_estudiante, matricula.nombre_acudiente, 
 		matricula.apellido_acudiente, pension.periodo_academico, pension.mes_academico, 
-		pension.fk_id_matricula, pension.valor, pension.nombre_admin, 
+		pension.fk_id_estudiante, pension.valor, pension.nombre_admin, 
 		matricula.fk_numero_documento_acudiente');
 		$this->db->from('pension');
-		$this->db->join('matricula', 'pension.fk_id_matricula = matricula.fk_numero_documento_estudiante');
+		$this->db->join('matricula', 'pension.fk_id_estudiante = matricula.fk_numero_documento_estudiante');
 		$this->db->where('pension.fecha', $fecha);
 	    $this->db->where('pension.id', $id);
 		$this->db->where('matricula.estado', "Matriculado");

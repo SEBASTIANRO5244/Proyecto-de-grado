@@ -30,8 +30,26 @@ class Mpago_estudiante extends CI_Model {
     }
 
   	public function buscarespecifico($id){
-  		$query = $this->db->query("select * from matricula where fk_numero_documento_estudiante = ".$id);
+  		$query = $this->db->query("select matricula.fecha, matricula.valor,
+        matricula.fk_numero_documento_estudiante, matricula.nombre_estudiante,
+        matricula.apellido_estudiante, matricula.fk_numero_documento_acudiente,
+        matricula.nombre_acudiente, matricula.apellido_acudiente, matricula.fk_id_curso,
+        estudiante.estado from matricula inner join estudiante on
+        matricula.fk_numero_documento_estudiante = estudiante.numero_documento
+        where matricula.fk_numero_documento_estudiante =".$id);
   		
+  		if($query->num_rows()>0){
+  			return $query->row();
+  		}else{
+  			return false;
+  		}
+
+  	}
+
+    public function obtener_id_matricula($id){
+  		$query = $this->db->query("select * from matricula
+        where matricula.estado = 'Matriculado' and
+        matricula.fk_numero_documento_estudiante =".$id);
   		if($query->num_rows()>0){
   			return $query->row();
   		}else{

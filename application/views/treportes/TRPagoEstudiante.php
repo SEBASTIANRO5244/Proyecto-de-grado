@@ -47,7 +47,7 @@
                            </td>
                          <td style="text-align:center;">
                            <?php
-                             echo $data->fk_id_matricula;
+                             echo $data->fk_id_estudiante;
                            ?>
                          </td>
                          <td style="text-align:center;">
