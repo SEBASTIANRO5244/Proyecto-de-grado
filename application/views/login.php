@@ -17,8 +17,8 @@
   <div class="login-triangle"></div>
   <h2 class="login-header"><b>BIENVENIDOS A STUDENTMAT</b></h2>
   <div class="login-container">
-    <p><input id="usuario" type="text" placeholder="Users"></p>
-    <p><input id="contraseña" type="password" placeholder="Password"></p>
+    <p><input id="usuario" type="text" placeholder="Usuario"></p>
+    <p><input id="contraseña" type="password" placeholder="Contraseña"></p>
     <p><input id="boton_sesion" type="submit" onclick="ingresar()" value="INICIAR SESIÓN"></p>
     <script type="text/javascript" src="<?php echo base_url('assets/js/controlador/login.js'); ?>"></script>
   </div>
