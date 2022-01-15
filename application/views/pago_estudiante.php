@@ -31,7 +31,7 @@
 <h1><center><label style="text-shadow: 2px 2px 4px #444">Pago Estudiantes</label></center></h1>
 <div class="row">
   <input class="form-control rounded-pill" type="hidden" id="Id" placeholder="Id_Pago">
-  <input class="input-number form-control rounded-pill" type="hidden" id="Id_matricula" placeholder="estado estudiante" style="width: 290px;">
+  <input class="input-number form-control rounded-pill" type="hidden" id="Id_matricula" placeholder="id_matricula" style="width: 290px;">
   <input class="input-number form-control rounded-pill" type="hidden" id="Estado_est" placeholder="estado estudiante" style="width: 290px;">
   <div class="col-sm-6">
     <label for="">Fecha</label>
