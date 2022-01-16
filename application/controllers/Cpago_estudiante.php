@@ -58,7 +58,7 @@ class Cpago_estudiante extends CI_Controller {
 
  
    public function tpago_est () {
-   $dato['pension'] = $this->Mpago_estudiante->consultar("select pension.id, pension.fecha, 
+   $dato['pension'] = $this->Mpago_estudiante->consultar("select pension.id AS pension_id, pension.fecha, 
     matricula.nombre_estudiante, matricula.apellido_estudiante, matricula.nombre_acudiente, 
     matricula.apellido_acudiente, pension.periodo_academico, pension.mes_academico, 
     pension.fk_id_estudiante, pension.valor, pension.nombre_admin, matricula.estado,

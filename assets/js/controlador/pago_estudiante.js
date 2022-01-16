@@ -546,8 +546,8 @@ $(document).on('click', '.reportePago', function(e){
       e.preventDefault();
     let fecha = '';
     let id = 0;   
-    fecha = $(this).parents("tr").find("td").eq(1).text();
-    id = $(this).parents("tr").find("td").eq(0).text();
+    fecha = $(this).parents("tr").find("td").eq(2).text();
+    id = $(this).parents("tr").find("td").eq(1).text();
     id = id.trim();
     fecha = fecha.trim();
 
