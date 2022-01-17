@@ -307,7 +307,7 @@ function actualizar() {
 }
 
 function cargarmodalest(id, nombre, apellido, genero, fecha_nacimiento, lugar_nacimiento, 
-    numero_documento, tipo_documento, direccion, eps, estado){
+    numero_documento, tipo_documento, direccion, eps){
  $("#Id_est").val(id);
  $("#Nombres").val(nombre);
  $("#Apellidos").val(apellido);
@@ -318,7 +318,6 @@ function cargarmodalest(id, nombre, apellido, genero, fecha_nacimiento, lugar_na
  $("#Tipo").val(tipo_documento);
  $("#Direccion").val(direccion);
  $("#Eps").val(eps);
- $("#Estado_est").val(estado);
 }
 
 function cargarestadoform(estado){
