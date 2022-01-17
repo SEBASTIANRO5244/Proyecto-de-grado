@@ -12,6 +12,17 @@ class Macudiente extends CI_Model {
   		echo $this->db->insert("acudiente",$dato);	
   	}
 
+    public function val_id_acu($id){
+      $query = $this->db->query("select * from acudiente where numero_documento = ".$id);
+      
+      if($query->num_rows()>0){
+        return $query->row();
+      }else{
+        return false;
+      }
+  
+    }
+
   	 public function consultar($sql)
    {
        $query = $this->db->query($sql);

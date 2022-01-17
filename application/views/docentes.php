@@ -92,7 +92,7 @@
 </div>        
       <div class="modalf_doc">
         <button type="button" class="btn btn-secondary" id="Cerrar" data-dismiss="modal">Cerrar</button>
-        <button onclick="guardar()" type="button" data-dismiss="modal" id="Guardar" class="btn btn-primary">Registrar</button>
+        <button onclick="val_id_doc()" type="button" data-dismiss="modal" id="Guardar" class="btn btn-primary">Registrar</button>
         <button type="button" onclick="actualizar()" data-dismiss="modal" class="btn btn-primary" id="Actualizar_doc">Actualizar</button>
         <button type="button" onclick="eliminarmodaldocente()" class="btn btn-primary" data-dismiss="modal" id="Eliminar_doc">Eliminar</button>
          <script type="text/javascript" src="<?php echo base_url('assets/js/controlador/docentes.js'); ?>"></script>

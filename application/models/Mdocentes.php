@@ -12,6 +12,17 @@ class Mdocentes extends CI_Model {
   		echo $this->db->insert("docente",$dato);	
   	}
 
+    public function val_id_doc($id){
+      $query = $this->db->query("select * from docente where numero_documento = ".$id);
+      
+      if($query->num_rows()>0){
+        return $query->row();
+      }else{
+        return false;
+      }
+  
+    }
+
   	 public function consultar($sql)
    {
        $query = $this->db->query($sql);

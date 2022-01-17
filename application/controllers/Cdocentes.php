@@ -27,6 +27,14 @@ class Cdocentes extends CI_Controller {
   		echo $this->Mdocentes->guardar($dato);
   	}
 
+    public  function val_id_doc()
+    {
+      # code...
+        $id = $_POST['identificacion'];
+        $respuesta = $this->Mdocentes->val_id_doc($id);
+        echo json_encode($respuesta);
+    }
+
         public function actualizar()
     {
       # code...

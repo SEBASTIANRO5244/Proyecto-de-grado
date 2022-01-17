@@ -28,6 +28,55 @@ $(document).on("click", "#Eliminar_doc1", function () {
   //$("#exampleModal").modal();
 });
 
+function val_id_doc() {
+  // body...
+  var acum= 0;
+  var identificacion = 0;  
+  var ruta = "";
+  identificacion = document.getElementById("Identificacion").value;
+
+  if(!identificacion){
+  
+   acum++;
+}
+
+if(acum<1){
+
+  ruta = url + cdocentes + 'val_id_doc';
+  
+  $.ajax({
+      'url'  : ruta,
+      'data' : {
+                  'identificacion': identificacion 
+      },
+      'type' : 'POST',
+      'statusCode': {
+          404: function() {
+            alertify.error("La Ruta de la pagina no es la correcta" );
+          }
+        }
+  }).done(function( data ) {
+      var respuesta="";
+      var obj="";
+      respuesta = '{"respuesta": ['+data+']}';
+      obj = JSON.parse(respuesta);
+      if (obj.respuesta[0]!=false) {
+        Swal.fire(
+          '¡Este docente ya está registrado!',
+          '',
+          'error')
+      }else{
+        guardar();
+      } 
+})
+}else{
+  Swal.fire(
+   'Error, campos vacios',
+   '',
+   'error')
+} 
+}
+
 function guardar() {
 	// body...
     var acum = 0;

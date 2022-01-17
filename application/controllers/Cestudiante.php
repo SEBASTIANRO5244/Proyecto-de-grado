@@ -26,6 +26,14 @@ class Cestudiante extends CI_Controller {
   		echo $this->Mestudiante->guardar($dato);
   	}
 
+    public  function val_id_est()
+    {
+      # code...
+        $id = $_POST['identificacion'];
+        $respuesta = $this->Mestudiante->val_id_est($id);
+        echo json_encode($respuesta);
+    }
+
     
      public function actualizar()
     {

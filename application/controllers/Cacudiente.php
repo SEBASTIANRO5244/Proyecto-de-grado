@@ -26,6 +26,14 @@ class Cacudiente extends CI_Controller {
   		echo $this->Macudiente->guardar($dato);
   	}
 
+    public  function val_id_acu()
+    {
+      # code...
+        $id = $_POST['identificacion'];
+        $respuesta = $this->Macudiente->val_id_acu($id);
+        echo json_encode($respuesta);
+    }
+
          public function actualizar()
     {
       # code...

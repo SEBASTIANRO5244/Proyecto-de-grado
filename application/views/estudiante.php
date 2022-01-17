@@ -84,7 +84,7 @@
 </div>       
       <div class="modal_fest">
         <button type="button" class="btn btn-secondary" id="Cerrar" style="margin-top: 30px;" data-dismiss="modal">Cerrar</button>
-        <button onclick="guardar()" style="margin-top: 30px"; type="button" id="Guardar" data-dismiss="modal" class="btn btn-primary">Registrar</button>
+        <button onclick="val_id_est()" style="margin-top: 30px"; type="button" id="Guardar" data-dismiss="modal" class="btn btn-primary">Registrar</button>
          <button type="button" id="Actualizar_est" onclick="actualizar()" data-dismiss="modal" class="btn btn-primary">Actualizar</button>
         <script type="text/javascript" src="<?php echo base_url('assets/js/controlador/estudiante.js'); ?>"></script>
       </div>

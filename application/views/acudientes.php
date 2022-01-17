@@ -75,7 +75,7 @@
 </div>        
       <div class="modalf_acu">
         <button type="button" class="btn btn-secondary" id="Cerrar" data-dismiss="modal">Cerrar</button>
-        <button onclick="guardar()" type="button" id="Guardar" data-dismiss="modal" class="btn btn-primary">Registrar</button>
+        <button onclick="val_id_acu()" type="button" id="Guardar" data-dismiss="modal" class="btn btn-primary">Registrar</button>
          <button type="button" id="Actualizar_acu" onclick="actualizarmodalacu()" data-dismiss="modal" class="btn btn-primary">Actualizar</button>
          <script type="text/javascript" src="<?php echo base_url('assets/js/controlador/acudiente.js'); ?>"></script>
       </div>

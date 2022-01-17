@@ -16,13 +16,61 @@
   //$("#exampleModal").modal();
 });
 
+function val_id_est() {
+  // body...
+  var acum= 0;
+  var identificacion = 0;  
+  var ruta = "";
+  identificacion = document.getElementById("Identificacion").value;
+
+  if(!identificacion){
+  
+   acum++;
+}
+
+if(acum<1){
+
+  ruta = url + cestudiantes + 'val_id_est';
+  
+  $.ajax({
+      'url'  : ruta,
+      'data' : {
+                  'identificacion': identificacion 
+      },
+      'type' : 'POST',
+      'statusCode': {
+          404: function() {
+            alertify.error("La Ruta de la pagina no es la correcta" );
+          }
+        }
+  }).done(function( data ) {
+      var respuesta="";
+      var obj="";
+      respuesta = '{"respuesta": ['+data+']}';
+      obj = JSON.parse(respuesta);
+      if (obj.respuesta[0]!=false) {
+        Swal.fire(
+          '¡Este estudiante ya está registrado!',
+          '',
+          'error')
+      }else{
+        guardar();
+      } 
+})
+}else{
+  Swal.fire(
+   'Error, campos vacios',
+   '',
+   'error')
+} 
+}
 
 function guardar() {
 	// body...
 
     var acum = 0;
-	var nombres = "";
-	var apellidos = "";
+	  var nombres = "";
+	  var apellidos = "";
     var genero ="";
     var fecha_nac="";
     var lugar_nac="";
@@ -39,7 +87,7 @@ function guardar() {
     genero = document.getElementById("Genero").value;
     fecha_nac = document.getElementById("Fecha_Nac").value;
     lugar_nac =	 document.getElementById("Lugar_Nac").value;	
-	identificacion =  document.getElementById("Identificacion").value;
+	  identificacion =  document.getElementById("Identificacion").value;
     tipo_identificacion =  document.getElementById("Tipo").value;
     direccion =  document.getElementById("Direccion").value;
     eps =  document.getElementById("Eps").value;
@@ -50,9 +98,6 @@ function guardar() {
  }
 
  if(acum<1){
-
-   
-
     ruta = url + cestudiantes + 'guardar';
 	
 	$.ajax({

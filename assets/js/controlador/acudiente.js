@@ -16,6 +16,55 @@
   //$("#exampleModal").modal();
 });
 
+function val_id_acu() {
+  // body...
+  var acum= 0;
+  var identificacion = 0;  
+  var ruta = "";
+  identificacion = document.getElementById("Identificacion").value;
+
+  if(!identificacion){
+  
+   acum++;
+}
+
+if(acum<1){
+
+  ruta = url + cacudiente + 'val_id_acu';
+  
+  $.ajax({
+      'url'  : ruta,
+      'data' : {
+                  'identificacion': identificacion 
+      },
+      'type' : 'POST',
+      'statusCode': {
+          404: function() {
+            alertify.error("La Ruta de la pagina no es la correcta" );
+          }
+        }
+  }).done(function( data ) {
+      var respuesta="";
+      var obj="";
+      respuesta = '{"respuesta": ['+data+']}';
+      obj = JSON.parse(respuesta);
+      if (obj.respuesta[0]!=false) {
+        Swal.fire(
+          '¡Este acudiente ya está registrado!',
+          '',
+          'error')
+      }else{
+        guardar();
+      } 
+})
+}else{
+  Swal.fire(
+   'Error, campos vacios',
+   '',
+   'error')
+} 
+}
+
 function guardar() {
 	// body...
     var acum = 0;
