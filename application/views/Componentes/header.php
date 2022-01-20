@@ -14,3 +14,7 @@
 	<script type="text/javascript" src="<?php echo base_url('assets/js/librerias/bootstrap.min.js');  ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url('assets/js/librerias/alertify.min.js');  ?>"></script>
 </head>
+
+<body>
+	
+
