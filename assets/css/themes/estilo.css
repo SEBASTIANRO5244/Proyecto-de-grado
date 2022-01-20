@@ -1,7 +1,7 @@
 /* LOGIN */
 html {
-  position: relative;
-  min-height: 100%;
+	position: relative;
+	min-height: 100%;
 }
 
 * {
@@ -13,6 +13,9 @@ html {
 
 body {
 	background-size: cover;
+	height: 100%;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
 }
 
 .login {
@@ -51,12 +54,12 @@ body {
 		border: 0;
 	}
 
-  #two {
-    overflow: hidden;
-    margin: 10px;
-    width: auto;
-    min-height: 170px;
-  }
+	#two {
+		overflow: hidden;
+		margin: 10px;
+		width: auto;
+		min-height: 170px;
+	}
 }
 
 @-webkit-keyframes fadeInDown {
@@ -198,10 +201,10 @@ body {
 }
 
 .footer {
-  left: 0;
-  bottom: 0;
-  height: 6%;
-  width: 100%;
+	left: 0;
+	bottom: 0;
+	height: 6%;
+	width: 100%;
 }
 
 .footer_form {
@@ -642,6 +645,7 @@ h5 {
 
 .contenedor-menu {
 	margin-top: -100px;
+  margin-bottom: 18%;
 }
 
 #Actualizar_est {

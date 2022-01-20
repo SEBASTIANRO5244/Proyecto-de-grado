@@ -1,5 +1,3 @@
-
-
 <section class="">
   <footer class="text-white text-center positionrelative" style="background-color: #28d !important;">
     <div class="text-center p-3">
