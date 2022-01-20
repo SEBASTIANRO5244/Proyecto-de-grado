@@ -1,8 +1,7 @@
-<nav class="navbar navbar-light" style="background-color: #28d;">
-  <a class="navbar-brand" href="#" >
-   </a>
-   <h3 class="alinear_letra" style="color: white;"><b>SISTEMA DE INFORMACIÓN INTEGRADO DE MATRÍCULAS PARA COLEGIOS PRIVADOS</b></h3> 
+<nav class="navbar justify-content-center" style="background-color: #28d; margin-bottom: 40px;">
+    <h3 class="alinear_letra1" style="color: white; text-align: center;"><b>SISTEMA DE INFORMACIÓN INTEGRADO DE MATRÍCULAS PARA COLEGIOS PRIVADOS</b></h3> 
 </nav>
+
 <div class="contenedor-menu">
 
 <button  onclick="estudiante()" class="botonmenu2" type="Submit"> <b class="letter">Estudiantes</b> <img class="estudiante" src="<?php echo base_url('assets/img/estudiante.png');?>"></button> 
