@@ -12,7 +12,7 @@ class Controlador extends CI_Controller {
 	
 		$this->load->view('Componentes/header');
 		$this->load->view('login');
-		$this->load->view('Componentes/footer');
+		$this->load->view('Componentes/footer_form');
 	}
 
 	 public function menu()
