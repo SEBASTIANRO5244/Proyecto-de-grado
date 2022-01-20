@@ -1,8 +1,5 @@
-<nav class="navbar justify-content-center" style="background-color: #28d; margin-bottom: 40px;">
-    <h3 class="alinear_letra1" style="color: white; text-align: center;"><b>SISTEMA DE INFORMACIÓN INTEGRADO DE MATRÍCULAS PARA COLEGIOS PRIVADOS</b></h3> 
-</nav>
-
-<div class="contenedor-menu">
+<center>
+<div class="contenedor-menu" style="margin-bottom:5%; justify-content: middle;">
 
 <button  onclick="estudiante()" class="botonmenu2" type="Submit"> <b class="letter">Estudiantes</b> <img class="estudiante" src="<?php echo base_url('assets/img/estudiante.png');?>"></button> 
 
@@ -25,3 +22,4 @@
 
 <button  class="botonmenu2" href="" id="cerrarSession"> <b class="letter">Cerrar Sesión</b> <img style="height: 112px;" src="<?php echo base_url('assets/img/salir.png');?>"></button> 
 </div>
+</center>

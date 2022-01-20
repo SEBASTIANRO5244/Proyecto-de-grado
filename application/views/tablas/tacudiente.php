@@ -1,6 +1,6 @@
 <div class="scrollbar scrollbar-primary" id="scrollbaracu">
   <div class="force-overflow"></div>
-<table class="table" id="table1">
+<table class="table" style="width: 100%; margin: auto;">
   <thead class="thead">
     <tr>
       <th scope="col">Nombres</th>

@@ -239,14 +239,12 @@ body {
 
 .botonmenu2 {
 	padding: 10px;
-	margin-left: 85px;
+	margin: 3%;
 	color: black;
 	box-shadow: 0 0 10px #28d;
 	background-color: white;
 	width: 165px;
 	right: 200px;
-	margin-top: 109px;
-	margin-right: 0px;
 	border: 1px solid #28d;
 }
 
@@ -640,8 +638,6 @@ h5 {
 }
 
 #titulo5 {
-	margin-left: 215px;
-	margin-top: -50px;
 	text-shadow: 2px 2px 4px #444;
 }
 
@@ -655,10 +651,6 @@ h5 {
 	margin-left: 315px;
 	margin-top: -50px;
 	text-shadow: 2px 2px 4px #444;
-}
-
-.contenedor-menu {
-	margin-top: -100px;
 }
 
 #Actualizar_est {
@@ -684,9 +676,9 @@ h5 {
 }
 
 #scrollbaracu {
-	margin-left: 140px;
+	margin-left: 25px;
 	height: 289px;
-	width: 80%;
+	width: 95%;
 	background: #fff;
 	overflow-y: scroll;
 	margin-bottom: -152px;
@@ -711,9 +703,9 @@ h5 {
 }
 
 #scrollbarpension {
-	margin-left: 75px;
+	margin-left: 25px;
 	height: 289px;
-	width: 90%;
+	width: 95%;
 	background: #fff;
 	overflow-y: scroll;
 	margin-bottom: -152px;

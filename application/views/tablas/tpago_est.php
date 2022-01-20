@@ -1,6 +1,6 @@
 <div class="scrollbar scrollbar-primary" id="scrollbarpension">
   <div class="force-overflow"></div>
-<table class="table" style="margin: auto; width: 101%;">
+<table class="table" style="margin: auto; width: 100%;">
   <thead class="thead">
     <tr>
       <th scope="col" style="display:none">Id</th>

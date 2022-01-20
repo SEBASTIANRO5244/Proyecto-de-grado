@@ -33,7 +33,7 @@ class Controlador extends CI_Controller {
 	 public function estudiante()
 	{
 	
-		$this->load->view('Componentes/header');
+		$this->load->view('Componentes/header_forms');
 		$this->load->view('estudiante');
 		$this->load->view('Componentes/footer');
 	}
@@ -41,7 +41,7 @@ class Controlador extends CI_Controller {
 	 public function acudiente()
 	{
 	
-		$this->load->view('Componentes/header');
+		$this->load->view('Componentes/header_forms');
 		$this->load->view('acudientes');
 		$this->load->view('Componentes/footer');
 	}
@@ -49,7 +49,7 @@ class Controlador extends CI_Controller {
     public function curso()
 	{
 	
-		$this->load->view('Componentes/header');
+		$this->load->view('Componentes/header_forms');
 		$this->load->view('cursos');
 		$this->load->view('Componentes/footer');
 	}
@@ -57,7 +57,7 @@ class Controlador extends CI_Controller {
 	public function docente()
 	{
 	
-		$this->load->view('Componentes/header');
+		$this->load->view('Componentes/header_forms');
 		$this->load->view('docentes');
 		$this->load->view('Componentes/footer');
 	}
@@ -65,7 +65,7 @@ class Controlador extends CI_Controller {
 	public function matricula()
 	{
 	
-		$this->load->view('Componentes/header');
+		$this->load->view('Componentes/header_forms');
 		$this->load->view('matriculas');
 		$this->load->view('Componentes/footer');
 	}
@@ -73,7 +73,7 @@ class Controlador extends CI_Controller {
     public function pago_docente()
 	{
 	
-		$this->load->view('Componentes/header');
+		$this->load->view('Componentes/header_forms');
 		$this->load->view('pago_docente');
 		$this->load->view('Componentes/footer');
 	}
@@ -81,7 +81,7 @@ class Controlador extends CI_Controller {
 	public function pago_estudiante()
 	{
 	
-		$this->load->view('Componentes/header');
+		$this->load->view('Componentes/header_forms');
 		$this->load->view('pago_estudiante');
 		$this->load->view('Componentes/footer');
 	}
@@ -89,7 +89,7 @@ class Controlador extends CI_Controller {
 	public function usuarios()
 	{
 	
-		$this->load->view('Componentes/header');
+		$this->load->view('Componentes/header_forms');
 		$this->load->view('usuarios');
 		$this->load->view('Componentes/footer');
 	}

@@ -1,5 +1,5 @@
-<section class="">
-  <footer class="text-center text-white" style="background-color: #28d;">
+
+  <footer class="text-center text-white mt-auto" style="background-color: #28d; ">
     <div class="container p-4 pb-0">
       <section class="">
         <p class="d-flex justify-content-center align-items-center">
@@ -14,5 +14,5 @@
     <script type="text/javascript" src="<?php echo base_url('assets/js/controlador/login.js')?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/Componentes/variablesglobales.js'); ?>"></script>
   </footer>
-</section>
+</body>
 </html>

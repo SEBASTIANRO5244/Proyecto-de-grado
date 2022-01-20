@@ -17,7 +17,13 @@
 
 <header>
 	<nav class="navbar justify-content-center" style="background-color: #28d; margin-bottom: 40px;">
-		<h3 class="alinear_letra1" style="color: white; text-align: center;"><b>SISTEMA DE INFORMACIÓN INTEGRADO DE MATRÍCULAS PARA COLEGIOS PRIVADOS</b></h3> 
+	<h3 class="alinear_letra1" style="color: white; text-align: center;"><b>SISTEMA DE INFORMACIÓN INTEGRADO DE MATRÍCULAS PARA COLEGIOS PRIVADOS</b></h3> 
+		<div class="container-fluid">
+			<a class="navbar-brand" href="">
+				<a type="button" class="btn btn-light" href="<?=$_SERVER["HTTP_REFERER"]?>">Atrás</a>
+			</a>
+		</div>
+		
 	</nav>
 </header>
 
