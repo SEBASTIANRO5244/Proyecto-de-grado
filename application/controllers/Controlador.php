@@ -12,7 +12,7 @@ class Controlador extends CI_Controller {
 	
 		$this->load->view('Componentes/header');
 		$this->load->view('login');
-		$this->load->view('Componentes/footer_form');
+		$this->load->view('Componentes/footer');
 	}
 
 	 public function menu()
@@ -24,7 +24,7 @@ class Controlador extends CI_Controller {
         
         $this->load->view('Componentes/header');
 		$this->load->view('menu');
-		$this->load->view('Componentes/footer_form');
+		$this->load->view('Componentes/footer');
         }
 
 		
@@ -35,7 +35,7 @@ class Controlador extends CI_Controller {
 	
 		$this->load->view('Componentes/header');
 		$this->load->view('estudiante');
-		$this->load->view('Componentes/footer_form');
+		$this->load->view('Componentes/footer');
 	}
 
 	 public function acudiente()
@@ -43,7 +43,7 @@ class Controlador extends CI_Controller {
 	
 		$this->load->view('Componentes/header');
 		$this->load->view('acudientes');
-		$this->load->view('Componentes/footer_form');
+		$this->load->view('Componentes/footer');
 	}
 
     public function curso()
@@ -51,7 +51,7 @@ class Controlador extends CI_Controller {
 	
 		$this->load->view('Componentes/header');
 		$this->load->view('cursos');
-		$this->load->view('Componentes/footer_form');
+		$this->load->view('Componentes/footer');
 	}
 
 	public function docente()
@@ -59,7 +59,7 @@ class Controlador extends CI_Controller {
 	
 		$this->load->view('Componentes/header');
 		$this->load->view('docentes');
-		$this->load->view('Componentes/footer_form');
+		$this->load->view('Componentes/footer');
 	}
 
 	public function matricula()
@@ -67,7 +67,7 @@ class Controlador extends CI_Controller {
 	
 		$this->load->view('Componentes/header');
 		$this->load->view('matriculas');
-		$this->load->view('Componentes/footer_form');
+		$this->load->view('Componentes/footer');
 	}
 
     public function pago_docente()
@@ -75,7 +75,7 @@ class Controlador extends CI_Controller {
 	
 		$this->load->view('Componentes/header');
 		$this->load->view('pago_docente');
-		$this->load->view('Componentes/footer_form');
+		$this->load->view('Componentes/footer');
 	}
 
 	public function pago_estudiante()
@@ -83,7 +83,7 @@ class Controlador extends CI_Controller {
 	
 		$this->load->view('Componentes/header');
 		$this->load->view('pago_estudiante');
-		$this->load->view('Componentes/footer_form');
+		$this->load->view('Componentes/footer');
 	}
 
 	public function usuarios()
@@ -91,7 +91,7 @@ class Controlador extends CI_Controller {
 	
 		$this->load->view('Componentes/header');
 		$this->load->view('usuarios');
-		$this->load->view('Componentes/footer_form');
+		$this->load->view('Componentes/footer');
 	}
 
 }

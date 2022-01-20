@@ -61,7 +61,7 @@ public function index(){
   
     $this->load->view('Componentes/header');
     $this->load->view('menu');
-    $this->load->view('Componentes/footer_form');
+    $this->load->view('Componentes/footer');
   }
   }
 
