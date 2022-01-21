@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Courgette|Rancho&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="<?php echo base_url('assets/js/librerias/jquery.js');  ?>"></script>
-	<script type="text/javascript" src="<?php echo base_url('assets/js/librerias/bootstrap.min.js');  ?>"></script>
-	<script type="text/javascript" src="<?php echo base_url('assets/js/librerias/alertify.min.js');  ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/librerias/bootstrap.min.js');  ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/librerias/alertify.min.js');  ?>"></script>
 </head>
 
 <header>
