@@ -1,7 +1,7 @@
 <div class="container-fluid">  
 
   <center>
-    <h1 id="titulo5">Registro Pago Docentes</h1>
+    <h1 id="titulo5">Registro Nómina Docentes</h1>
   </center>  
 
   <form>
