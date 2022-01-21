@@ -1,6 +1,6 @@
-<div class="scrollbarmatricula scrollbar-primary">
+<div class="scrollbar scrollbar-primary" id="scrollbarestu">
   <div class="force-overflow"></div>
-<table class="table" style="margin: auto;">
+<table class="table" style="width: 100%; margin: auto;">
   <thead class="thead">
     <tr>
       <th scope="col">Nom Est.</th>

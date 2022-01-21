@@ -83,5 +83,5 @@
 
   <div id="tacudiente"></div>
 
-  <button type="button" onclick="limpiar()" class="btn btn-secondary btn-lg" id="New_acu" data-toggle="modal" data-target="#exampleModal" data-whatever=" @getbootstrap" style="background-color: #28d; margin-top: 200px; margin-bottom: 60px; margin-right:25px; float:right;">Agregar</button>
+  <button type="button" onclick="limpiar()" class="btn btn-secondary btn-lg" id="New_acu" data-toggle="modal" data-target="#exampleModal" data-whatever=" @getbootstrap" style="background-color: #28d; margin-top: 200px; margin-bottom: 60px; margin-right:100px; float:right;">Agregar</button>
 </div>

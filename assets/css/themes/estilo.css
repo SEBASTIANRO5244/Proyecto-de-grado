@@ -685,9 +685,9 @@ h5 {
 }
 
 .scrollbardoc {
-	margin-left: 10px;
+	margin-left: 35px;
 	height: 289px;
-	width: 100%;
+	width: 95%;
 	background: #fff;
 	overflow-y: scroll;
 	margin-bottom: -152px;
@@ -712,9 +712,9 @@ h5 {
 }
 
 .scrollbarUsu {
-	margin-left: 260px;
+	margin-left: 35px;
 	height: 289px;
-	width: 65%;
+	width: 95%;
 	background: #fff;
 	overflow-y: scroll;
 	margin-bottom: -152px;

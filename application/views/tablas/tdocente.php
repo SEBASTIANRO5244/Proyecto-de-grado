@@ -1,6 +1,6 @@
-<div class="scrollbardoc scrollbar-primary">
+<div class="scrollbardoc scrollbar-primary" id="scrollbarDoc">
   <div class="force-overflow"></div>
-<table class="table"  style="margin: auto;">
+<table class="table"  style="width: 100%; margin: auto;">
   <thead class="thead">
     <tr>
       <th scope="col">Nombres</th>
