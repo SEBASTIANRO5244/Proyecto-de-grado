@@ -38,6 +38,15 @@ public function curso ()
    
    }
 
+   public function acerca_de()
+   {
+       $data['acerca_de']= null;
+       $mpdf = new \Mpdf\Mpdf();
+       $html = $this->load->view('treportes/TRAcerca_de',$data,true);
+       $mpdf->WriteHTML($html);
+       $mpdf->Output();
+   }
+
   public function estudiante ()
    {
        $data['estudiante']=$this->Reportes->estudiante();
