@@ -1,11 +1,12 @@
 <center>
 <div class="contenedor-menu" style="margin-bottom:5%; justify-content: middle;">
 
+
+<button onclick="curso()" class="botonmenu2" type="Submit"> <b class="letter">Cursos</b> <img class="curso" src="<?php echo base_url('assets/img/cursos.png');?>"></button> 
+
 <button  onclick="estudiante()" class="botonmenu2" type="Submit"> <b class="letter">Estudiantes</b> <img class="estudiante" src="<?php echo base_url('assets/img/estudiante.png');?>"></button> 
 
 <button onclick="acudiente()" class="botonmenu2" type="Submit"> <b class="letter">Acudientes</b> <img class="acudiente" src="<?php echo base_url('assets/img/padre.png');?>"></button> 
-
-<button onclick="curso()" class="botonmenu2" type="Submit"> <b class="letter">Cursos</b> <img class="curso" src="<?php echo base_url('assets/img/cursos.png');?>"></button> 
 
 <button onclick="matricula()" class="botonmenu2" type="Submit"> <b class="letter">Matricula</b> <img class="matricula" src="<?php echo base_url('assets/img/matricula.png');?>"></button> 
 
