@@ -22,7 +22,7 @@
       <th style="text-align:center; padding:15px; background-color:#4C9ED9; color:#fff" scope="col">Apellido</th>
       <th style="text-align:center; padding:15px; background-color:#4C9ED9; color:#fff" scope="col">Periodo</th>
       <th style="text-align:center; padding:15px; background-color:#4C9ED9; color:#fff" scope="col">Mes Academico</th>
-      <th style="text-align:center; padding:15px; background-color:#4C9ED9; color:#fff" scope="col">Valor</th>
+      <th style="text-align:center; padding:15px; background-color:#4C9ED9; color:#fff" scope="col">Nómina</th>
       <th style="text-align:center; padding:15px; background-color:#4C9ED9; color:#fff" scope="col">Rectora</th>
     </tr>
   </thead>

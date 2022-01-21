@@ -42,12 +42,12 @@
               <input class="input-letter form-control rounded-pill" type="text" id="Apellidos" placeholder="Apellidos">
             </div>
             <div class="col-sm-6">
-              <label for="">Valor Pago</label>
+              <label for="">Nómina</label>
               <input class="input-number form-control rounded-pill" type="text" id="Valor" placeholder="Valor">
             </div>
             <div class="col-sm-6">
-              <label for="">Rectora</label>
-              <input class="input-letter form-control rounded-pill" type="text" id="Admin" placeholder="Rectora">
+              <label for="">Entregado por</label>
+              <input class="input-letter form-control rounded-pill" type="text" id="Admin" placeholder="Rectora/Secretaria">
             </div>
             <div class="col-sm-6">
               <label for="exampleFormControlSelect1">Periodo Academico</label>

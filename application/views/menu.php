@@ -13,7 +13,7 @@
 
 <button onclick="pago_estudiante()" class="botonmenu2" type="Submit"> <b class="letter">Pago Estudiantes</b> <img class="p_estudiante" src="<?php echo base_url('assets/img/icono.png');?>"></button> 
 
-<button onclick="pago_docente()" class="botonmenu2" type="Submit"> <b class="letter">Pago Docentes</b> <img class="p_docentes" src="<?php echo base_url('assets/img/pago.png');?>"></button>
+<button onclick="pago_docente()" class="botonmenu2" type="Submit"> <b class="letter">Nómina Docentes</b> <img class="p_docentes" src="<?php echo base_url('assets/img/pago.png');?>"></button>
 
 <button onclick="usuarios()" class="botonmenu2" type="Submit"> <b class="letter">Usuarios</b> <img class="registro_login" src="<?php echo base_url('assets/img/usuario.png');?>"></button> 
 

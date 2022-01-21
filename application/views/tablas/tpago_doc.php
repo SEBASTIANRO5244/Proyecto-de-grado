@@ -8,8 +8,8 @@
       <th scope="col">Identificación</th>
       <th scope="col">Nombre</th>
       <th scope="col">Apellido</th>
-      <th scope="col">Valor a pagar</th>
-      <th scope="col">Rectora</th>
+      <th scope="col">Nómina</th>
+      <th scope="col">Entregado por</th>
       <th scope="col">Periodo Acad</th>
       <th scope="col">Mes Acad</th>
       <th scope="col">Acción</th>

@@ -11,7 +11,7 @@
       <th scope="col">Profesión</th>
       <th scope="col">Télefono</th>
       <th scope="col">Contrato</th>
-      <th scope="col">ValorCon</th>
+      <th scope="col">Nómina</th>
       <th scope="col">Dirección</th>
       <th scope="col">Estado</th>
       <th scope="col">Acción</th>

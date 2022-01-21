@@ -77,8 +77,8 @@
               </div>
             </div>
             <div class="col-sm-6">
-              <label for="">Valor Contrato</label>
-              <input class="input-number form-control rounded-pill" type="text" id="ValorContrato" placeholder="ValorContrato">
+              <label for="">Valor nómina</label>
+              <input class="input-number form-control rounded-pill" type="text" id="ValorContrato" placeholder="Nómina">
             </div>
           </div>        
           <div class="modalf_doc">
