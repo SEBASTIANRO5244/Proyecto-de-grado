@@ -8,12 +8,22 @@ class Cusuarios extends CI_Controller {
         $this->load->model('Musuarios');
   	}
 
+    public  function buscarespecifico()
+    {
+      # code...
+        $id = $_POST['nit'];
+        $respuesta = $this->Musuarios->buscarespecifico($id);
+        echo json_encode($respuesta);
+    }
+
   	public function guardar()
   	{
   	$dato = array(
   					"nombre" => $_POST['nombres'],
   					"tipo_usuario" => $_POST['tipo'],
+            "tipo_usu" => $_POST['id_tipo_usu'],
   					"usuario" => $_POST['users'],
+            "id_colegio" => $_POST['nit'],
             "password" => $_POST['pass']
   				);
 
@@ -27,7 +37,9 @@ class Cusuarios extends CI_Controller {
       $dato = array(
             "nombre" => $_POST['nombres'],
             "tipo_usuario" => $_POST['tipo'],
+            "tipo_usu" => $_POST['id_tipo_usu'],
             "usuario" => $_POST['users'],
+            "id_colegio" => $_POST['nit'],
             "password" => $_POST['pass']
           );
 
@@ -35,9 +47,25 @@ class Cusuarios extends CI_Controller {
     }
 
       public function tusuarios () {
-   $dato['usuarios'] = $this->Musuarios->consultar("Select * from usuarios");
-    $this->load->view('tablas/tusuarios', $dato);
+        $tip_user = $this->session->all_userdata();
+	      $tip_user = $tip_user['tipo_usu'];
 
+        if($tip_user == 1){
+          $dato['usuarios'] = $this->Musuarios->consultar("
+            select * from usuarios
+          ");
+        }else{
+          $dato['usuarios'] = $this->Musuarios->consultar("
+            select colegios.nombre_colegio, usuario.id,
+            usuario.nombre, usuario.tipo_usuario, usuario.usuario,
+            usuario.password, usuario.tipo_usu, usuario.id_colegio from usuarios 
+            inner join colegios 
+            on usuarios.id_colegio = colegios.id_colegio
+            where usuarios.tipo_usu = 0
+          ");
+        }
+
+        $this->load->view('tablas/tusuarios', $dato);
  }
 
  public function eliminar()

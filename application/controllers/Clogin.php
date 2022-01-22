@@ -25,33 +25,45 @@ public function index(){
 
     $user = "";
     $pass = "";
+    $tipo_usu = "";
     $sql = "";
     $consulta = "";
 
     $user = $_POST['user'];
     $pass = $_POST['pass'];
 
-    $sql = "select usuario, password from usuarios where usuario = '" .$user. "' and password = '". $pass ."'";
+    $sql = "select usuario, password, tipo_usu from usuarios where usuario = '" .$user. "' and password = '". $pass ."'";
 
     $consulta = $this->Mlogin->ingresar($sql);
 
-    if($consulta != true){
-       echo false;
-    }else{
+    if($consulta[1] == true){
       $datasessiones = array('id' => $user,
-                             'nombre' => $pass,
-                             'login' => TRUE
-                       );
+            'nombre' => $pass,
+            'login' => TRUE,
+            'tipo_usu' => $consulta[0]->tipo_usu
+      );
       $this->session->set_userdata($datasessiones);
-      echo true;
+      echo json_encode($consulta[0]);
+    }else{
+      echo false;
     }
-
-
   }
 
   public function logout(){
         $this->session->sess_destroy();
     } 
+
+    public function admin_menu(){
+
+      if (!$this->session->userdata('login') == TRUE) {
+                redirect('Controlador');
+              }else{
+      
+        $this->load->view('Componentes/header');
+        $this->load->view('admin_menu');
+        $this->load->view('Componentes/footer');
+      }
+      }
 
  public function menu(){
 

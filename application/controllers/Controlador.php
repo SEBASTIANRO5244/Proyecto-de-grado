@@ -30,6 +30,21 @@ class Controlador extends CI_Controller {
 		
 	}
 
+	public function admin_menu()
+	{
+	
+	 if (!$this->session->userdata('login') == TRUE) {
+            redirect('Controlador');
+        }else{
+        
+        $this->load->view('Componentes/header');
+		$this->load->view('admin_menu');
+		$this->load->view('Componentes/footer');
+        }
+
+		
+	}
+
 	 public function estudiante()
 	{
 	

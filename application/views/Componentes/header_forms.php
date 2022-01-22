@@ -28,6 +28,12 @@
 </header>
 
 <body class="d-flex flex-column">
+<?php 
+	$tip_user = $this->session->all_userdata();
+	$tip_user = $tip_user['tipo_usu']
+?>
+
+<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?php echo $tip_user; ?>">
 
 
 	

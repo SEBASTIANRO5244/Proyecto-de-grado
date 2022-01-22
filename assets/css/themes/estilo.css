@@ -781,3 +781,7 @@ h5 {
 .Membrete {
 	margin-top: 50%;
 }
+
+#hidden_div {
+    display: block;
+}

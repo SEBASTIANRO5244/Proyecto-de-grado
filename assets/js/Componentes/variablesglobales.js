@@ -14,6 +14,7 @@ var clogin="";
 url = "http://localhost/Proyecto-de-grado/index.php/";
 cmain = "Controlador/";
 cmenu = "Cmenu/";
+cadmin = "Cadmin/";
 cestudiantes = "Cestudiante/";
 cacudiente = "Cacudiente/";
 ccurso = "Ccurso/";

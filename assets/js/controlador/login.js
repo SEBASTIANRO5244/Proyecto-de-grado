@@ -28,14 +28,19 @@ function ingresar() {
               alertify.error("La Ruta de la pagina no es la correcta" );
             }
           }
-    }).done(function( data ) { 
-
-         if(data!= false){
-            location.href= url + clogin + "menu";           
-            //alertify.success("Dato Encontrado");
+    }).done(function(data){
+        
+        if(data == false){
+            alertify.error("Error al buscar");   
         }else{
-            alertify.error("Error al buscar");
-        }            
+            var obj = JSON.parse(data);
+            if(obj.tipo_usu == 0){
+                location.href= url + clogin + "menu"; 
+            }else{
+                location.href= url + clogin + "admin_menu";
+            }
+        }
+        
     }).fail(function() {
         alertify.error( "Error" );
     });

@@ -22,6 +22,18 @@ class Musuarios extends CI_Model {
      }
    }
 
+   public function buscarespecifico($id){
+    $query = $this->db->query("select *
+      from colegios
+      where id_colegio =".$id);
+    
+    if($query->num_rows()>0){
+      return $query->row();
+    }else{
+      return false;
+    }
+  }
+
 
     public function eliminar($id){
       $query = $this->db->where($id);

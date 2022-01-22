@@ -29,11 +29,30 @@
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Tipo Usuario</label>
-                <select class="form-control rounded-pill" id="Tipo_Usuario">
+                <select class="form-control rounded-pill" id="Tipo_Usuario" name="form_select" onchange="showDiv('hidden_div', this)">
                   <option>Seleccione</option>
                   <option>Secretario</option>
                   <option>Rector</option>
+                  <?php 
+                    $tip_user = $this->session->all_userdata();
+                    $tip_user = $tip_user['tipo_usu']
+                  ?>
+                  <?php if($tip_user == 1){ ?>
+                    <option>Admin</option>
+                  <?php } ?>
                 </select>
+              </div>
+            </div>
+            <div id="hidden_div">
+              <div class="col">
+                <label for="">Numero NIT colegio</label>
+                <input class="input-number form-control rounded-pill" type="text" id="Numero_NIT" placeholder="Número de NIT" style="width: 290px;">
+                <button class="botonbuscar" onclick="buscarespecifico()" type="Submit"><img class="buscar" src="<?php echo base_url('assets/img/buscar1.png');?>"></button> 
+                
+              </div>
+              <div class="col">
+                <label for="">Colegio</label>
+                <input class="input-letter form-control rounded-pill" type="text" id="Colegio" placeholder="Nombre Colegio">
               </div>
             </div>
             <div class="col-sm-6">
@@ -48,7 +67,8 @@
               <button type="button" id="Cerrar" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
               <button onclick="guardar()" id="Guardar" type="button" data-dismiss="modal" class="btn btn-primary">Registrar</button>
               <button type="button" onclick="eliminarmodalusuarios()" class="btn btn-primary" data-dismiss="modal" id="Eliminar_usu">Eliminar</button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="actualizarmodalusu()" id="Actualizar_usu">Actualizar</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="actualizarmodalusu()" 
+              id="Actualizar_usu">Actualizar</button>
               <script type="text/javascript" src="<?php echo base_url('assets/js/controlador/usuarios.js'); ?>"></script>
             </div>
           </div>
@@ -58,8 +78,26 @@
   </div>
 
   <div id="tusuarios"></div>
-  <button type="button" class="btn btn-secondary btn-lg" id="New_usuario" data-toggle="modal" data-target="#exampleModal" 
+  <button type="button" class="btn btn-secondary btn-lg" id="New_usuario" onclick="style_div('hidden_div', document.getElementById('Tipo_Usuario'))"
+    data-toggle="modal" data-target="#exampleModal" 
     data-whatever=" @getbootstrap" style="background-color: #28d; margin-top: 200px; margin-bottom: 60px; 
     margin-right:100px; float:right;">Agregar
   </button>
 </div>
+
+<script>
+    function showDiv(divId, element)
+  {
+      document.getElementById(divId).style.display = element.value == "Admin" ? 'none' : 'block';
+  }
+
+  function style_div(divId, element)
+  {
+    var value = document.getElementById('Tipo_Usuario');
+    if(element.value == "Admin"){
+      document.getElementById(divId).style.display = 'none';
+    }else{
+      document.getElementById(divId).style.display = 'block';
+    }
+  }
+</script>
