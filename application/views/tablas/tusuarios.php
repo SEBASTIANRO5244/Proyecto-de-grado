@@ -39,7 +39,7 @@
                          </td>
                       
                           <td>
-      <button type="button" class="btn btn-success" data-toggle='modal' data-target='#exampleModal' id="Actualizar_usu1" data-whatever=" @geetbootstrap" onclick="cargarmodalusu('<?php echo $data->id;?>','<?php echo $data->nombre;?>','<?php echo $data->tipo_usuario;?>','<?php echo $data->usuario;?>','<?php echo $data->password;?>')"><img src="<?php echo base_url('assets/img/actualizar.png');?>"><br><b class="letter"></button>
+      <button type="button" class="btn btn-success" data-toggle='modal' data-target='#exampleModal' id="Actualizar_usu1" data-whatever=" @geetbootstrap" onclick="cargarmodalusu('<?php echo $data->id;?>','<?php echo $data->nombre;?>','<?php echo $data->tipo_usuario;?>','<?php echo $data->usuario;?>','<?php echo $data->password;?>'); style_div('hidden_div', document.getElementById('Tipo_Usuario'));"><img src="<?php echo base_url('assets/img/actualizar.png');?>"><br><b class="letter"></button>
       <button type="button" class="btn btn-danger" data-toggle='modal' id="Eliminar_usu1" data-target='#exampleModal' data-whatever=" @geetbootstrap"  onclick="cargarmodalusu('<?php echo $data->id;?>','<?php echo $data->nombre;?>','<?php echo $data->tipo_usuario;?>','<?php echo $data->usuario;?>','<?php echo $data->password;?>')"><img src="<?php echo base_url('assets/img/eliminar.png');?>"><br><b class="letter"></button>
        </td>
                        </tr>

@@ -14,11 +14,14 @@ class Mlogin extends CI_Model {
     */
   	public function ingresar($sql){
       $query = $this->db->query($sql);
+      $response = array($query->row(), true);
       
       if($query->num_rows()>0){
-        return true;
+        $response[1] = true;
+        return $response;
       }else{
-        return false;
+        $response[1] = false;
+        return $response;
       }
           
     }
