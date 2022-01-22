@@ -1,6 +1,6 @@
  $(document).on("click", "#New_usuario", function () {
   $(".modal-title").html("Nuevo");
-
+  limpiar();
   $("#Guardar").show();
   $("#Cerrar").show();
   $("#Actualizar_usu").hide();
@@ -28,7 +28,7 @@
   //$("#exampleModal").modal();
 });
 
-function buscarespecifico() {
+function buscarespecifico(valor) {
   // body...
   var acum = 0;
   var nit = 0;  
@@ -63,12 +63,14 @@ if(acum<1){
       obj = JSON.parse(respuesta);
       if (obj.respuesta[0]!=false) {
           $("#Colegio").val(obj.respuesta[0].nombre_colegio);
-          Swal.fire({
-         icon: 'success',
-          title: 'Colegio encontrado con exito!!',
-          showConfirmButton: false,
-          timer: 900
-        })
+          if(valor != 1){
+            Swal.fire({
+              icon: 'success',
+               title: 'Colegio encontrado con exito!!',
+               showConfirmButton: false,
+               timer: 900
+             })
+          }
       }else{
         Swal.fire(
            'Error, colegio no registrado',
@@ -188,6 +190,8 @@ function limpiar(){
     $("#Tipo_Usuario").val("");
     $("#Nom_Usuario").val("");
     $("#Contraseña").val(""); 
+    $("#Numero_NIT").val(""); 
+    $("#Colegio").val(""); 
 }
 
 function tusuarios(){
@@ -323,15 +327,13 @@ function actualizar() {
 
 }
 
-function cargarmodalusu(id, nombre, tipo_usuario, usuario, password, id_colegio, nombre_colegio){
- 
+function cargarmodalusu(id, nombre, tipo_usuario, usuario, password, id_colegio){
  $("#Id").val(id);
  $("#Nombres").val(nombre);
  $("#Tipo_Usuario").val(tipo_usuario);
  $("#Nom_Usuario").val(usuario);
  $("#Contraseña").val(password); 
  $("#Numero_NIT").val(id_colegio); 
- $("#Colegio").val(nombre_colegio); 
 }
 
 function actualizarmodalusu(){
