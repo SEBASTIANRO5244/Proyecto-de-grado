@@ -23,6 +23,9 @@ class Reportes extends CI_Model {
 
  		public function  pension ($fecha, $id)
  	{	
+		$current_user = $this->session->all_userdata();
+		$tip_user = $current_user['tipo_usu'];
+		$id_colegio = $current_user['id_colegio'];
 		$this->db->select(' matricula.id, pension.id, pension.fecha, matricula.estado,
 		matricula.nombre_estudiante, matricula.apellido_estudiante, matricula.nombre_acudiente, 
 		matricula.apellido_acudiente, pension.periodo_academico, pension.mes_academico, 
@@ -31,6 +34,7 @@ class Reportes extends CI_Model {
 		$this->db->from('pension');
 		$this->db->join('matricula', 'pension.fk_id_matricula = matricula.id');
 		$this->db->where('pension.id', $id);
+		$this->db->where('id_colegio', $id_colegio);
 		$query = $this->db->get();
 	 	return $query->result();
  	}

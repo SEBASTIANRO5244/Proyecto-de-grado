@@ -90,7 +90,7 @@
                           <td>
       
 
-      <button type="button" class="btn btn-success" data-toggle='modal' data-target='#exampleModal' id="Actualizar_pension1" data-whatever=" @geetbootstrap" onclick="cargarmodalPEst('<?php echo $data->id;?>','<?php echo $data->pension_id;?>','<?php echo $data->fecha;?>','<?php echo $data->valor;?>','<?php echo $data->nombre_estudiante;?>','<?php echo $data->apellido_estudiante;?>','<?php echo $data->nombre_acudiente;?>','<?php echo $data->apellido_acudiente;?>','<?php echo $data->nombre_admin;?>','<?php echo $data->fk_id_estudiante;?>','<?php echo $data->mes_academico;?>','<?php echo $data->periodo_academico;?>','<?php echo $data->fk_numero_documento_acudiente;?>')"><img src="<?php echo base_url('assets/img/actualizar.png');?>"><br><b class="letter"></button>
+      <button type="button" class="btn btn-success" data-toggle='modal' data-target='#exampleModal' id="Actualizar_pension1" data-whatever=" @geetbootstrap" onclick="cargarmodalPEst('<?php echo $data->id;?>','<?php echo $data->fecha;?>','<?php echo $data->valor;?>','<?php echo $data->nombre_estudiante;?>','<?php echo $data->apellido_estudiante;?>','<?php echo $data->nombre_acudiente;?>','<?php echo $data->apellido_acudiente;?>','<?php echo $data->nombre_admin;?>','<?php echo $data->fk_id_estudiante;?>','<?php echo $data->mes_academico;?>','<?php echo $data->periodo_academico;?>','<?php echo $data->fk_numero_documento_acudiente;?>','<?php echo $data->pension_id;?>')"><img src="<?php echo base_url('assets/img/actualizar.png');?>"><br><b class="letter"></button>
 
         <a href="" class="btn btn-warning reportePago"><img src="<?php echo base_url('assets/img/reporte.png');?>"></a>
        </td>

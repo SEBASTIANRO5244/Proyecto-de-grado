@@ -386,9 +386,9 @@ function actualizar() {
 }
 
 function cargarmodalPEst(id, fecha, valor, nombre_estudiante, apellido_estudiante, nombre_acudiente, 
-  apellido_acudiente, nombre_admin, fk_id_estudiante, mes_academico, periodo_academico, fk_numero_documento_acudiente){
+  apellido_acudiente, nombre_admin, fk_id_estudiante, mes_academico, periodo_academico, fk_numero_documento_acudiente, pension_id){
  
-    $("#Id").val(id);
+    $("#Id_matricula").val(id);
     $("#Fecha").val(fecha); 
     $("#Valor").val(valor);
     $("#Nombres").val(nombre_estudiante);
@@ -400,6 +400,7 @@ function cargarmodalPEst(id, fecha, valor, nombre_estudiante, apellido_estudiant
     $("#Mes_academico").val(mes_academico);
     $("#Identificacion").val(fk_id_estudiante);
     $("#Identificacion_acu").val(fk_numero_documento_acudiente);
+    $("#Id").val(pension_id);
     
 }
 
