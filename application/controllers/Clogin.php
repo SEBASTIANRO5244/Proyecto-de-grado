@@ -55,7 +55,7 @@ public function index(){
 
     public function admin_menu(){
 
-      if (!$this->session->userdata('login') == TRUE) {
+      if ((!$this->session->userdata('login') == TRUE) || ($this->session->userdata('tipo_usu') == 0) ) {
                 redirect('Controlador');
               }else{
       

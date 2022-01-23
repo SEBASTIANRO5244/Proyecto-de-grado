@@ -32,81 +32,104 @@ class Controlador extends CI_Controller {
 
 	public function admin_menu()
 	{
-	
-	 if (!$this->session->userdata('login') == TRUE) {
+	 if ((!$this->session->userdata('login') == TRUE) || ($this->session->userdata('tipo_usu') == 0) ) {
             redirect('Controlador');
         }else{
         
         $this->load->view('Componentes/header');
 		$this->load->view('admin_menu');
 		$this->load->view('Componentes/footer');
-        }
-
-		
+        }		
 	}
 
 	 public function estudiante()
 	{
+		if (!$this->session->userdata('login') == TRUE) {
+            redirect('Controlador');
+        }else{
 	
-		$this->load->view('Componentes/header_forms');
-		$this->load->view('estudiante');
-		$this->load->view('Componentes/footer');
+			$this->load->view('Componentes/header_forms');
+			$this->load->view('estudiante');
+			$this->load->view('Componentes/footer');
+		}
 	}
 
 	 public function acudiente()
 	{
+		if (!$this->session->userdata('login') == TRUE) {
+            redirect('Controlador');
+        }else{
 	
-		$this->load->view('Componentes/header_forms');
-		$this->load->view('acudientes');
-		$this->load->view('Componentes/footer');
+			$this->load->view('Componentes/header_forms');
+			$this->load->view('acudientes');
+			$this->load->view('Componentes/footer');
+		}
 	}
 
     public function curso()
 	{
-	
-		$this->load->view('Componentes/header_forms');
-		$this->load->view('cursos');
-		$this->load->view('Componentes/footer');
+		if (!$this->session->userdata('login') == TRUE) {
+            redirect('Controlador');
+        }else{
+			$this->load->view('Componentes/header_forms');
+			$this->load->view('cursos');
+			$this->load->view('Componentes/footer');
+		}
 	}
 
 	public function docente()
 	{
-	
-		$this->load->view('Componentes/header_forms');
-		$this->load->view('docentes');
-		$this->load->view('Componentes/footer');
+		if (!$this->session->userdata('login') == TRUE) {
+            redirect('Controlador');
+        }else{
+			$this->load->view('Componentes/header_forms');
+			$this->load->view('docentes');
+			$this->load->view('Componentes/footer');
+		}
 	}
 
 	public function matricula()
 	{
-	
-		$this->load->view('Componentes/header_forms');
-		$this->load->view('matriculas');
-		$this->load->view('Componentes/footer');
+		if (!$this->session->userdata('login') == TRUE) {
+            redirect('Controlador');
+        }else{
+			$this->load->view('Componentes/header_forms');
+			$this->load->view('matriculas');
+			$this->load->view('Componentes/footer');
+		}
 	}
 
     public function pago_docente()
 	{
-	
-		$this->load->view('Componentes/header_forms');
-		$this->load->view('pago_docente');
-		$this->load->view('Componentes/footer');
+		if (!$this->session->userdata('login') == TRUE) {
+            redirect('Controlador');
+        }else{
+			$this->load->view('Componentes/header_forms');
+			$this->load->view('pago_docente');
+			$this->load->view('Componentes/footer');
+		}
 	}
 
 	public function pago_estudiante()
 	{
-	
-		$this->load->view('Componentes/header_forms');
-		$this->load->view('pago_estudiante');
-		$this->load->view('Componentes/footer');
+		if (!$this->session->userdata('login') == TRUE) {
+            redirect('Controlador');
+        }else{
+			$this->load->view('Componentes/header_forms');
+			$this->load->view('pago_estudiante');
+			$this->load->view('Componentes/footer');
+		}
 	}
 
 	public function usuarios()
 	{
-	
-		$this->load->view('Componentes/header_forms');
-		$this->load->view('usuarios');
-		$this->load->view('Componentes/footer');
+		if (!$this->session->userdata('login') == TRUE) {
+            redirect('Controlador');
+        }else{
+			$this->load->view('Componentes/header_forms');
+			$this->load->view('usuarios');
+			$this->load->view('Componentes/footer');
+		}
 	}
 
 }

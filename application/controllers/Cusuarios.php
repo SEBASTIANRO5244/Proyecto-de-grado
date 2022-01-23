@@ -56,9 +56,9 @@ class Cusuarios extends CI_Controller {
           ");
         }else{
           $dato['usuarios'] = $this->Musuarios->consultar("
-            select colegios.nombre_colegio, usuario.id,
-            usuario.nombre, usuario.tipo_usuario, usuario.usuario,
-            usuario.password, usuario.tipo_usu, usuario.id_colegio from usuarios 
+            select colegios.nombre_colegio, usuarios.id,
+            usuarios.nombre, usuarios.tipo_usuario, usuarios.usuario,
+            usuarios.password, usuarios.tipo_usu, usuarios.id_colegio from usuarios 
             inner join colegios 
             on usuarios.id_colegio = colegios.id_colegio
             where usuarios.tipo_usu = 0
