@@ -4,7 +4,7 @@
 
   <thead class="thead">
     <tr>
-      <th scope="col">Id</th>
+      <th scope="col" style="display:none">Id</th>
       <th scope="col">Nombre</th>
       <th scope="col">Acción</th>
     </tr>
@@ -17,7 +17,7 @@
                        foreach ($curso->result() as $data ) {      
                    ?>
                        <tr>
-                         <th scope="row">
+                         <th scope="row" style="display:none">
                            <?php
                              echo $data->id;
                            ?>

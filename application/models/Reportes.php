@@ -52,17 +52,38 @@ class Reportes extends CI_Model {
  	}
 
  		public function  estudiante ()
+
  	{
-    $sql = ("Select * from estudiante");
- 	$query = $this->db->query($sql);
- 	return $query->result();
+
+ 		$current_user = $this->session->all_userdata();
+		$tip_user = $current_user['tipo_usu'];
+		$id_colegio = $current_user['id_colegio'];
+
+
+		$this->db->select('*');
+		$this->db->from('estudiante');
+		$this->db->where('id_colegio', $id_colegio);
+
+        
+ 	    $query = $this->db->get();
+ 	    return $query->result();
  	}
 
  	 	public function  matricula ()
  	{
-    $sql = ("Select * from matricula where estado='Matriculado'");
- 	$query = $this->db->query($sql);
- 	return $query->result();
+
+ 		$current_user = $this->session->all_userdata();
+		$tip_user = $current_user['tipo_usu'];
+		$id_colegio = $current_user['id_colegio'];
+
+        $this->db->select('*');
+		$this->db->from('matricula');
+		$this->db->where('estado="Matriculado"');
+		$this->db->where('id_colegio', $id_colegio);
+
+        
+ 	    $query = $this->db->get();
+ 	    return $query->result();
  	}
 
 }
