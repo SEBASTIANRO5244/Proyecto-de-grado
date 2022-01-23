@@ -11,7 +11,8 @@ class Ccurso extends CI_Controller {
   	public function guardar()
   	{
   	$dato = array(
-  					"nombre" => $_POST['nombres']
+  					"nombre" => $_POST['nombres'],
+            "id_colegio" => $_POST['id_col']
   				);
 
   		echo $this->Mcurso->guardar($dato);
@@ -26,7 +27,11 @@ class Ccurso extends CI_Controller {
     }
 
    public function tcurso () {
-   $dato['curso'] = $this->Mcurso->consultar("Select * from curso");
+    $current_user = $this->session->all_userdata();
+    $tip_user = $current_user['tipo_usu'];
+    $id_colegio = $current_user['id_colegio'];
+
+    $dato['curso'] = $this->Mcurso->consultar("Select * from curso where id_colegio =".$id_colegio);
     $this->load->view('tablas/tcurso', $dato);
   }
 }

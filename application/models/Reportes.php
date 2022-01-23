@@ -9,8 +9,16 @@ class Reportes extends CI_Model {
 
   	public function  curso ()
  	{
- 	$query = $this->db->get('curso');
- 	return $query->result();
+		$current_user = $this->session->all_userdata();
+		$tip_user = $current_user['tipo_usu'];
+		$id_colegio = $current_user['id_colegio'];
+		
+		$this->db->select('*');
+		$this->db->from('curso');
+		$this->db->where('id_colegio', $id_colegio);
+
+ 		$query = $this->db->get();
+ 		return $query->result();
  	}
 
  		public function  pension ($fecha, $id)

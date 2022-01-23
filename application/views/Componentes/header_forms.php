@@ -29,11 +29,13 @@
 
 <body class="d-flex flex-column">
 <?php 
-	$tip_user = $this->session->all_userdata();
-	$tip_user = $tip_user['tipo_usu']
+	$current_user = $this->session->all_userdata();
+	$tip_user = $current_user['tipo_usu'];
+	$id_colegio = $current_user['id_colegio'];
 ?>
 
-<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?php echo $tip_user; ?>">
+<input type="text" readonly class="form-control-plaintext" id="Tip_current_user" value="<?php echo $tip_user; ?>">
+<input type="text" readonly class="form-control-plaintext" id="Id_col" value="<?php echo $id_colegio; ?>">
 
 
 	

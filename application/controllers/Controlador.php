@@ -136,10 +136,14 @@ class Controlador extends CI_Controller {
 
 	public function colegios()
 	{
+		if ((!$this->session->userdata('login') == TRUE) || ($this->session->userdata('tipo_usu') == 0) ) {
+            redirect('Controlador');
+        }else{
 	
-		$this->load->view('Componentes/header_forms');
-		$this->load->view('colegios');
-		$this->load->view('Componentes/footer');
+			$this->load->view('Componentes/header_forms');
+			$this->load->view('colegios');
+			$this->load->view('Componentes/footer');
+		}
 	}
 
 

@@ -48,7 +48,9 @@ class Cusuarios extends CI_Controller {
 
       public function tusuarios () {
         $tip_user = $this->session->all_userdata();
+        $id_col = $tip_user['id_colegio'];
 	      $tip_user = $tip_user['tipo_usu'];
+        
 
         if($tip_user == 1){
           $dato['usuarios'] = $this->Musuarios->consultar("
@@ -61,8 +63,7 @@ class Cusuarios extends CI_Controller {
             usuarios.password, usuarios.tipo_usu, usuarios.id_colegio from usuarios 
             inner join colegios 
             on usuarios.id_colegio = colegios.id_colegio
-            where usuarios.tipo_usu = 0
-          ");
+            where usuarios.tipo_usu = 0 and usuarios.id_colegio = ".$id_col);
         }
 
         $this->load->view('tablas/tusuarios', $dato);

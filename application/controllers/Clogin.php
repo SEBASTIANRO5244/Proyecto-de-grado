@@ -32,15 +32,18 @@ public function index(){
     $user = $_POST['user'];
     $pass = $_POST['pass'];
 
-    $sql = "select usuario, password, tipo_usu from usuarios where usuario = '" .$user. "' and password = '". $pass ."'";
+    $sql = "select usuario, password, tipo_usu, id_colegio from usuarios where usuario = '" .$user. "' and password = '". $pass ."'";
 
     $consulta = $this->Mlogin->ingresar($sql);
+
+    
 
     if($consulta[1] == true){
       $datasessiones = array('id' => $user,
             'nombre' => $pass,
             'login' => TRUE,
-            'tipo_usu' => $consulta[0]->tipo_usu
+            'tipo_usu' => $consulta[0]->tipo_usu,
+            'id_colegio' => $consulta[0]->id_colegio
       );
       $this->session->set_userdata($datasessiones);
       echo json_encode($consulta[0]);

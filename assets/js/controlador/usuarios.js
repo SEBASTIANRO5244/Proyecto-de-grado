@@ -109,6 +109,10 @@ function guardar() {
   pass = document.getElementById("Contraseña").value;
   nombre_colegio = document.getElementById("Colegio").value;
   nit = document.getElementById("Numero_NIT").value;
+
+  if(id_tipo_usu = 0){
+    nit = document.getElementById("Id_col").value;
+  }
   
   if(!nombres||!tipo||!users||!pass||!nit||!nombre_colegio){
     

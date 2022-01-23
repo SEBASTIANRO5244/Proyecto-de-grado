@@ -1,3 +1,8 @@
+<?php 
+	$current_user = $this->session->all_userdata();
+	$tip_user = $current_user['tipo_usu'];
+	$id_colegio = $current_user['id_colegio'];
+?>
 <div class="container-fluid">  
 
   <center>
@@ -43,18 +48,27 @@
                 </select>
               </div>
             </div>
-            <div id="hidden_div">
-              <div class="col">
-                <label for="">Numero NIT colegio</label>
-                <input class="input-number form-control rounded-pill" type="text" id="Numero_NIT" placeholder="Número de NIT" style="width: 290px;">
-                <button class="botonbuscar" onclick="buscarespecifico()" type="Submit"><img class="buscar" src="<?php echo base_url('assets/img/buscar1.png');?>"></button> 
-                
+            <?php 
+              if(!$tip_user == 0){
+            ?>
+              <div id="hidden_div">
+                <div class="col">
+                  <label for="">Numero DANE colegio</label>
+                  <input class="input-number form-control rounded-pill" type="text" id="Numero_NIT" placeholder="Número de NIT" style="width: 290px;">
+                  <button class="botonbuscar" onclick="buscarespecifico()" type="Submit"><img class="buscar" src="<?php echo base_url('assets/img/buscar1.png');?>"></button> 
+                </div>
+                <div class="col">
+                  <label for="">Colegio</label>
+                  <input class="input-letter form-control rounded-pill" type="text" id="Colegio" placeholder="Nombre Colegio">
+                </div>
               </div>
-              <div class="col">
-                <label for="">Colegio</label>
-                <input class="input-letter form-control rounded-pill" type="text" id="Colegio" placeholder="Nombre Colegio">
-              </div>
-            </div>
+            <?php 
+              }
+              
+            ?>
+          
+           
+              
             <div class="col-sm-6">
               <label for="">Usuario</label>
               <input class="form-control rounded-pill" type="text" id="Nom_Usuario" placeholder="Usuario">

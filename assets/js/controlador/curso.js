@@ -21,9 +21,11 @@ function guardar() {
 	// body...
     var acum = 0;
 	  var nombres = "";
+    var id_col = "";
     var ruta = "";
 
     nombres = document.getElementById("Nombres").value;
+    id_col = document.getElementById("Id_col").value;
 
      if(!nombres){
      acum++;
@@ -36,7 +38,8 @@ function guardar() {
 	$.ajax({
         'url'  : ruta,
         'data' : {
-        			'nombres': nombres
+        			'nombres': nombres,
+              'id_col' : id_col
         },
         'type' : 'POST',
         'statusCode': {
