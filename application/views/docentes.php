@@ -21,6 +21,7 @@
           <h1><center><label style="text-shadow: 2px 2px 4px #444">Docentes</label></center></h1>
           <div class="row">
             <input class="form-control rounded-pill" id="Id_doc" type="hidden" placeholder="Id_Docente">
+            <input class="form-control rounded-pill" id="Id_pago_doc" type="hidden" placeholder="Id_pago_doc">
             <div class="col-sm-6">
               <label for="">Nombres</label>
               <input class="input-letter form-control rounded-pill" id="Nombres" type="text" placeholder="Nombres">

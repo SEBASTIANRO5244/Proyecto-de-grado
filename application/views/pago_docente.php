@@ -24,6 +24,7 @@
           <h1><center><label style="text-shadow: 2px 2px 4px #444">Pago Docentes</label></center></h1>
           <div class="row">
             <input class="form-control rounded-pill" type="hidden" id="Id" placeholder="Id">
+            <input class="form-control rounded-pill" type="hidden" id="Id_documen" placeholder="Id_documen">
             <div class="col-sm-6">
               <label for="">Fecha</label>
               <input class="form-control rounded-pill" type="date" id="Fecha" placeholder="Fecha">

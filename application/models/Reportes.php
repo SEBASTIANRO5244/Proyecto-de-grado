@@ -37,11 +37,16 @@ class Reportes extends CI_Model {
 
  	 	public function  pago_Docente ($fecha, $id)
  	{	
+		$tip_user = $this->session->all_userdata();
+		$id_col = $tip_user['id_colegio'];
+		$tip_user = $tip_user['tipo_usu'];
+
 		$this->db->select('*');
 		$this->db->from('pago_docente');
 		$this->db->join('docente', 'pago_docente.numDoc_docente = docente.numero_documento');
 		$this->db->where('fecha', $fecha);
 	    $this->db->where('pago_docente.id', $id);
+		$this->db->where('pago_docente.id_colegio', $id_col);
 		$query = $this->db->get();
 	 	return $query->result();
  	}

@@ -24,6 +24,7 @@ class Cpago_docente extends CI_Controller {
             "valor" => $_POST['valor'],
             "nombre_rectora" => $_POST['rectora'],
             "periodo_academico" => $_POST['periodo_academico'],
+            "id_colegio" => $_POST['id_col'],
             "mes_academico" => $_POST['mes_academico']
           );
 
@@ -31,14 +32,19 @@ class Cpago_docente extends CI_Controller {
     }
 
       public function tpago_doc () {
-   $dato['pago_docente'] = $this->Mpago_docente->consultar("select pago_docente.fecha, 
-   pago_docente.numDoc_docente, pago_docente.valor, pago_docente.nombre_rectora, 
-   pago_docente.periodo_academico, pago_docente.mes_academico, docente.nombre, 
-   docente.apellido, pago_docente.id
-   from pago_docente 
-   inner join docente 
-   on pago_docente.numDoc_docente = docente.numero_documento");
-    $this->load->view('tablas/tpago_doc', $dato);
+
+      $tip_user = $this->session->all_userdata();
+      $id_col = $tip_user['id_colegio'];
+      $tip_user = $tip_user['tipo_usu'];
+
+      $dato['pago_docente'] = $this->Mpago_docente->consultar("select pago_docente.fecha, 
+      pago_docente.numDoc_docente, pago_docente.valor, pago_docente.nombre_rectora, 
+      pago_docente.periodo_academico, pago_docente.mes_academico, docente.nombre, 
+      docente.apellido, pago_docente.id, pago_docente.id_colegio
+      from pago_docente 
+      inner join docente 
+      on pago_docente.numDoc_docente = docente.numero_documento where  pago_docente.id_colegio=".$id_col);
+        $this->load->view('tablas/tpago_doc', $dato);
 
  }
 
@@ -58,14 +64,15 @@ class Cpago_docente extends CI_Controller {
       echo $this->Mpago_docente->actualizar($id,$dato);
     }
 
-     public function actualizarDoc(){
-  $nombre = $_POST['nombres'];
-  $apellidos = $_POST['apellidos'];
-  $identificacion = $_POST['identificacion'];
+  public function actualizarDoc(){
+    $nombre = $_POST['nombres'];
+    $apellidos = $_POST['apellidos'];
+    $identificacion = $_POST['identificacion'];
+    $id_documen = $_POST['id_documen'];
 
 
 
-  echo $this->Mpago_docente->actualizarDoc($nombre, $apellidos, $identificacion);
+    echo $this->Mpago_docente->actualizarDoc($nombre, $apellidos, $identificacion, $id_documen);
  }
 
 }

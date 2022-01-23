@@ -20,6 +20,7 @@ class Cdocentes extends CI_Controller {
             "telefono" => $_POST['telefono'],
             "contrato" => $_POST['contrato'],
             "valorContrato" => $_POST['valor'],
+            "id_colegio" => $_POST['id_col'],
             "direccion" => $_POST['direccion'],
             "estado" => $_POST['estado']
   				);
@@ -66,16 +67,18 @@ class Cdocentes extends CI_Controller {
 
 
      public function tdocente () {
-   $dato['docente'] = $this->Mdocentes->consultar("Select * from docente where estado='Activo'");
-    $this->load->view('tablas/tdocente', $dato);
+      $tip_user = $this->session->all_userdata();
+      $id_col = $tip_user['id_colegio'];
+      $tip_user = $tip_user['tipo_usu'];
+      $dato['docente'] = $this->Mdocentes->consultar("Select * from docente where estado='Activo' and id_colegio =".$id_col);
+      $this->load->view('tablas/tdocente', $dato);
   }
 
    public function actualizarPago(){
-  $nombre = $_POST['nombres'];
-  $apellidos = $_POST['apellidos'];
   $identificacion = $_POST['identificacion'];
+  $id_pago_doc = $_POST['id_pago_doc'];
 
 
-  echo $this->Mdocentes->actualizarPago($nombre, $apellidos, $identificacion);
+  echo $this->Mdocentes->actualizarPago($identificacion, $id_pago_doc);
  }
 }

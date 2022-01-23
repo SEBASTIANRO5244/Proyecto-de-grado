@@ -13,7 +13,10 @@ class Mdocentes extends CI_Model {
   	}
 
     public function val_id_doc($id){
-      $query = $this->db->query("select * from docente where numero_documento = ".$id);
+      $tip_user = $this->session->all_userdata();
+      $id_col = $tip_user['id_colegio'];
+      $tip_user = $tip_user['tipo_usu'];
+      $query = $this->db->query("select * from docente where numero_documento = $id and id_colegio = $id_col");
       
       if($query->num_rows()>0){
         return $query->row();
@@ -44,8 +47,8 @@ class Mdocentes extends CI_Model {
       $query = $this->db->query("update docente set estado='".$estado."'  where id=".$id);
     }
 
-    public function actualizarPago($nombre, $apellidos, $identificacion){
-      $query = $this->db->query("update pago_docente set nombre_docente='".$nombre."',apellido_docente='".$apellidos."',numDoc_docente='".$identificacion."' where numDoc_docente =".$identificacion);
+    public function actualizarPago($identificacion, $id_pago_doc){
+      $query = $this->db->query("update pago_docente set numDoc_docente='".$identificacion."' where numDoc_docente =".$id_pago_doc);
       return $query;
     }
 

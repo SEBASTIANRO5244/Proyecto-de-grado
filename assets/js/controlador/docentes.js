@@ -1,6 +1,6 @@
- $(document).on("click", "#New_doc", function () {
+$(document).on("click", "#New_doc", function () {
   $(".modal-title").html("Nuevo");
-
+  limpiar();
   $("#Guardar").show();
   $("#Cerrar").show();
   $("#Actualizar_doc").hide();
@@ -85,6 +85,7 @@ function guardar() {
     var genero ="";
     var identificacion = 0;
     var tipo_identificacion="";
+    var id_col = "";
     var direccion = "";
     var Profesion="";
     var telefono="";
@@ -103,6 +104,7 @@ function guardar() {
     contrato = document.getElementById("Contrato").value;
     valor = document.getElementById("ValorContrato").value;
     direccion = document.getElementById("Direccion").value;
+    id_col = document.getElementById("Id_col").value;
     Profesion = document.getElementById("Profesion").value;
 
 if(!nombres||!apellidos||!genero||!identificacion||!tipo_identificacion||!telefono||!contrato||!valor||!direccion||!Profesion){
@@ -125,6 +127,7 @@ if(!nombres||!apellidos||!genero||!identificacion||!tipo_identificacion||!telefo
                     'tipo_identificacion': tipo_identificacion,
                     'direccion': direccion,
                     'Profesion': Profesion,
+                    'id_col' : id_col,
                     'telefono': telefono,
                     'contrato' : contrato,
                     'valor' : valor,
@@ -338,6 +341,7 @@ function cargarmodaldoc(id, nombre, apellido, genero, numero_documento, tipo_doc
  $("#Profesion").val(profesion);
  $("#Contrato").val(contrato);
  $("#ValorContrato").val(valorContrato);
+ $("#Id_pago_doc").val(numero_documento);
 }
 
 function actualizarmodaldoc(){
@@ -419,14 +423,11 @@ function eliminarmodaldocente() {
 }
 
 function actualizarPago(){
-  var nombre = "";
-  var apellidos = "";
   var identificacion = 0;
+  var id_pago_doc = 0;
 
-
-  nombre = $("#Nombres").val();
-  apellidos = $("#Apellidos").val();
   identificacion = $("#Identificacion").val();  
+  id_pago_doc = $("#Id_pago_doc").val();  
  
 
 
@@ -435,9 +436,8 @@ function actualizarPago(){
     $.ajax({
         'url'  : ruta,
         'data' : {
-                    'nombres': nombre , 
-                    'apellidos': apellidos,
-                    'identificacion': identificacion                  
+                    'identificacion': identificacion,
+                    'id_pago_doc' : id_pago_doc                 
          },
         'type' : 'POST',
         'statusCode': {

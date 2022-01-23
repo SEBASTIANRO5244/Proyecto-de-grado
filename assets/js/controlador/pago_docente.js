@@ -24,6 +24,7 @@ function guardar() {
     var valor="";
     var rectora = "";
     var periodo_academico ="";
+    var id_col = "";
     var mes_academico ="";
 
     fecha = document.getElementById("Fecha").value;
@@ -32,6 +33,7 @@ function guardar() {
     rectora = document.getElementById("Admin").value;
     periodo_academico =  document.getElementById("Periodo_academico").value;
     mes_academico =  document.getElementById("Mes_academico").value;
+    id_col = document.getElementById("Id_col").value;
 
 
     if(!fecha||!valor||!rectora||!periodo_academico||!mes_academico){
@@ -40,8 +42,6 @@ function guardar() {
  }
 
  if(acum<1){
-
-
 
     ruta = url + cpago_docente + 'guardar';
     
@@ -52,6 +52,7 @@ function guardar() {
                     'numdoc_docente': numdoc_docente,
                     'valor': valor,
                     'rectora': rectora,
+                    'id_col': id_col,
                     'periodo_academico': periodo_academico,
                     'mes_academico': mes_academico
         },
@@ -322,6 +323,8 @@ function cargarmodalPDoc(id, fecha,  valor, nombre, apellido,
     $("#Valor").val(valor);  
     $("#Periodo_academico").val(periodo_academico);
     $("#Mes_academico").val(mes_academico);
+    $("#Id_documen").val(numDoc_docente);
+
     
 }
 
@@ -334,14 +337,13 @@ function actualizarDoc(){
   var nombre = "";
   var apellidos = "";
   var identificacion = 0;
+  var id_documen = 0;
 
 
   nombre = $("#Nombres").val();
   apellidos = $("#Apellidos").val();
   identificacion = $("#Identificacion").val();
-
- 
-
+  id_documen = $("#Id_documen").val();
 
    ruta = url + cpago_docente + 'actualizarDoc';
     
@@ -350,7 +352,8 @@ function actualizarDoc(){
         'data' : {
                     'nombres': nombre , 
                     'apellidos': apellidos,
-                    'identificacion': identificacion
+                    'identificacion': identificacion,
+                    'id_documen' : id_documen
                                 
          },
         'type' : 'POST',
