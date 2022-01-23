@@ -34,8 +34,8 @@
 	$id_colegio = $current_user['id_colegio'];
 ?>
 
-<input type="text" readonly class="form-control-plaintext" id="Tip_current_user" value="<?php echo $tip_user; ?>">
-<input type="text" readonly class="form-control-plaintext" id="Id_col" value="<?php echo $id_colegio; ?>">
+<input readonly class="form-control-plaintext" type="hidden" id="Tip_current_user" value="<?php echo $tip_user; ?>">
+<input readonly class="form-control-plaintext"  type="hidden" id="Id_col" value="<?php echo $id_colegio; ?>">
 
 
 	

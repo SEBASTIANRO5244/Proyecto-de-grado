@@ -24,6 +24,7 @@
           <h1><center><label style="text-shadow: 2px 2px 4px #444">Estudiantes</label></center></h1>
             <div class="row">
             <input class="form-control rounded-pill" type="hidden" id="Id_est" placeholder="Id Estudiante">
+            <input class="form-control rounded-pill" type="hidden" id="Id_est_old" placeholder="Id Estudiante antiguo">
           <div class="col-sm-6">
             <label for="">Nombres</label>
             <input class="input-letter form-control rounded-pill" type="text" placeholder="Nombres"  id="Nombres">

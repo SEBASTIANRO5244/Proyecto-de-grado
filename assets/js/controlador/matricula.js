@@ -410,7 +410,6 @@ function actualizar() {
         if(data == 1){
             actualizarEst();
             actualizarAcu();
-            actualizarPago();
             limpiar();
             tmatriculas();
             cargar_tabla();
@@ -448,7 +447,8 @@ function cargarmodalmat(fk_numero_documento_estudiante, nombre_estudiante, apell
     $("#Apellidos1").val(apellido_acudiente);
     $("#Identificacion1").val(fk_numero_documento_acudiente);
     $("#Fecha").val(fecha);
-    $("#Valor").val(valor);  
+    $("#Valor").val(valor); 
+    $("#Id_doc_est_old").val(fk_numero_documento_acudiente);
 }
 
 function actualizarmodalmat(){
@@ -674,19 +674,24 @@ function actualizarAcu(){
   var nombre = "";
   var apellidos = "";
   var identificacion = 0;
+  var id_doc = 0;
 
   nombre = $("#Nombres1").val();
   apellidos = $("#Apellidos1").val();
   identificacion = $("#Identificacion1").val();
+  id_doc = $("#Id_doc_est_old").val();
+
+  alertify.error(id_doc);
 
    ruta = url + cmatriculas + 'actualizarAcu';
     
     $.ajax({
         'url'  : ruta,
         'data' : {
-                    'nombres': nombre , 
-                    'apellidos': apellidos,
-                    'identificacion': identificacion
+                    'nombres' : nombre , 
+                    'apellidos' : apellidos,
+                    'identificacion' : identificacion,
+                    'id_doc' : id_doc
                     
          },
         'type' : 'POST',

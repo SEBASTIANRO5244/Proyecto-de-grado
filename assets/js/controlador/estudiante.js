@@ -276,6 +276,7 @@ function actualizar() {
     }).done(function( data ) {
         if(data == 1){
             actualizarMat();
+            actualizarPago();
             limpiar();
             testudiante();
             cargar_tabla();
@@ -311,16 +312,17 @@ function actualizar() {
 
 function cargarmodalest(id, nombre, apellido, genero, fecha_nacimiento, lugar_nacimiento, 
     numero_documento, tipo_documento, direccion, eps){
- $("#Id_est").val(id);
- $("#Nombres").val(nombre);
- $("#Apellidos").val(apellido);
- $("#Genero").val(genero);
- $("#Fecha_Nac").val(fecha_nacimiento);
- $("#Lugar_Nac").val(lugar_nacimiento);
- $("#Identificacion").val(numero_documento);
- $("#Tipo").val(tipo_documento);
- $("#Direccion").val(direccion);
- $("#Eps").val(eps);
+  $("#Id_est").val(id);
+  $("#Nombres").val(nombre);
+  $("#Apellidos").val(apellido);
+  $("#Genero").val(genero);
+  $("#Fecha_Nac").val(fecha_nacimiento);
+  $("#Lugar_Nac").val(lugar_nacimiento);
+  $("#Identificacion").val(numero_documento);
+  $("#Tipo").val(tipo_documento);
+  $("#Direccion").val(direccion);
+  $("#Eps").val(eps);
+  $("#Id_est_old").val(numero_documento);
 }
 
 function cargarestadoform(estado){
@@ -359,10 +361,12 @@ function actualizarMat(){
   var nombre = "";
   var apellidos = "";
   var identificacion = 0;
+  var id_est_old = 0;
 
   nombre = $("#Nombres").val();
   apellidos = $("#Apellidos").val();
   identificacion = $("#Identificacion").val();
+  id_est_old = $("#Id_est_old").val();
 
    ruta = url + cestudiantes + 'actualizarMat';
     
@@ -371,7 +375,8 @@ function actualizarMat(){
         'data' : {
                     'nombres': nombre , 
                     'apellidos': apellidos,
-                    'identificacion': identificacion
+                    'identificacion': identificacion,
+                    'id_est_old': id_est_old,
                     
          },
         'type' : 'POST',
@@ -387,6 +392,42 @@ function actualizarMat(){
             cargar_tabla();
              
         
+        }else{
+          
+        }
+            
+  }).fail(function() {
+     
+  })
+
+}
+
+function actualizarPago(){
+  var identificacion = 0;
+  var id_est_old = 0;
+
+  identificacion = $("#Identificacion").val();
+  id_est_old = $("#Id_est_old").val();
+
+   ruta = url + cestudiantes + 'actualizarPago';
+    
+    $.ajax({
+        'url'  : ruta,
+        'data' : { 
+                    'id_est_old': id_est_old,
+                    'identificacion': identificacion                  
+         },
+        'type' : 'POST',
+        'statusCode': {
+            404: function() {
+             alertify.error("La Ruta de la pagina no es la correcta" );
+           }
+          }
+    }).done(function( data ) {
+        if(data == 1){
+          limpiar();
+          testudiante();
+          cargar_tabla();
         }else{
           
         }

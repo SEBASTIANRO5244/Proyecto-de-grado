@@ -68,8 +68,16 @@ class Mmatricula extends CI_Model {
     }
 
     public function CargarCombo(){
+      $current_user = $this->session->all_userdata();
+      $tip_user = $current_user['tipo_usu'];
+      $id_colegio = $current_user['id_colegio'];
+      
+      $this->db->select('*');
+      $this->db->from('curso');
+      $this->db->where('id_colegio', $id_colegio);
 
-      $query = $this->db->get('curso');
+ 		  $query = $this->db->get();
+
       $json = array();
         foreach ($query -> result() as $row) {
           $json [] = array(
@@ -129,8 +137,8 @@ function EliminarestadoEst($data){
       return $query;
     }
 
-       public function actualizarAcu($nombre, $apellidos, $identificacion){
-      $query = $this->db->query("update acudiente set nombre='".$nombre."',apellido='".$apellidos."', numero_documento='".$identificacion."' where numero_documento =".$identificacion);
+       public function actualizarAcu($nombre, $apellidos, $identificacion, $id_doc){
+      $query = $this->db->query("update acudiente set numero_documento='".$identificacion."',nombre='".$nombre."',apellido='".$apellidos."' where numero_documento =".$id_doc);
       return $query;
     }
 

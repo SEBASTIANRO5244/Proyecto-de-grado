@@ -1,3 +1,10 @@
+<?php 
+	$current_user = $this->session->all_userdata();
+	$tip_user = $current_user['tipo_usu'];
+	$id_colegio = $current_user['id_colegio'];
+?>
+<input readonly class="form-control-plaintext"  type="hidden" id="Id_col" value="<?php echo $id_colegio; ?>">
+<center><h1 id="Titulo"></h1></center>
 <center>
 <div class="contenedor-menu" style="margin-bottom:5%; justify-content: middle;">
 
@@ -24,3 +31,5 @@
 <button  class="botonmenu2" href="" id="cerrarSession"> <b class="letter">Cerrar Sesión</b> <img style="height: 112px;" src="<?php echo base_url('assets/img/salir.png');?>"></button> 
 </div>
 </center>
+
+<script type="text/javascript" src="<?php echo base_url('assets/js/controlador/menu.js');?>"></script>

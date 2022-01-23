@@ -69,8 +69,9 @@ public function actualizarMat(){
   $nombre = $_POST['nombres'];
   $apellidos = $_POST['apellidos'];
   $identificacion = $_POST['identificacion'];
+  $id_acu_old = $_POST['id_acu_old'];
 
-  echo $this->Macudiente->actualizarMat($nombre, $apellidos, $identificacion);
+  echo $this->Macudiente->actualizarMat($nombre, $apellidos, $identificacion, $id_acu_old);
  }
 
 }

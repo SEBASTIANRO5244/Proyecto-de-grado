@@ -41,8 +41,13 @@ class Mestudiante extends CI_Model {
       echo $query = $this->db->update("estudiante",$dato);
     }
 
-    public function actualizarMat($nombre, $apellidos, $identificacion){
-      $query = $this->db->query("update Matricula set nombre_estudiante='".$nombre."',apellido_estudiante='".$apellidos."' where fk_numero_documento_estudiante =".$identificacion);
+    public function actualizarMat($nombre, $apellidos, $identificacion, $id_est_old){
+      $query = $this->db->query("update Matricula set fk_numero_documento_estudiante='".$identificacion."',nombre_estudiante='".$nombre."',apellido_estudiante='".$apellidos."' where fk_numero_documento_estudiante =".$id_est_old);
+      return $query;
+    }
+
+    public function actualizarPago($identificacion, $id_est_old){
+      $query = $this->db->query("update pension set fk_id_estudiante='".$identificacion."' where fk_id_estudiante =".$id_est_old);
       return $query;
     }
   

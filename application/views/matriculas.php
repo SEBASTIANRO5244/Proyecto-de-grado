@@ -24,6 +24,7 @@
             <div class="col-sm-6" style="display: none;">
               <input class="input-letter form-control rounded-pill" type="text" id="Estado_est">
             </div>
+              <input class="input-letter form-control rounded-pill" type="text" id="Id_doc_est_old">
             <div class="col-sm-6">
               <label for="">Documento estudiante</label>
               <input class="input-number form-control rounded-pill" type="text" id="Identificacion" placeholder="Documento"  style="width: 317px;">

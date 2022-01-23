@@ -40,8 +40,8 @@ class Macudiente extends CI_Model {
     }
 
 
-     public function actualizarMat($nombre, $apellidos, $identificacion){
-      $query = $this->db->query("update Matricula set nombre_acudiente='".$nombre."',apellido_acudiente='".$apellidos."' where fk_numero_documento_acudiente =".$identificacion);
+     public function actualizarMat($nombre, $apellidos, $identificacion, $id_acu_old){
+      $query = $this->db->query("update matricula set fk_numero_documento_acudiente='".$identificacion."', nombre_acudiente='".$nombre."',apellido_acudiente='".$apellidos."' where fk_numero_documento_acudiente =".$id_acu_old);
       return $query;
     }
   }

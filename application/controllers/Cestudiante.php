@@ -71,7 +71,16 @@ class Cestudiante extends CI_Controller {
   $nombre = $_POST['nombres'];
   $apellidos = $_POST['apellidos'];
   $identificacion = $_POST['identificacion'];
+  $id_est_old = $_POST['id_est_old'];
 
-  echo $this->Mestudiante->actualizarMat($nombre, $apellidos, $identificacion);
+  echo $this->Mestudiante->actualizarMat($nombre, $apellidos, $identificacion, $id_est_old);
+ }
+
+ public function actualizarPago(){
+  $identificacion = $_POST['identificacion'];
+  $id_est_old = $_POST['id_est_old'];
+
+
+  echo $this->Mestudiante->actualizarPago($identificacion, $id_est_old);
  }
 }

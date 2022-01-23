@@ -24,6 +24,7 @@
           <h1><center><label style="text-shadow: 2px 2px 4px #444">Acudientes</label></center></h1>
           <div class="row">
             <input class="form-control rounded-pill" type="hidden" id="Id_acu" placeholder="Id Acudiente">
+            <input class="form-control rounded-pill" type="hidden" id="Id_acu_old" placeholder="Id_acu_old">
             <div class="col-sm-6">
               <label for="">Nombres</label>
               <input class="input-letter form-control rounded-pill" id="Nombres" type="text" placeholder="Nombres">

@@ -305,16 +305,16 @@ function actualizar() {
 }
 
 function cargarmodalacu(id, nombre, apellido, genero, numero_documento, tipo_documento, direccion, telefono, profesion){
- 
- $("#Id_acu").val(id);
- $("#Nombres").val(nombre);
- $("#Apellidos").val(apellido);
- $("#Genero").val(genero);
- $("#Identificacion").val(numero_documento);
- $("#Tipo").val(tipo_documento);
- $("#Direccion").val(direccion);
- $("#Telefono").val(telefono); 
- $("#Profesion").val(profesion);
+  $("#Id_acu").val(id);
+  $("#Nombres").val(nombre);
+  $("#Apellidos").val(apellido);
+  $("#Genero").val(genero);
+  $("#Identificacion").val(numero_documento);
+  $("#Tipo").val(tipo_documento);
+  $("#Direccion").val(direccion);
+  $("#Telefono").val(telefono); 
+  $("#Profesion").val(profesion);
+  $("#Id_acu_old").val(numero_documento);
 }
 
 function actualizarmodalacu(){
@@ -341,10 +341,12 @@ function actualizarMat(){
   var nombre = "";
   var apellidos = "";
   var identificacion = 0;
+  var id_acu_old = 0;
 
   nombre = $("#Nombres").val();
   apellidos = $("#Apellidos").val();
   identificacion = $("#Identificacion").val();
+  id_acu_old = $("#Id_acu_old").val();
 
    ruta = url + cacudiente + 'actualizarMat';
     
@@ -353,7 +355,8 @@ function actualizarMat(){
         'data' : {
                     'nombres': nombre , 
                     'apellidos': apellidos,
-                    'identificacion': identificacion
+                    'identificacion': identificacion,
+                    'id_acu_old' : id_acu_old
                     
          },
         'type' : 'POST',

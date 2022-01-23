@@ -79,6 +79,7 @@ class Cmatriculas extends CI_Controller {
             $nombre_acudiente= $_POST['nombre_acu'];
             $apellido_acudiente = $_POST['apellido_acu'];
             $fk_id_curso = $_POST['curso'];
+
             echo $this->Mmatricula->actualizar($fecha,$valor,$fk_numero_documento_estudiante,
             $nombre_estudiante,$apellido_estudiante,$fk_numero_documento_acudiente,
             $nombre_acudiente,$apellido_acudiente,$fk_id_curso);
@@ -155,9 +156,11 @@ class Cmatriculas extends CI_Controller {
   $nombre = $_POST['nombres'];
   $apellidos = $_POST['apellidos'];
   $identificacion = $_POST['identificacion'];
+  $id_doc = $_POST['id_doc'];
 
-  echo $this->Mmatricula->actualizarAcu($nombre, $apellidos, $identificacion);
+  echo $this->Mmatricula->actualizarAcu($nombre, $apellidos, $identificacion, $id_doc);
  }
+
 
  public function actualizarPago(){
   $nombre = $_POST['nombres'];
