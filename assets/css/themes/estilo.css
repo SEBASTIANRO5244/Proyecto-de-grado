@@ -310,6 +310,12 @@ body {
 	margin-top: 10px;
 }
 
+.registro_colegios {
+	height: 100px;
+	margin-left: 0px;
+	margin-top: 10px;
+}
+
 /*Boton reportes*/
 .report {
 	height: 100px;
@@ -392,6 +398,13 @@ body {
 	width: 130%;
 	margin-left: -10%;
 	height: 55%;
+}
+
+
+#m_colegios {
+	width: 105%;
+	margin-left: -10%;
+	height: 75%;
 }
 
 .modal-dialog {

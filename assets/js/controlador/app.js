@@ -33,3 +33,7 @@ function pago_estudiante(){
 function usuarios(){
 	location.href= url + cmain + 'usuarios';
 }
+
+function colegios(){
+	location.href= url + cmain + 'colegios';
+}
