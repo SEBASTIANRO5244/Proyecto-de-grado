@@ -109,4 +109,15 @@ class Controlador extends CI_Controller {
 		$this->load->view('Componentes/footer');
 	}
 
+
+
+	public function colegios()
+	{
+	
+		$this->load->view('Componentes/header_forms');
+		$this->load->view('colegios');
+		$this->load->view('Componentes/footer');
+	}
+
+
 }

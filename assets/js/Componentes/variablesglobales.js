@@ -10,6 +10,7 @@ var cpago_docente="";
 var cpago_estudiante="";
 var cusuarios="";
 var clogin="";
+var ccolegios="";
 
 url = "http://localhost/Proyecto-de-grado/index.php/";
 cmain = "Controlador/";
@@ -24,4 +25,5 @@ cpago_docente = "Cpago_docente/";
 cpago_estudiante = "Cpago_estudiante/";
 cusuarios = "Cusuarios/";
 clogin = "Clogin/";
+ccolegios = "Ccolegios/";
 
