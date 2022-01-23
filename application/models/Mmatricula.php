@@ -7,16 +7,22 @@ class Mmatricula extends CI_Model {
         parent::__construct(); 
   	}
 
-  	public function buscarespecifico($id){
-  		$query = $this->db->query("select * from estudiante where numero_documento = ".$id);
-  		
-  		if($query->num_rows()>0){
-  			return $query->row();
-  		}else{
-  			return false;
-  		}
+      public function buscarespecifico($id){
 
-  	}
+       $tip_user = $this->session->all_userdata();
+       $id_col = $tip_user['id_colegio'];
+       $tip_user = $tip_user['tipo_usu'];
+
+      $query = $this->db->query("select * from estudiante where numero_documento = $id and id_colegio= 
+        $id_col");
+      
+      if($query->num_rows()>0){
+        return $query->row();
+      }else{
+        return false;
+      }
+
+    }
 
     public function val_estado_est($id){
   		$query = $this->db->query("select * from estudiante where numero_documento = ".$id);
@@ -30,7 +36,13 @@ class Mmatricula extends CI_Model {
   	}
 
       public function buscarespecifico1($id){
-      $query = $this->db->query("select * from acudiente where numero_documento = ".$id);
+
+        $tip_user = $this->session->all_userdata();
+       $id_col = $tip_user['id_colegio'];
+       $tip_user = $tip_user['tipo_usu'];
+
+      $query = $this->db->query("select * from acudiente where numero_documento = $id and id_colegio= 
+        $id_col");
       
       if($query->num_rows()>0){
         return $query->row();
