@@ -193,7 +193,9 @@ function guardar() {
     var fecha="";
     var curso="";
     var estado="Matriculado";
+    var id_col = "";
     var ruta = "";
+
 
     nombres = document.getElementById("Nombres").value;
     apellidos = document.getElementById("Apellidos").value;
@@ -204,6 +206,7 @@ function guardar() {
     valor =  document.getElementById("Valor").value;
     fecha = document.getElementById("Fecha").value;
     curso = document.getElementById("G_Cursar").value;
+    id_col = document.getElementById("Id_col").value;
 
     if(!nombres||!apellidos||!identificacion||!nombres1||!apellidos1||!identificacion1||
         !valor||!fecha||!curso){
@@ -228,7 +231,8 @@ function guardar() {
                     'valor': valor,
                     'fecha': fecha,
                     'curso': curso,
-                    'estado': estado
+                    'estado': estado,
+                    'id_col' : id_col
 
         },
         'type' : 'POST',

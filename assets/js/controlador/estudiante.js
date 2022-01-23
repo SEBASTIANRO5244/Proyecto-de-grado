@@ -79,6 +79,7 @@ function guardar() {
     var direccion = "";
     var eps="";
     var estado="Inactivo";
+    var id_col = "";
     var ruta = "";
 
     
@@ -91,6 +92,7 @@ function guardar() {
     tipo_identificacion =  document.getElementById("Tipo").value;
     direccion =  document.getElementById("Direccion").value;
     eps =  document.getElementById("Eps").value;
+     id_col = document.getElementById("Id_col").value;
 
     if(!nombres||!apellidos||!genero||!identificacion||!tipo_identificacion||!fecha_nac||!direccion||!lugar_nac||!eps){
     
@@ -113,7 +115,8 @@ function guardar() {
                     'tipo_identificacion': tipo_identificacion,
                     'direccion': direccion,
                     'eps': eps,
-                    'estado' : estado
+                    'estado' : estado,
+                    'id_col' : id_col
 
         },
         'type' : 'POST',

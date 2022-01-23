@@ -39,7 +39,7 @@ function guardar() {
         'url'  : ruta,
         'data' : {
         			'nombres': nombres,
-              'id_col' : id_col
+                    'id_col' : id_col
         },
         'type' : 'POST',
         'statusCode': {

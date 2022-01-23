@@ -77,6 +77,7 @@ function guardar() {
     var Profesion="";
     var telefono="";
     var estado="Inactivo";
+    var id_col = "";
     var ruta = "";
 
 
@@ -88,6 +89,7 @@ tipo_identificacion = document.getElementById("Tipo").value;
 telefono = document.getElementById("Telefono").value;
 direccion = document.getElementById("Direccion").value;
 Profesion = document.getElementById("Profesion").value;
+ id_col = document.getElementById("Id_col").value;
      
      if(!nombres||!apellidos||!genero||!identificacion||!tipo_identificacion||!telefono||!direccion||!Profesion){
 	  
@@ -110,7 +112,8 @@ Profesion = document.getElementById("Profesion").value;
                     'direccion': direccion,
                     'Profesion': Profesion,
                     'telefono': telefono,
-                    'estado' : estado
+                    'estado' : estado,
+                    'id_col' : id_col
 
         },
         'type' : 'POST',

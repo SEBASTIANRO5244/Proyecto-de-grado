@@ -14,13 +14,14 @@ class Cestudiante extends CI_Controller {
   			"nombre" => $_POST['nombres'],
   			"apellido" => $_POST['apellidos'],
   			"genero" => $_POST['genero'],
-            "fecha_nacimiento" => $_POST['fecha_nac'],
-            "lugar_nacimiento" => $_POST['lugar_nac'],
-            "numero_documento" => $_POST['identificacion'],
-            "tipo_documento" => $_POST['tipo_identificacion'],
+        "fecha_nacimiento" => $_POST['fecha_nac'],
+        "lugar_nacimiento" => $_POST['lugar_nac'],
+        "numero_documento" => $_POST['identificacion'],
+        "tipo_documento" => $_POST['tipo_identificacion'],
   			"direccion" => $_POST['direccion'],
-            "eps" => $_POST['eps'],
-            "estado" => $_POST['estado']
+        "eps" => $_POST['eps'],
+        "estado" => $_POST['estado'],
+        "id_colegio" => $_POST['id_col']
   				);
 
   		echo $this->Mestudiante->guardar($dato);
@@ -56,7 +57,11 @@ class Cestudiante extends CI_Controller {
 
 
      public function testudiante () {
-   $dato['estudiante'] = $this->Mestudiante->consultar("Select * from estudiante");
+    $current_user = $this->session->all_userdata();
+    $tip_user = $current_user['tipo_usu'];
+    $id_colegio = $current_user['id_colegio'];
+
+   $dato['estudiante'] = $this->Mestudiante->consultar("Select * from estudiante where id_colegio =".$id_colegio);
     $this->load->view('tablas/testudiante', $dato);
 
  }

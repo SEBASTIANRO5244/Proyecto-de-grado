@@ -45,14 +45,21 @@ class Cmatriculas extends CI_Controller {
             "fecha" => $_POST['fecha'],
             "fk_id_curso" => $_POST['curso'],
             "valor" => $_POST['valor'],
-            "estado" => $_POST['estado']
+            "estado" => $_POST['estado'],
+            "id_colegio" => $_POST['id_col']
           );
 
       echo $this->Mmatricula->guardar($dato);
     }
 
     public function tmatriculas() {
-    $dato['matricula'] = $this->Mmatricula->consultar("Select * from matricula where estado='Matriculado'");
+    $current_user = $this->session->all_userdata();
+    $tip_user = $current_user['tipo_usu'];
+    $id_colegio = $current_user['id_colegio'];
+
+
+
+    $dato['matricula'] = $this->Mmatricula->consultar("Select * from matricula where estado='Matriculado' and id_colegio =".$id_colegio);
     $this->load->view('tablas/tmatriculas', $dato);
 
   }

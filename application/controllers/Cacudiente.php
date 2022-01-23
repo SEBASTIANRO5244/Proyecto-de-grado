@@ -20,7 +20,8 @@ class Cacudiente extends CI_Controller {
   					"profesion" => $_POST['Profesion'],
             "telefono" => $_POST['telefono'],
             "direccion" => $_POST['direccion'],
-            "estado" => $_POST['estado']
+            "estado" => $_POST['estado'],
+            "id_colegio" => $_POST['id_col']
   				);
 
   		echo $this->Macudiente->guardar($dato);
@@ -54,7 +55,12 @@ class Cacudiente extends CI_Controller {
 
 
      public function tacudiente () {
-   $dato['acudiente'] = $this->Macudiente->consultar("Select * from acudiente");
+    $current_user = $this->session->all_userdata();
+    $tip_user = $current_user['tipo_usu'];
+    $id_colegio = $current_user['id_colegio'];
+
+
+   $dato['acudiente'] = $this->Macudiente->consultar("Select * from acudiente where id_colegio =".$id_colegio);
     $this->load->view('tablas/tacudiente', $dato);
 
  }
